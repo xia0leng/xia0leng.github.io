@@ -4,7 +4,7 @@ https://keybase.io/xiaoleng
 
 I hereby claim:
 
-  * I am an admin of https://xln.moe
+  * I am an admin of https://www.xln.moe
   * I am xiaoleng (https://keybase.io/xiaoleng) on keybase.
   * I have a public key ASC0eYnS__UQ6grvJjl2kCdX1DLbSJaIFxS_ZqrEx2krrAo
 
@@ -20,14 +20,14 @@ To do so, I am signing this object:
       "username": "xiaoleng"
     },
     "merkle_root": {
-      "ctime": 1636397295,
-      "hash": "e2558c605a148cba89fe75a13b31937c206d6dd7d5a43d097f91308bc962bcb9402b7182760a48197ee584dba6e295a2c558af3ab1c9ee1d55d5073d2fb6e894",
-      "hash_meta": "ac8dc67cf7ab4a554da14e50157e990ad081e0a61dc6f0751e124a290d03e9a2",
-      "seqno": 21171439
+      "ctime": 1641901990,
+      "hash": "5018230aa73c905c77ad5793bebee8fe77d79aad7c0b4015d749bb793773aed075287257674532e283d06700b7d0d0030c8faf9249e270e7c0f2ab4e6104a6f3",
+      "hash_meta": "907b5e25f8cb788a2fc3402390ed97057d3df2f01d95ab59be36062718d4190c",
+      "seqno": 21608987
     },
     "service": {
-      "entropy": "UuC/1UrsUkkPxN/h2fnu0dTp",
-      "hostname": "xln.moe",
+      "entropy": "mws94L9zzSBcAcGJzNireJOQ",
+      "hostname": "www.xln.moe",
       "protocol": "https:"
     },
     "type": "web_service_binding",
@@ -37,16 +37,16 @@ To do so, I am signing this object:
     "name": "keybase.io go client",
     "version": "5.3.0"
   },
-  "ctime": 1636397313,
+  "ctime": 1641901997,
   "expire_in": 504576000,
-  "prev": "3cbeecbec96b265de841b502335df1e6a5ed24b2dab8dc17b604f24442e75543",
-  "seqno": 49,
+  "prev": "c19f7387bf1273d92a98f3b2cec9648358e9f5c4f31867ce6acb1fb9543ea9eb",
+  "seqno": 51,
   "tag": "signature"
 }
 
 which yields the signature:
 
-hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgtHmJ0v/1EOoK7yY5dpAnV9Qy20iWiBcUv2aqxMdpK6wKp3BheWxvYWTESpcCMcQgPL7svslrJl3oQbUCM13x5qXtJLLauNwXtgTyRELnVUPEINRHm5GXtla6Ovm2RJ3BFY+E9oigi5TbKHVx7FNY2gVhAgHCo3NpZ8RA5qRhecv9EuJaY2KM/Tc5xsqbztbPfyUfM5DUcMIMg2e5u3RzWMETjDCEm7gnRqh80249WptE1dLCRpcp3RYFCqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIMO+wqWGAaVHJKCjm04HcONJRXMmlHv9x/U3mNczQZ/so3RhZ80CAqd2ZXJzaW9uAQ==
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgtHmJ0v/1EOoK7yY5dpAnV9Qy20iWiBcUv2aqxMdpK6wKp3BheWxvYWTESpcCM8QgwZ9zh78Sc9kqmPOyzslkg1jp9cTzGGfOassfuVQ+qevEIOSDyZfa296vHI4wAlQRvqmdUIRaZrBTmDhNpQJlrbVYAgHCo3NpZ8RAp26AS/r+Jxigf3Z4gUzvHnDctejnW+kM6Pomw+lYD2UW8tgGjObx1Wevobln8QYyUjO0JHmMrHRH6B0iTCq4BqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIPvmu+8vDaPEx08lzkNRv6rYK833agwQzDNEjNMKukSxo3RhZ80CAqd2ZXJzaW9uAQ==
 
 And finally, I am proving ownership of this host by posting or
 appending to this document.
