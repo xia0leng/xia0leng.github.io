@@ -6643,7 +6643,7 @@ select:focus {
 
 .p-news-labels__item a:hover,
 .p-news-labels__item a.is-current {
-	text-shadow: 2px 2px 0 #fff100, -2px 2px 0 #fff100, 2px -2px 0 #fff100, -2px -2px 0 #fff100;
+	text-shadow: 2px 2px 0 #c7e2e9, -2px 2px 0 #c7e2e9, 2px -2px 0 #c7e2e9, -2px -2px 0 #c7e2e9;
 }
 
 .p-pagination {
@@ -6703,7 +6703,7 @@ select:focus {
 
 .page-numbers:hover,
 .page-numbers.current {
-	text-shadow: 2px 2px 0 #fff100, -2px 2px 0 #fff100, 2px -2px 0 #fff100, -2px -2px 0 #fff100;
+	text-shadow: 2px 2px 0 #c7e2e9, -2px 2px 0 #c7e2e9, 2px -2px 0 #c7e2e9, -2px -2px 0 #c7e2e9;
 }
 
 .page-numbers:hover.prev::before,
@@ -6804,7 +6804,7 @@ select:focus {
 .p-profile-card__info-row {
 	align-items: center;
 	border-bottom: 1px solid;
-	border-bottom: 1px solid #f2b4ca;
+	border-bottom: 1px solid #cec7e9;
 	display: flex;
 	padding: 10px 0;
 }
@@ -6949,8 +6949,8 @@ select {
 
 .l-frame-single::before {
 	border-bottom-width: 0.3125rem;
-	border-left: 5px solid #e3007f;
-	border-right: 5px solid #e3007f;
+	border-left: 5px solid #7F7AB4;
+	border-right: 5px solid #7F7AB4;
 	border-top-width: 0.3125rem;
 	height: calc(100% - 0.25rem);
 	left: 0.125rem;
@@ -7074,7 +7074,7 @@ select {
 }
 
 .l-post__content {
-	background: rgba(250, 227, 232, 0.95) url(../img/common/base-bg-opacity.png) repeat center top;
+	background: rgba(214, 227, 232, 0.95) url(../img/common/base-bg-opacity.png) repeat center top;
 	background-size: 9.375rem 8.75rem;
 }
 
@@ -7089,7 +7089,7 @@ select {
 }
 
 .l-section-front {
-	background: rgba(250, 227, 232, 0.95) url(../img/common/base-bg-opacity.png) repeat center top;
+	background: rgba(214, 227, 232, 0.95) url(../img/common/base-bg-opacity.png) repeat center top;
 	background-size: 9.375rem 8.75rem;
 	padding-bottom: 7.5rem;
 	padding-top: 7.5rem;
@@ -7104,7 +7104,7 @@ select {
 }
 
 .l-single__content {
-	background: rgba(250, 227, 232, 0.95) url(../img/common/base-bg-opacity.png) repeat center top;
+	background: rgba(214, 227, 232, 0.95) url(../img/common/base-bg-opacity.png) repeat center top;
 	background-size: 9.375rem 8.75rem;
 }
 
@@ -7184,7 +7184,7 @@ select {
 .p-biography-info-card__lead {
 	font-size: 1.5rem;
 	margin-top: 1.5rem;
-	text-shadow: 0.125rem 0.125rem 0 #fff100, -0.125rem 0.125rem 0 #fff100, 0.125rem -0.125rem 0 #fff100, -0.125rem -0.125rem 0 #fff100;
+	text-shadow: 0.125rem 0.125rem 0 #C1ECFA, -0.125rem 0.125rem 0 #C1ECFA, 0.125rem -0.125rem 0 #C1ECFA, -0.125rem -0.125rem 0 #C1ECFA;
 }
 
 .p-biography-slide__items {
@@ -7428,14 +7428,14 @@ select {
 }
 
 .p-main-visual-image::before {
-	border: 0.3125rem solid #e3007f;
+	border: 0.3125rem solid #7F7AB4;
 	height: calc(100% - 0.25rem);
 	left: 0.125rem;
 	width: calc(100% - 0.25rem);
 }
 
 .p-main-visual-image::after {
-	border: 0.125rem solid #fff100;
+	border: 0.125rem solid #C1ECFA;
 }
 
 .p-main-visual {
@@ -7504,7 +7504,7 @@ select {
 
 .p-news-labels__item a:hover,
 .p-news-labels__item a.is-current {
-	text-shadow: 0.125rem 0.125rem 0 #fff100, -0.125rem 0.125rem 0 #fff100, 0.125rem -0.125rem 0 #fff100, -0.125rem -0.125rem 0 #fff100;
+	text-shadow: 0.125rem 0.125rem 0 #C1ECFA, -0.125rem 0.125rem 0 #C1ECFA, 0.125rem -0.125rem 0 #C1ECFA, -0.125rem -0.125rem 0 #C1ECFA;
 }
 
 .p-pagination {
@@ -7523,7 +7523,7 @@ select {
 
 .page-numbers:hover,
 .page-numbers.current {
-	text-shadow: 0.125rem 0.125rem 0 #fff100, -0.125rem 0.125rem 0 #fff100, 0.125rem -0.125rem 0 #fff100, -0.125rem -0.125rem 0 #fff100;
+	text-shadow: 0.125rem 0.125rem 0 #C1ECFA, -0.125rem 0.125rem 0 #C1ECFA, 0.125rem -0.125rem 0 #C1ECFA, -0.125rem -0.125rem 0 #C1ECFA;
 }
 
 .p-pagination__prev-last::before,
