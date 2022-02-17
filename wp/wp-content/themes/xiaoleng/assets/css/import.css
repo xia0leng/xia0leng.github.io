@@ -5757,7 +5757,7 @@ select:focus {
 }
 
 .p-drawer-content {
-	background-color: #f79eaf;
+	background-color: #d495f7;
 	background-image: url(../img/common/drawer-bg.png), url(../img/common/drawer-bg.jpg);
 	background-position: right 0 bottom 0, center top;
 	background-repeat: no-repeat, repeat-y;
