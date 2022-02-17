@@ -1,7 +1,7 @@
 // ローディング処理
 $(window).on('load', function () {
 	$("#loading").removeClass("is-active");
-	$("#lottie").hide();
+	$("#lottie").remove();
 	$(".p-main-visual-image").addClass("is-animation");
 })
 
