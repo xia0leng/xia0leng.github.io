@@ -1,14 +1,6 @@
 /* ---------- Change bg to purple ---------- */
-body::before {
+body {
 	background: rgba(212, 149, 247, 0.9);
-	content: "";
-	display: block;
-	height: 100vh;
-	left: 0;
-	position: fixed;
-	top: 0;
-	width: 100%;
-	z-index: 1;
 }
 
 /* ---------- Fix page2 double purple footer bug ---------- */
