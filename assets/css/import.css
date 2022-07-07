@@ -7456,7 +7456,6 @@ p{
 
 /* style the items (options), including the selected item: */
 .select-items div,.select-selected {
-  color: ;
   padding: 8px 16px;
   border: 1px solid transparent;
   border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
@@ -7687,7 +7686,6 @@ textarea.c-form__input {
 }
 
 .f2 {
-    display: ;
     font: normal normal normal 14px/1 FontAwesome;
     font-size: inherit;
     text-rendering: auto;
