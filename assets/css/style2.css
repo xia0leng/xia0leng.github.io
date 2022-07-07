@@ -1,5 +1,5 @@
 /* ---------- Change bg to purple ---------- */
-.app {
+body {
 	background: rgba(212, 149, 247, 0.9);
 	content: "";
 	display: block;
