@@ -7500,6 +7500,7 @@ textarea.c-form__input {
   padding: 14px 0px;
   background-color: inherit;
   margin: 0;
+    white-space: nowrap;
 }
 
 .dropdown:hover .dropbtn {
