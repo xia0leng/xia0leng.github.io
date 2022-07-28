@@ -4272,6 +4272,7 @@ select:focus {
 .p-poster-info-card__body {
 	font-weight: 800;
 	margin-top: 30px;
+    width: 87%;
 }
 
 .p-poster-info-card__logo {
@@ -6329,10 +6330,12 @@ select {
 	width: 45%;
 }
 
+@media (min-width: 750px) {
 .p-poster-info-card__body {
 	margin-left: auto;
 	margin-top: 0;
 	width: 100%;
+}
 }
 
 .p-poster-info-card__lead {
