@@ -4581,7 +4581,7 @@ select:focus {
 .p-footer {
 	background: #d495f7;
 	border-top: 2px solid #FFFFFF;
-	padding: 2rem 0 4rem;
+	padding: 2rem 0 5rem;
 }
 
 .p-footer__sns {
@@ -7137,10 +7137,10 @@ to {
 }
 
 /* ---------- v3 footer ---------- */
-@media screen and (min-width: 40em)
-.csxBPJ {
-    margin-top: 6rem;
-    margin-bottom: 6rem;
+@media screen and (min-width: 40em){
+    .p-footer {
+    padding: 2rem 0 4rem;
+    }
 }
 
 .PageFooter_columnTitle__QeQzy {
