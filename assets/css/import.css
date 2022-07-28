@@ -7157,8 +7157,13 @@ to {
     }
 }
 
+footer a{
+    color: #fafafa;
+    text-decoration: none;
+    margin-bottom: 1rem;
 }
-footer p{
+
+.PageFooter_disclaimer__307VW{
     text-align: center;
     font-size: 10px;
     line-height: 2;
@@ -7167,10 +7172,9 @@ footer p{
     color: #fafafa;
 }
 
-footer a{
-    color: #fafafa;
-    text-decoration: none;
-    margin-bottom: 1rem;
+.PageFooter_disclaimerLink__OP_fJ {
+    color: #fff;
+    text-decoration: underline;
 }
 
 .PageFooter_footerLogo__2G_r_ {
