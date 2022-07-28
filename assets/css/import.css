@@ -6332,7 +6332,7 @@ select {
 .p-poster-info-card__body {
 	margin-left: auto;
 	margin-top: 0;
-	width: 90%;
+	width: 100%;
 }
 
 .p-poster-info-card__lead {
