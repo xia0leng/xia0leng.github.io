@@ -4059,7 +4059,7 @@ select:focus {
 }
 
 .l-single {
-	padding-bottom: 60px;
+	padding-bottom: 0px;
 	padding-top: 130px;
 }
 
@@ -6292,7 +6292,7 @@ select {
 }
 
 .l-single {
-	padding-bottom: 7.5rem;
+	padding-bottom: 0rem;
 	padding-top: 11.25rem;
 }
 
@@ -6546,7 +6546,7 @@ select {
 }
 
 .l-single {
-	padding-bottom: 120px;
+	padding-bottom: 30px;
 	padding-top: 180px;
 }
 
