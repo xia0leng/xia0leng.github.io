@@ -4272,7 +4272,7 @@ select:focus {
 .p-poster-info-card__body {
 	font-weight: 800;
 	margin-top: 30px;
-    width: 87%;
+    width: 100%;
 }
 
 .p-poster-info-card__logo {
@@ -6357,6 +6357,7 @@ select {
 .p-footer__inner {
 	display: flex;
     margin: 0 auto 2.222rem;
+    max-width: 1400px;
 }
 
 .p-footer__left {
@@ -7137,9 +7138,15 @@ to {
 }
 
 /* ---------- v3 footer ---------- */
-@media screen and (min-width: 40em){
+@media (min-width: 750px) and (max-width: 1399px) {
     .p-footer {
     padding: 2rem 0 4rem;
+    }
+}
+
+@media (min-width: 1400px) {
+    .p-footer {
+    padding: 4rem 0 4rem;
     }
 }
 
