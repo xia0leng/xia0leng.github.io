@@ -4581,7 +4581,7 @@ select:focus {
 .p-footer {
 	background: #d495f7;
 	border-top: 2px solid #FFFFFF;
-	padding: 64px 0;
+	padding: 2rem 0 4rem;
 }
 
 .p-footer__sns {
@@ -7137,6 +7137,12 @@ to {
 }
 
 /* ---------- v3 footer ---------- */
+@media screen and (min-width: 40em)
+.csxBPJ {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+}
+
 .PageFooter_columnTitle__QeQzy {
     font-weight: 700;
 }
@@ -7157,6 +7163,7 @@ footer a{
     color: #fafafa;
     text-decoration: none;
     margin-bottom: 1rem;
+    letter-spacing: normal;
 }
 
 .PageFooter_disclaimerWrapper__fSLIn{
@@ -7172,9 +7179,7 @@ footer a{
 
 .PageFooter_footerColumn__F5zDl{
     display: inline-grid;
-    padding-bottom: 2.222rem;
-    padding-left: 1.111rem;
-    padding-right: 1.111rem;
+    padding: 1.111rem;
     align-items: center;
     
 }
@@ -7182,7 +7187,7 @@ footer a{
 .PageFooter_disclaimer__307VW{
     text-align: center;
     font-size: 10px;
-    line-height: 1.5;
+    line-height: 2;
     font-family: 'Zen Kurenaido';
     letter-spacing: normal;
     color: #fafafa;
@@ -7195,7 +7200,7 @@ footer a{
 
 .PageFooter_logoContainer__Qn1XY{
     padding-top: 2rem;
-    padding-bottom: 3.472rem;
+    padding-bottom: 2rem;
 }
 
 .PageFooter_footerLogo__2G_r_ {
