@@ -7119,28 +7119,24 @@ to {
     justify-content: flex-end;
 }
 
-.PageFooter_disclaimerWrapper__fSLIn{
-    margin: 0 auto;
-    padding-left: 2rem;
-    padding-right: 2rem;
+
+.contact{
+    display: flex;
+    justify-content: center;
+    height: 1070px;
+    overflow: hidden;
 }
 
-.PageFooter_footerColumn__Y6TXe{
-    display: inline-grid;
-    padding-left: 1.111rem;
-    padding-right: 1.111rem;
-    padding-bottom: 2.222rem
+.tIvQIf .DqBBlb {
+    color: #5f6368;
+    display: none !important;
 }
 
-.PageFooter_footerColumn__F5zDl{
-    display: inline-grid;
-    padding-bottom: 2.222rem;
-    padding-left: 1.111rem;
-    padding-right: 1.111rem;
-    align-items: center;
-    
+.l-page-biography__profiles {
+    justify-content: center;
 }
 
+/* ---------- v3 footer ---------- */
 .PageFooter_columnTitle__QeQzy {
     font-weight: 700;
 }
@@ -7161,6 +7157,28 @@ footer a{
     color: #fafafa;
     text-decoration: none;
     margin-bottom: 1rem;
+}
+
+.PageFooter_disclaimerWrapper__fSLIn{
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.PageFooter_footerColumn__Y6TXe{
+    display: inline-grid;
+    padding-left: 1.111rem;
+    padding-right: 1.111rem;
+    padding-bottom: 2.222rem
+}
+
+.PageFooter_footerColumn__F5zDl{
+    display: inline-grid;
+    padding-bottom: 2.222rem;
+    padding-left: 1.111rem;
+    padding-right: 1.111rem;
+    align-items: center;
+    
 }
 
 .PageFooter_disclaimer__307VW{
@@ -7184,22 +7202,6 @@ footer a{
     padding-top: 2rem;
 }
 
-.contact{
-    display: flex;
-    justify-content: center;
-    height: 1070px;
-    overflow: hidden;
-}
-
-.tIvQIf .DqBBlb {
-    color: #5f6368;
-    display: none !important;
-}
-
-.l-page-biography__profiles {
-    justify-content: center;
-}
-
 /* ---------- fix iOS 12 safari twitter embeded ---------- */
 .twitter-timeline {
     width: 100vw !important;
@@ -7215,8 +7217,6 @@ footer a{
 }
 
 /* ---------- homepage shop section ---------- */
-
-
 .sec{
     background-color: #fff;
     border-radius: 20px;
@@ -8008,11 +8008,4 @@ textarea.c-form__input {
     margin-left: var(--px8);
     margin-right: var(--px12);
     vertical-align: middle;
-}
-    
-/* ---------- BitMEX Academy footer ---------- */
-#__next{
-    font-size:100%;
-    background: #d495f7;
-    letter-spacing: normal;
 }
