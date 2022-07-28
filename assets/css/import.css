@@ -4254,6 +4254,15 @@ select:focus {
 	margin-top: 30px;
 }
 
+.p-biography-info-card__text2 {
+	color: #27272e;
+	font-size: 14px;
+	letter-spacing: 0.08em;
+	line-height: 2;
+	margin-top: 30px;
+    font-weight: 800;
+}
+
 .p-biography-info-card__text strong {
 	color: #9306e0;
 	font-size: 16px;
@@ -6326,6 +6335,10 @@ select {
 	letter-spacing: 0.1em;
 }
 
+.p-biography-info-card__text2 {
+	letter-spacing: 0.1em;
+}
+    
 .p-poster-info-card__img {
 	width: 45%;
 }
