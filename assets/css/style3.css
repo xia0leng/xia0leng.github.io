@@ -1071,7 +1071,7 @@ span.loading{
 
 /* ---------- Fix page2 BitMEX Academy footer double purple footer bug ---------- */
 #__next {
-    background: none;
+    background: inherit;
 }
 
 /* ---------- Fix breadcrumb grey slash ---------- */
