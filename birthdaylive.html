@@ -277,6 +277,34 @@ img.emoji {
                                       <p style="font-family: 'Zen Kurenaido', sans-serif;">
                                           The concert ticket is priced <strong>0.001 XBT</strong>; you may click the button below, or direct message Xiaoleng (if possible) to make a purchase. We accept online payment in Bitcoin (XBT), USDT, Chinese Yuan (by bank transfer, WeChat, or Alipay), or Hong Kong Dollar (by bank transfer, FPS, PayMe, or AlipayHK).
                                       </p>
+                                      
+                                      <br>
+                                      
+                                      
+            <div>
+                <div class="panel label-success transparent fixed-container" style="height: 210px; border-color: #f7931a;">
+                    <div>
+                        <span id="title-box" class="label label-success pulse" style="">
+                            <span style="font-family: 'Noto Sans SC', sans-serif;"><strong>以XBT定价的门票的法币价格是多少？</strong></span>
+                        </span>
+                    </div>
+                    <div>
+                        <span id="second-title-box" class="label pulse" style=""><span style="font-family: 'Noto Sans SC', sans-serif;">每张门票0.001XBT / </span>Each ticket is priced 0.001 XBT</span>
+                        <div class="input-group">
+                            <span class="input-group-addon glyphicon glyphicon-btc"></span>
+                            <input type="number" step="0.001" class="form-control" value="0.001" placeholder="0.001" id="hodlings">
+                        </div>
+                    </div>
+                    <div>
+                        <span id="third-title-box" class="label pulse" style=""><span style="font-family: 'Noto Sans SC', sans-serif;">折合美元 </span>Equals in USD</span>
+                        <div class="input-group">
+                            <span class="input-group-addon">$</span>
+                            <input id="hodler-hodlings" type="number" step="1" class="form-control" placeholder="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+                                      
                                       <div class="l-post__middle">
                                           <a href="https://xln.moe/fw/ticket" class="c-button" target="_blank">购买门票 Buy Tickets</a><!-- /c-button -->
                                       </div><!-- /l-post__footer -->
@@ -543,6 +571,9 @@ img.emoji {
             <script src="https://xln.moe/assets/js/jquery-3.6.0.min.js"></script>
             <script src="https://xln.moe/assets/js/rellax.min.js"></script>
             <script src="https://xln.moe/assets/js/common.js"></script>
+            <script src="https://xln.moe/assets/js/markets.js"></script>
+            <script src="https://xln.moe/assets/js/roller-coaster-engine.js"></script>
+
         
         </body>
     </div>
