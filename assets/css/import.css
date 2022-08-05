@@ -4373,7 +4373,7 @@ select:focus {
 }
 
 .p-drawer-content__logo {
-	width: 170px;
+	width: 160px;
 }
 
 .p-drawer-content__logo img {
@@ -4729,7 +4729,7 @@ select:focus {
 }
 
 .p-header__logo {
-	width: 170px;
+	width: 160px;
 }
 
 .p-header__logo a img {
@@ -4954,7 +4954,7 @@ select:focus {
 }
 
 .p-loading__img img {
-	width: 170px;
+	width: 225px;
 }
 
 .p-loading__animation {
