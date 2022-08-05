@@ -8023,3 +8023,8 @@ textarea.c-form__input {
     margin-right: var(--px12);
     vertical-align: middle;
 }
+
+/* ---------- Facebook comments width ---------- */
+.fb-comments, .fb-comments span, .fb-comments iframe{
+    width: 100% !important;
+}
