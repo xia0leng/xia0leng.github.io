@@ -4729,7 +4729,7 @@ select:focus {
 }
 
 .p-header__logo {
-	width: 175px;
+	width: 131px;
 }
 
 .p-header__logo a img {
@@ -5960,7 +5960,7 @@ select {
 }
 
 .p-header__logo {
-	width: 20rem;
+	width: 13rem;
 }
 
 .p-header__link:nth-child(n + 2) {
@@ -6698,7 +6698,7 @@ select {
 }
 
 .p-header__logo {
-	width: 320px;
+	width: 240px;
 }
 
 .p-loading__animation {
