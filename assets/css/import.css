@@ -8025,14 +8025,14 @@ textarea.c-form__input {
 }
 
 /* ---------- Facebook comments width ---------- */
-l-page-poster__info,.fb_iframe_widget{
+l-page-poster__info .fb_iframe_widget{
     width: 100% !important;
 }
 
-l-page-poster__info,.fb_iframe_widget,span{
+l-page-poster__info .fb_iframe_widget span{
     width: 100% !important;
 }
 
-l-page-poster__info,.fb_iframe_widget,iframe{
+l-page-poster__info .fb_iframe_widget iframe{
     width: 100% !important;
 }
