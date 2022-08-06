@@ -8025,6 +8025,6 @@ textarea.c-form__input {
 }
 
 /* ---------- Facebook comments width ---------- */
-.fb-comments span{
+.fb-comments iframe{
     width: 100% !important;
 }
