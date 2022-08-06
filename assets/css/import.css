@@ -8025,6 +8025,6 @@ textarea.c-form__input {
 }
 
 /* ---------- Facebook comments width ---------- */
-.fb-comments{
+l-page-poster__info, .fb_iframe_widget l-page-poster__info, .fb_iframe_widget, span l-page-poster__info, .fb_iframe_widget, iframe{
     width: 100% !important;
 }
