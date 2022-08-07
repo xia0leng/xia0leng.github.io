@@ -4595,7 +4595,7 @@ select:focus {
 }
 
 .p-footer__sns a:nth-child(n + 2) {
-	margin-left: 46px;
+	margin-left: 37px;
 }
 
 .p-footer__sns a img.is-twitter {
@@ -4636,7 +4636,7 @@ select:focus {
 }
 
 .p-middle__sns a:nth-child(n + 2) {
-	margin-left: 46px;
+	margin-left: 37px;
 }
 
 .p-middle__sns a img.is-twitter {
