@@ -4608,6 +4608,7 @@ select:focus {
 
 .p-footer__sns a img.is-line {
 	width: 30px;
+    max-width: initial;
 }
 
 .p-footer__sns a:hover img {
