@@ -4595,7 +4595,7 @@ select:focus {
 }
 
 .p-footer__sns a:nth-child(n + 2) {
-	margin-left: 46px;
+	margin-left: 34.5px;
 }
 
 .p-footer__sns a img.is-twitter {
@@ -4636,7 +4636,7 @@ select:focus {
 }
 
 .p-middle__sns a:nth-child(n + 2) {
-	margin-left: 46px;
+	margin-left: 34.5px;
 }
 
 .p-middle__sns a img.is-twitter {
@@ -5906,7 +5906,7 @@ select {
 }
 
 .p-footer__sns a:nth-child(n + 2) {
-	margin-left: 1.875rem;
+	margin-left: 1.406rem;
 }
 
 .p-footer__sns a img.is-twitter {
@@ -5922,7 +5922,7 @@ select {
 }
 
 .p-middle__sns a:nth-child(n + 2) {
-	margin-left: 1.875rem;
+	margin-left: 1.406rem;
 }
 
 .p-middle__sns a img.is-twitter {
@@ -6668,11 +6668,11 @@ select {
 }
 
 .p-footer__sns a:nth-child(n + 2) {
-	margin-left: 30px;
+	margin-left: 22.5px;
 }
 
 .p-middle__sns a:nth-child(n + 2) {
-	margin-left: 30px;
+	margin-left: 22.5px;
 }
     
 .p-footer__nav {
