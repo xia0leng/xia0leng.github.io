@@ -1095,14 +1095,14 @@ th, td{
     text-align: center;
 }
 
-/* ---------- page3 title ---------- */
-.h1-title {
-    font-size: 32px;
-    color: #111;
-    text-align: center;
-}
 
 /* ---------- page3 footer background ---------- */
 .p-footer {
     background: inherit;
+}
+
+/* ---------- page3 fix footer double rem ---------- */
+.PageFooter_disclaimerWrapper__fSLIn{
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
