@@ -4628,6 +4628,7 @@ select:focus {
 .p-middle__sns {
 	align-items: center;
 	display: flex;
+    padding: 0 1.111rem;
 }
 
 .p-middle__sns a {
@@ -7186,7 +7187,7 @@ footer a{
 
 .PageFooter_footerColumn__F5zDl{
     display: inline-grid;
-    padding: 1.111rem 0;
+    padding: 1.111rem;
     align-items: center;
     
 }
