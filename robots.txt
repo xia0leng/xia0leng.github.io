@@ -1,2 +1,11 @@
 User-agent: *
-Disallow: /
+Disallow: /.well-known/
+Disallow: /assets/
+Disallow: /checkout/
+Disallow: /fw/
+Disallow: /profile
+Disallow: /support/load/
+Disallow: /_config
+Disallow: /404
+Disallow: /about_me
+Disallow: /next_event
