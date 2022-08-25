@@ -4344,7 +4344,7 @@ select:focus {
 }
 
 .p-drawer-content {
-	background-color: #d495f7;
+	background-color: #b66eff;
 	background-position: right 0 bottom 0, center top;
 	background-repeat: no-repeat, repeat-y;
 	background-size: 307px 233px, 100% auto;
@@ -4579,7 +4579,7 @@ select:focus {
 }
 
 .p-footer {
-	background: #d495f7;
+	background: #b66eff;
 	border-top: 2px solid #FFFFFF;
 	padding: 2rem 0 5rem;
 }
@@ -4928,7 +4928,7 @@ select:focus {
 }
 
 .p-loading {
-	background: #d495f7;
+	background: #b66eff;
 	height: 100%;
 	left: 0;
 	opacity: 0;
@@ -4968,7 +4968,7 @@ select:focus {
 }
 
 .p-main-visual-image {
-	background: #d495f7;
+	background: #b66eff;
 	overflow: hidden;
 	position: relative;
 }
@@ -7327,7 +7327,7 @@ p{
 }
 
 .l-picture-frame {
-	background: #d495f7;
+	background: #b66eff;
 	overflow: hidden;
 	position: relative;
 }
@@ -7357,7 +7357,7 @@ p{
 }
 
 .l-poster-frame {
-	background: #d495f7;
+	background: #b66eff;
 	overflow: hidden;
 	position: relative;
 }
