@@ -3954,7 +3954,7 @@ select:focus {
 }
 
 .l-page__content {
-	background: rgba(222, 200, 235, 0.95) url(../img/common/base-bg-opacity.png) repeat center top/150px 140px;
+	background: rgba(211, 188, 255, 0.95) url(../img/common/base-bg-opacity.png) repeat center top/150px 140px;
 	padding-bottom: 60px;
 	padding-top: 60px;
 }
@@ -4015,7 +4015,7 @@ select:focus {
 }
 
 .l-post__content {
-	background: rgba(222, 200, 235, 0.95) url(../img/common/base-bg-opacity.png) repeat center top/150px 140px;
+	background: rgba(211, 188, 255, 0.95) url(../img/common/base-bg-opacity.png) repeat center top/150px 140px;
 }
 
 .l-post__footer {
@@ -4040,11 +4040,11 @@ select:focus {
 	padding-bottom: 60px;
 	padding-top: 60px;
 	position: relative;
-    background: rgba(212, 149, 247, 0.9);
+    background: rgba(184, 113, 255, 0.9);
 }
 
 .l-section-front {
-	background: rgba(222, 200, 235, 0.95) url(../img/common/base-bg-opacity.png) repeat center top/150px 140px;
+	background: rgba(211, 188, 255, 0.95) url(../img/common/base-bg-opacity.png) repeat center top/150px 140px;
 	padding-bottom: 60px;
 	padding-top: 60px;
 }
@@ -4064,7 +4064,7 @@ select:focus {
 }
 
 .l-single__content {
-	background: rgba(222, 200, 235, 0.95) url(../img/common/base-bg-opacity.png) repeat center top/150px 140px;
+	background: rgba(211, 188, 255, 0.95) url(../img/common/base-bg-opacity.png) repeat center top/150px 140px;
 }
 
 .l-sns__iframe:nth-child(2) {
@@ -4344,7 +4344,7 @@ select:focus {
 }
 
 .p-drawer-content {
-	background-color: #b66eff;
+	background-color: #b87eff;
 	background-position: right 0 bottom 0, center top;
 	background-repeat: no-repeat, repeat-y;
 	background-size: 307px 233px, 100% auto;
@@ -4579,7 +4579,7 @@ select:focus {
 }
 
 .p-footer {
-	background: #b66eff;
+	background: #b87eff;
 	border-top: 2px solid #FFFFFF;
 	padding: 2rem 0 5rem;
 }
@@ -4928,7 +4928,7 @@ select:focus {
 }
 
 .p-loading {
-	background: #b66eff;
+	background: #b87eff;
 	height: 100%;
 	left: 0;
 	opacity: 0;
@@ -4968,7 +4968,7 @@ select:focus {
 }
 
 .p-main-visual-image {
-	background: #b66eff;
+	background: #b87eff;
 	overflow: hidden;
 	position: relative;
 }
@@ -5712,7 +5712,7 @@ select {
 }
 
 .l-post__content {
-	background: rgba(222, 200, 235, 0.95) url(../img/common/base-bg-opacity.png) repeat center top;
+	background: rgba(211, 188, 255, 0.95) url(../img/common/base-bg-opacity.png) repeat center top;
 	background-size: 9.375rem 8.75rem;
 }
 
@@ -5737,7 +5737,7 @@ select {
 }
 
 .l-section-front {
-	background: rgbargba(222, 200, 235, 0.95) url(../img/common/base-bg-opacity.png) repeat center top;
+	background: rgbargba(211, 188, 255, 0.95) url(../img/common/base-bg-opacity.png) repeat center top;
 	background-size: 9.375rem 8.75rem;
 	padding-bottom: 7.5rem;
 	padding-top: 7.5rem;
@@ -5752,7 +5752,7 @@ select {
 }
 
 .l-single__content {
-	background: rgba(222, 200, 235, 0.95) url(../img/common/base-bg-opacity.png) repeat center top;
+	background: rgba(211, 188, 255, 0.95) url(../img/common/base-bg-opacity.png) repeat center top;
 	background-size: 9.375rem 8.75rem;
 }
 
@@ -6504,7 +6504,7 @@ select {
 
 
 .l-page__content {
-	background: rgba(222, 200, 235, 0.95) url(../img/common/base-bg-opacity.png) repeat center top/150px 140px;
+	background: rgba(211, 188, 255, 0.95) url(../img/common/base-bg-opacity.png) repeat center top/150px 140px;
 	padding-bottom: 120px;
 	padding-top: 120px;
 }
@@ -6514,7 +6514,7 @@ select {
 }
 
 .l-post__content {
-	background: rgba(222, 200, 235, 0.95) url(../img/common/base-bg-opacity.png) repeat center top/150px 140px;
+	background: rgba(211, 188, 255, 0.95) url(../img/common/base-bg-opacity.png) repeat center top/150px 140px;
 }
 
 .l-post__footer {
@@ -6538,7 +6538,7 @@ select {
 }
 
 .l-section-front {
-	background: rgba(222, 200, 235, 0.95) url(../img/common/base-bg-opacity.png) repeat center top/150px 140px;
+	background: rgba(211, 188, 255, 0.95) url(../img/common/base-bg-opacity.png) repeat center top/150px 140px;
 	padding-bottom: 120px;
 	padding-top: 120px;
 }
@@ -6557,7 +6557,7 @@ select {
 }
 
 .l-single__content {
-	background: rgba(222, 200, 235, 0.95) url(../img/common/base-bg-opacity.png) repeat center top/150px 140px;
+	background: rgba(211, 188, 255, 0.95) url(../img/common/base-bg-opacity.png) repeat center top/150px 140px;
 }
 
 .l-sns__iframe {
@@ -7327,7 +7327,7 @@ p{
 }
 
 .l-picture-frame {
-	background: #b66eff;
+	background: #b87eff;
 	overflow: hidden;
 	position: relative;
 }
@@ -7357,7 +7357,7 @@ p{
 }
 
 .l-poster-frame {
-	background: #b66eff;
+	background: #b87eff;
 	overflow: hidden;
 	position: relative;
 }
