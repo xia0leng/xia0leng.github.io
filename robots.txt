@@ -5,6 +5,7 @@ Disallow: /checkout/
 Disallow: /fw/
 Disallow: /profile
 Disallow: /support/load/
+Disallow: /support/contact
 Disallow: /_config
 Disallow: /404
 Disallow: /about_me
