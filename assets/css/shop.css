@@ -2502,7 +2502,7 @@ legend{
     border:1px solid #e60012
 }
 .color-liyuu::before{
-    background:#fff url(/assets/img/shop/bg.png) repeat;
+    background:#b87eff url(/assets/img/shop/bg.png) repeat;
     background-size:auto 50%
 }
 .color-liyuu .information .btn{
