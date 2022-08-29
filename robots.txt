@@ -4,6 +4,7 @@ Disallow: /assets/
 Disallow: /checkout/
 Disallow: /fw/
 Disallow: /profile
+Disallow: /support/fw/
 Disallow: /support/load/
 Disallow: /support/contact
 Disallow: /_config
