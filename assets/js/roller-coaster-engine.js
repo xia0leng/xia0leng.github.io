@@ -92,45 +92,6 @@ $(document).ready(function() {
         }, 1000);
     }
 
-    function updateStatus(open, close) {
-        var angle = (Math.atan2(close - open, 20) * 180 / Math.PI);
-        var randomNumber = getRandom(maximum);
-        var rollerCoasterStatus = "";
-        var changeAbs = Math.abs((currentMoon / oldEarth) - 1).toFixed(3);
-        var changeTreshold = 0.008;
-        
-        if(close>=100000){
-            $('body').css('background-image', 'url(images/moon.gif');
-        }else if(close>=9000 && close <= 9999){	
-            $('body').css('background-image', 'url(images/over9000.gif');	
-            $("#roller-coaster-guy").attr("src", "images/roller-coaster-guy.gif");	
-            rollerCoasterStatus = "IT'S OVER 9000!!!!";	
-            rotateTheGuy(0);	
-            $('#change-value').html("+9000");	
-            $('#change-percentage').html("Infinity%");
-        }else{
-            $('body').css('background-image', 'url(images/what-if-its-a-space-rollercoaster.jpg');
-        }
-        
-        if (changeAbs >= changeTreshold) {
-            $("#roller-coaster-guy").attr("src", "images/roller-coaster-guy.gif");
-            rotateTheGuy(90 - (angle)); //  +90 degrees 'cause de upwards gif
-
-            if (angle >= 0) {
-                rollerCoasterStatus = hodlersBelike[randomNumber];
-            } else {
-                rollerCoasterStatus = tronaldDump[randomNumber];
-            }
-        } else {
-            rollerCoasterStatus = meh[randomNumber];
-            $("#roller-coaster-guy").attr("src", "images/no-fun-roller-coaster-guy.gif");
-            rotateTheGuy(-angle);
-        }
-
-        $('#roller-coaster-status').html(rollerCoasterStatus);
-
-    }
-
     function rotateTheGuy(angle) {
         $("#roller-coaster-guy").css({
             "transform": "rotate(" + angle + "deg)",
