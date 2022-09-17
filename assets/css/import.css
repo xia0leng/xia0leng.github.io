@@ -21,13 +21,11 @@ html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%; 
-<-! imported ->
 font-size: 16px;
 }
 
 body {
   margin: 0; 
-    <-! imported ->
 -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	background: transparent;
@@ -45,7 +43,6 @@ body {
 
 
 
- <-! imported ->
 body::before {
 	content: "";
 	display: block;
@@ -7658,7 +7655,7 @@ textarea.c-form__input {
     font-weight: 900;
     letter-spacing: 0.06em;
     position: relative;
-    text-decoration: none
+    text-decoration: none;
   border: none;
   outline: none;
   padding: 0px;
