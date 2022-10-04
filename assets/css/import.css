@@ -3278,15 +3278,15 @@ body {
           background: url("/assets/img/top/mv_sp6.jpg") no-repeat center top;
           background-size: cover; } }
     .visual .visual_wrap_mv .mv_img.mv7 {
-      background: url("/assets/img/top/mv7_2.jpg") no-repeat center top;
+      background: url("/assets/img/top/mv7.jpg") no-repeat center top;
       background-size: cover; }
       @media (orientation: landscape) {
         .visual .visual_wrap_mv .mv_img.mv7 {
-          background: url("/assets/img/top/mv7_2.jpg") no-repeat center top !important;
+          background: url("/assets/img/top/mv7.jpg") no-repeat center top !important;
           background-size: cover !important; } }
       @media only screen and (max-width: 768px) {
         .visual .visual_wrap_mv .mv_img.mv7 {
-          background: url("/assets/img/top/mv_sp7_2.jpg") no-repeat center top;
+          background: url("/assets/img/top/mv_sp7.jpg") no-repeat center top;
           background-size: cover; } }
     .visual .visual_wrap_mv .mv_img.mv8 {
       background: url("/assets/img/top/mv8.jpg") no-repeat center top;
