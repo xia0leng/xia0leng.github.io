@@ -4037,11 +4037,11 @@ select:focus {
 	padding-bottom: 60px;
 	padding-top: 60px;
 	position: relative;
-    background: rgba(170, 126, 255, 0.9);
+    background: #aa7eff;
 }
 
 .l-section-front {
-	background: rgba(197, 188, 255, 0.95) url(../img/common/base-bg-opacity.png) repeat center top/150px 140px;
+	background: #c5bcff url(../img/common/base-bg-opacity.png) repeat center top/150px 140px;
 	padding-bottom: 60px;
 	padding-top: 60px;
 }
@@ -5754,7 +5754,7 @@ select {
 }
 
 .l-section-front {
-	background: rgbargba(197, 188, 255, 0.95) url(../img/common/base-bg-opacity.png) repeat center top;
+	background: #c5bcff url(../img/common/base-bg-opacity.png) repeat center top;
 	background-size: 9.375rem 8.75rem;
 	padding-bottom: 7.5rem;
 	padding-top: 7.5rem;
@@ -6564,7 +6564,7 @@ select {
 }
 
 .l-section-front {
-	background: rgba(197, 188, 255, 0.95) url(../img/common/base-bg-opacity.png) repeat center top/150px 140px;
+	background: #c5bcff url(../img/common/base-bg-opacity.png) repeat center top/150px 140px;
 	padding-bottom: 120px;
 	padding-top: 120px;
 }
