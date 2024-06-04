@@ -175,7 +175,7 @@ function prepareDom() {
             </div>
         </div>`;
     
-    const startLogo = '★コネクト';
+    const startLogo = 'START';
     for (let i = 0; i < startLogo.length; i++) {
         const span = document.createElement('span');
         span.textContent = startLogo[i];

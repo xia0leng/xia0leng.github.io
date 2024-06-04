@@ -138,27 +138,6 @@ iframe {
   border-style: outset;
   border-width: 2px;
   text-align: center;
-  text-shadow: -1px 0 1px #555, 1px 0 1px #555, 0 -1px 1px #555, 0 1px 1px #555;
-}
-
-.bar > .start > span:nth-child(1) {
-  text-shadow: -1px 0 #fff, 1px 0 #fff, 0 -1px #fff, 0 1px #fff;
-}
-
-.bar > .start > span:nth-child(2) {
-  color: var(--darkred);
-}
-
-.bar > .start > span:nth-child(3) {
-  color: var(--darkyellow);
-}
-
-.bar > .start > span:nth-child(4) {
-  color: var(--darkblue);
-}
-
-.bar > .start > span:nth-child(5) {
-  color: var(--darkpink);
 }
 
 .bar > .start.active {
