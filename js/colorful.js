@@ -151,7 +151,7 @@ const htmlConfig = {
     readme: `<h1>欢迎来到小冷官方网站</h1>
     <h2>Welcome to Xiaoleng Official Website</h2>
     <p><img src="./images/logo.png" alt="logo"></p>
-    <p>这里是你们最可爱的每天都在追逐着星光的梦想的小冷<br>
+    <p>这里是你最可爱的每天都在追逐着星光的梦想的小冷<br>
     I am ur cutest Xiaoleng, chasing the dreams of starlight every day.</p>
     <p>欢迎来到小冷的世界<br>
     Welcome to the world of Xiaoleng.</p>`,
