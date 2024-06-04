@@ -72,7 +72,7 @@ var config = {
                 style: ['large']
             },
         },
-        desc: 'All support in one place',
+        desc: 'Liq™ Engine是我们的下一代数字货币衍生品交易引擎<br> Liq™ Engine is our next generation of cryptocurrency derivatives trading engine.',
         style: ['medium'],
         link: ['entry', 'icon']
     },
