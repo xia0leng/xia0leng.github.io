@@ -12,28 +12,28 @@ var config = {
         name: '药物 Medication',
         type: 'okusuri',
         value: {
-            tail: {
+            DXM: {
                 name: '右美沙芬',
                 type: '123',
-                value: './qwq/212.html',
+                value: './fw/medication/DXM.html',
                 style: ['large']
             },
-            magika: {
+            ATD: {
                 name: '金刚烷胺',
                 type: '123',
-                value: 'internet1',
+                value: './fw/medication/ATD.html',
                 style: ['large']
             },
-            internet: {
+            PR: {
                 name: '普瑞巴林',
                 type: '123',
-                value: 'internet2',
+                value: './fw/medication/PR.html',
                 style: ['large']
             },
-            recovering: {
+            CDI: {
                 name: '可待因',
                 type: '123',
-                value: 'recovering',
+                value: './fw/medication/CDI.html',
                 style: ['large']
             }
         },
