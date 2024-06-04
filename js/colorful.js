@@ -540,6 +540,8 @@ function makeIcon(key, action) {
         icon = 'okusuri';
     } else if (action.type == 'url') {
         icon = 'url';
+    } else if (action.type == 'iframe') {
+        icon = 'url';
     } else if (action.type == 'twitter') {
         icon = 'twitter';
     } else if (action.type == 'facebook') {
