@@ -110,7 +110,7 @@ var config = {
             internet8: {
                 name: 'L²S²',
                 type: 'url',
-                value: './llss',
+                value: './llss/index.html',
                 style: ['large']
             },
         },
