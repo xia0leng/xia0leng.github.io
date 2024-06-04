@@ -73,7 +73,7 @@ var config = {
             },
             internet9: {
                 name: 'PGP Public Key Block',
-                type: 'iframe',
+                type: 'md2',
                 value: './support/pgp.html',
                 style: ['large']
             }
