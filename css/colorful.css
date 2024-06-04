@@ -138,6 +138,13 @@ iframe {
   border-style: outset;
   border-width: 2px;
   text-align: center;
+  background: url(./images/button_start.png);
+  background-position: center;
+  background-size: contain;
+}
+
+.bar > .start > span:nth-child(1) {
+  padding-left: 30px;
 }
 
 .bar > .start.active {
