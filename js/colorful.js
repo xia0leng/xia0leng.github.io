@@ -151,7 +151,10 @@ const htmlConfig = {
     readme: `<h1>欢迎来到小冷官方网站</h1>
     <h2>Welcome to Xiaoleng Official Website</h2>
     <p><img src="./images/logo.png" alt="logo"></p>
-    `,
+    <p>这里是你们最可爱的每天都在追逐着星光的梦想的小冷<br>
+    I am ur cutest Xiaoleng, chasing the dreams of starlight every day.</p>
+    <p>欢迎来到小冷的世界<br>
+    Welcome to the world of Xiaoleng.</p>`,
     internet1: `<h2>金刚烷胺</h2>
   
       极为危险的畜生药物。在决定服用之前，你需要知晓其杀伤性，且绝对不能高剂量使用</p>
