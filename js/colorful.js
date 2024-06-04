@@ -140,7 +140,7 @@ var config = {
         link: ['icon']
     },
     unya: {
-        name: '混沌',
+        name: '混沌 Chaos',
         type: 'js',
         value: 'unya.js',
         link: ['icon']
