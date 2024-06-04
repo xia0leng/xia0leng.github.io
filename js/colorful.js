@@ -74,7 +74,7 @@ var config = {
         internet9: {
                 name: 'PGP Public Key Block',
                 type: 'md2',
-                value: './qwq/212.html',
+                value: './support/pgp.html',
                 style: ['large']
             }
         },
@@ -89,13 +89,13 @@ var config = {
             internet8: {
                 name: '条款和隐私声明 Terms &amp; Privacy Notice',
                 type: 'md2',
-                value: 'internet8',
+                value: './terms.html',
                 style: ['large']
             },
             internet9: {
                 name: '数据处理要求 Data Handling Requirement',
                 type: 'md2',
-                value: 'internet8',
+                value: './legal/data-handle.html',
                 style: ['large']
             }
         },
