@@ -103,6 +103,21 @@ var config = {
         style: ['medium'],
         link: ['entry', 'icon']
     },
+        mis8: {
+        name: 'Liq™',
+        type: 'folder',
+        value: {
+            internet8: {
+                name: 'L²S²',
+                type: 'url',
+                value: './fw/llss.html',
+                style: ['large']
+            },
+        },
+        desc: 'All support in one place',
+        style: ['medium'],
+        link: ['entry', 'icon']
+    },
     Twitter: {
         type: 'twitter',
         value: 'twitter.js',
