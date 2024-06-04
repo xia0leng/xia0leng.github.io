@@ -61,6 +61,21 @@ var config = {
         },
         link: ['entry']
     },
+    liq: {
+        name: 'Liq™',
+        type: 'folder',
+        value: {
+            internet8: {
+                name: 'L²S²',
+                type: 'iframe',
+                value: './llss/index.html',
+                style: ['large']
+            },
+        },
+        desc: 'All support in one place',
+        style: ['medium'],
+        link: ['entry', 'icon']
+    },
     support: {
         name: '支持 Support',
         type: 'folder',
@@ -100,21 +115,6 @@ var config = {
             }
         },
         desc: 'Legal stuffs',
-        style: ['medium'],
-        link: ['entry', 'icon']
-    },
-        liq: {
-        name: 'Liq™',
-        type: 'folder',
-        value: {
-            internet8: {
-                name: 'L²S²',
-                type: 'iframe',
-                value: './llss/index.html',
-                style: ['large']
-            },
-        },
-        desc: 'All support in one place',
         style: ['medium'],
         link: ['entry', 'icon']
     },
