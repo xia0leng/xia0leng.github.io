@@ -8,7 +8,7 @@ var config = {
         icon: 'help',
         start: true
     },
-    drug: {
+    medication: {
         name: '药物 Medication',
         type: 'okusuri',
         value: {
@@ -61,7 +61,7 @@ var config = {
         },
         link: ['entry']
     },
-    mis7: {
+    support: {
         name: '支持 Support',
         type: 'folder',
         value: {
@@ -71,7 +71,7 @@ var config = {
                 value: './contact.html',
                 style: ['large']
             },
-        internet9: {
+            internet9: {
                 name: 'PGP Public Key Block',
                 type: 'md2',
                 value: './support/pgp.html',
@@ -82,7 +82,7 @@ var config = {
         style: ['medium'],
         link: ['entry', 'icon']
     },
-    mi7: {
+    legal: {
         name: '法律 Legal',
         type: 'folder',
         value: {
@@ -103,7 +103,7 @@ var config = {
         style: ['medium'],
         link: ['entry', 'icon']
     },
-        mis8: {
+        liq: {
         name: 'Liq™',
         type: 'folder',
         value: {
