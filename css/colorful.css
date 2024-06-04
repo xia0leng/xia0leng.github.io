@@ -138,7 +138,7 @@ iframe {
   border-style: outset;
   border-width: 2px;
   text-align: center;
-  background: url(./images/button_start.png);
+  background: url(./images/start.png);
   background-position: center;
   background-size: contain;
 }
