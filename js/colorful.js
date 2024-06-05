@@ -261,7 +261,7 @@ var config = {
                 style: ['large']
             }
         },
-        desc: 'All support in one place',
+        desc: '需要联系小冷的团队吗？无论你是遇到问题还是有疑问，无论简单或复杂，我们始终在这里为你提供帮助<br> Need to get in touch with Xiaoleng&#39;s team? Whether you&#39;re encountering an issue or have questions, simple or complex, we&#39;re always here to assist you.',
         style: ['medium'],
         link: ['entry', 'icon']
     },
