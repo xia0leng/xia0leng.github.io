@@ -18,6 +18,12 @@ var config = {
                 value: './fw/medication/DXM.html',
                 style: ['large']
             },
+            The_harm_of_dextromethorphan: {
+                name: '右美沙芬的危害专题',
+                type: '123',
+                value: './fw/medication/The_harm_of_dextromethorphan.html',
+                style: ['large']
+            },
             ATD: {
                 name: '金刚烷胺',
                 type: '123',
@@ -58,6 +64,30 @@ var config = {
                 name: 'Z药物',
                 type: '123',
                 value: './fw/medication/ZD.html',
+                style: ['large']
+            },
+            BZD: {
+                name: '苯二氮卓类药物',
+                type: '123',
+                value: './fw/medication/BZD.html',
+                style: ['large']
+            },
+            Opioids: {
+                name: '阿片类药物',
+                type: '123',
+                value: './fw/medication/Opioids.html',
+                style: ['large']
+            },
+            RTL: {
+                name: '哌醋甲酯',
+                type: '123',
+                value: './fw/medication/RTL.html',
+                style: ['large']
+            },
+            KTM: {
+                name: '氯胺酮',
+                type: '123',
+                value: './fw/medication/KTM.html',
                 style: ['large']
             }
         },
