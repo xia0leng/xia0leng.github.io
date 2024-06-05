@@ -167,6 +167,42 @@ var config = {
                 type: '123',
                 value: './fw/medication/THP.html',
                 style: ['large']
+            },
+            EI: {
+                name: '酶抑制剂',
+                type: '123',
+                value: './fw/medication/EI.html',
+                style: ['large']
+            },
+            SPM: {
+                name: '补充剂',
+                type: '123',
+                value: './fw/medication/SPM.html',
+                style: ['large']
+            },
+            CFI: {
+                name: '咖啡因',
+                type: '123',
+                value: './fw/medication/CFI.html',
+                style: ['large']
+            },
+            TAN: {
+                name: '茶氨酸',
+                type: '123',
+                value: './fw/medication/TAN.html',
+                style: ['large']
+            },
+            MGT: {
+                name: '苏糖酸镁',
+                type: '123',
+                value: './fw/medication/MGT.html',
+                style: ['large']
+            },
+            PCT: {
+                name: '吡拉西坦',
+                type: '123',
+                value: './fw/medication/PCT.html',
+                style: ['large']
             }
         },
         desc: '这是对overdose.wiki上所列出的所有药物说明的备份存档，目前只提供中文版本<br> This is a backup archive of all the drug descriptions listed on overdose.wiki, currently available only in Chinese.',
