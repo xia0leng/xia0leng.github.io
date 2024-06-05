@@ -107,7 +107,68 @@ var config = {
                 type: '123',
                 value: './fw/medication/ACL.html',
                 style: ['large']
+            },
+            SRIs: {
+                name: '血清素再摄取抑制剂',
+                type: '123',
+                value: './fw/medication/SRIs.html',
+                style: ['large']
+            },
+            AES: {
+                name: '止吐药',
+                type: '123',
+                value: './fw/medication/AES.html',
+                style: ['large']
+            },
+            VPA: {
+                name: '丙戊酸',
+                type: '123',
+                value: './fw/medication/VPA.html',
+                style: ['large']
+            },
+            NFP: {
+                name: '奈福泮',
+                type: '123',
+                value: './fw/medication/NFP.html',
+                style: ['large']
+            },
+            DPX: {
+                name: '地芬诺酯',
+                type: '123',
+                value: './fw/medication/DPX.html',
+                style: ['large']
+            },
+            QTP: {
+                name: '喹硫平',
+                type: '123',
+                value: './fw/medication/QTP.html',
+                style: ['large']
+            },
+            RPD: {
+                name: '利培酮',
+                type: '123',
+                value: './fw/medication/RPD.html',
+                style: ['large']
+            },
+            DMH: {
+                name: '茶苯海明',
+                type: '123',
+                value: './fw/medication/DMH.html',
+                style: ['large']
+            },
+            PVR: {
+                name: '喷托维林',
+                type: '123',
+                value: './fw/medication/PVR.html',
+                style: ['large']
+            },
+            THP: {
+                name: '苯海索',
+                type: '123',
+                value: './fw/medication/THP.html',
+                style: ['large']
             }
+        },
         },
         desc: '这是对overdose.wiki上所列出的所有药物说明的备份存档，目前只提供中文版本<br> This is a backup archive of all the drug descriptions listed on overdose.wiki, currently available only in Chinese.',
         style: ['medium'],
