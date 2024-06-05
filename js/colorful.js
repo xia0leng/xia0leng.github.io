@@ -169,7 +169,6 @@ var config = {
                 style: ['large']
             }
         },
-        },
         desc: '这是对overdose.wiki上所列出的所有药物说明的备份存档，目前只提供中文版本<br> This is a backup archive of all the drug descriptions listed on overdose.wiki, currently available only in Chinese.',
         style: ['medium'],
         link: ['entry', 'icon']
