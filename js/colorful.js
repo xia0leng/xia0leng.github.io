@@ -89,6 +89,24 @@ var config = {
                 type: '123',
                 value: './fw/medication/KTM.html',
                 style: ['large']
+            },
+            EtOH: {
+                name: '乙醇',
+                type: '123',
+                value: './fw/medication/EtOH.html',
+                style: ['large']
+            },
+            Cigarette: {
+                name: '香烟',
+                type: '123',
+                value: './fw/medication/Cigarette.html',
+                style: ['large']
+            },
+            ACL: {
+                name: '槟榔碱',
+                type: '123',
+                value: './fw/medication/ACL.html',
+                style: ['large']
             }
         },
         desc: '这是对overdose.wiki上所列出的所有药物说明的备份存档，目前只提供中文版本<br> This is a backup archive of all the drug descriptions listed on overdose.wiki, currently available only in Chinese.',
