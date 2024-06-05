@@ -51,7 +51,13 @@ var config = {
             TMD: {
                 name: '曲马多',
                 type: '123',
-                value: './fw/medication/tMD.html',
+                value: './fw/medication/TMD.html',
+                style: ['large']
+            },
+            ZD: {
+                name: 'Z药物',
+                type: '123',
+                value: './fw/medication/ZD.html',
                 style: ['large']
             }
         },
