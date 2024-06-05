@@ -41,6 +41,18 @@ var config = {
                 type: '123',
                 value: './fw/medication/DHCDI.html',
                 style: ['large']
+            },
+            MMT: {
+                name: '美金刚',
+                type: '123',
+                value: './fw/medication/MMT.html',
+                style: ['large']
+            },
+            TMD: {
+                name: '曲马多',
+                type: '123',
+                value: './fw/medication/tMD.html',
+                style: ['large']
             }
         },
         desc: '这是对overdose.wiki上所列出的所有药物说明的备份存档，目前只提供中文版本<br> This is a backup archive of all the drug descriptions listed on overdose.wiki, currently available only in Chinese.',
