@@ -282,7 +282,7 @@ var config = {
                 style: ['large']
             }
         },
-        desc: '与你最可爱的小偶像小冷之间的协议，致力于保护用户权利，确保数据安全，并提供透明的服务规范<br> Agreement between you and your cutest idol Xiaoleng, committed to protecting user rights, ensuring data security, and providing transparent service regulations.',
+        desc: '与你最可爱的小冷之间的协议，致力于保护用户权利，确保数据安全，并提供透明的服务规范<br> Agreement between you and your cutest idol Xiaoleng, committed to protecting user rights, ensuring data security, and providing transparent service regulations.',
         style: ['medium'],
         link: ['entry', 'icon']
     },
