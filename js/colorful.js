@@ -203,6 +203,96 @@ var config = {
                 type: '123',
                 value: './fw/medication/PCT.html',
                 style: ['large']
+            },
+            MOP: {
+                name: '吗啡',
+                type: '123',
+                value: './fw/medication/MOP.html',
+                style: ['large']
+            },
+            GBP: {
+                name: '加巴喷丁',
+                type: '123',
+                value: './fw/medication/GBP.html',
+                style: ['large']
+            },
+            BCF: {
+                name: '巴氯芬',
+                type: '123',
+                value: './fw/medication/BCF.html',
+                style: ['large']
+            },
+            PPF: {
+                name: '丙泊酚',
+                type: '123',
+                value: './fw/medication/PPF.html',
+                style: ['large']
+            },
+            ZPD: {
+                name: '唑吡坦',
+                type: '123',
+                value: './fw/medication/ZPD.html',
+                style: ['large']
+            },
+            ZPO: {
+                name: '扎来普隆',
+                type: '123',
+                value: './fw/medication/ZPO.html',
+                style: ['large']
+            },
+            ZPC: {
+                name: '佐匹克隆',
+                type: '123',
+                value: './fw/medication/ZPC.html',
+                style: ['large']
+            },
+            DPD: {
+                name: '地芬尼多',
+                type: '123',
+                value: './fw/medication/DPD.html',
+                style: ['large']
+            },
+            PMZ: {
+                name: '异丙嗪',
+                type: '123',
+                value: './fw/medication/PMZ.html',
+                style: ['large']
+            },
+            TXT: {
+                name: '托莫西汀',
+                type: '123',
+                value: './fw/medication/TXT.html',
+                style: ['large']
+            },
+            OZP: {
+                name: '奥氮平',
+                type: '123',
+                value: './fw/medication/OZP.html',
+                style: ['large']
+            },
+            ARP: {
+                name: '阿立哌唑',
+                type: '123',
+                value: './fw/medication/ARP.html',
+                style: ['large']
+            },
+            ASP: {
+                name: '氨磺必利',
+                type: '123',
+                value: './fw/medication/ASP.html',
+                style: ['large']
+            },
+            compound: {
+                name: '复方专题',
+                type: '123',
+                value: './fw/medication/compound.html',
+                style: ['large']
+            },
+            DPH: {
+                name: '苯海拉明',
+                type: '123',
+                value: './fw/medication/DPH.html',
+                style: ['large']
             }
         },
         desc: '这是对overdose.wiki上所列出的所有药物说明的备份存档，目前只提供中文版本<br> This is a backup archive of all the drug descriptions listed on overdose.wiki, currently available only in Chinese.<br> ⚠️请减少od次数⚠️也请安全的使用药物<br> ⚠️Please reduce the number of overdoses⚠️ and use drugs safely.',
