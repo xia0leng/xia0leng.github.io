@@ -205,7 +205,7 @@ var config = {
                 style: ['large']
             }
         },
-        desc: '这是对overdose.wiki上所列出的所有药物说明的备份存档，目前只提供中文版本<br> This is a backup archive of all the drug descriptions listed on overdose.wiki, currently available only in Chinese.',
+        desc: '这是对overdose.wiki上所列出的所有药物说明的备份存档，目前只提供中文版本<br> This is a backup archive of all the drug descriptions listed on overdose.wiki, currently available only in Chinese.<br> ⚠️请减少od次数⚠️也请安全的使用药物<br> ⚠️Please reduce the number of overdoses⚠️ and use drugs safely.',
         style: ['medium'],
         link: ['entry', 'icon']
     },
@@ -336,12 +336,10 @@ const htmlConfig = {
     <p><img src="./images/logo.png" alt="logo"></p>
     <p>这里是每天都在追逐星光梦想的你最可爱的小冷<br>
     I am your cutest Xiaoleng, chasing the dreams of starlight every day.</p>
-    <p>让我们沉溺于这场药物💊甜腻的梦中<br>
-    也请来了解你最可爱的小偶像小冷<br>
-    Let's indulge in this sweet, 💊drug-filled dream.<br>
-    Also, come get to know Xiaoleng, your cutest idol.</p>
-    <p>⚠️请减少od次数⚠️也请安全的使用药物<br>
-    ⚠️Please reduce the number of overdoses⚠️ and use drugs safely.</p>
+    <p>与小冷一起怀着对舞台的憧憬和闪闪发光✨的梦想<br>
+    Join Xiaoleng as we embrace the allure of the stage and our sparkling dreams✨<br>
+    让我们沉溺于这场药物💊甜腻的梦中<br>
+    Let's indulge in this sweet, 💊drug-filled dream.</p>
     <p>这是一个专属于小冷和你的网站<br>
     请多多关注小冷吧~<br>
     This is a website exclusively for Xiaoleng and you.<br>
