@@ -289,37 +289,31 @@ var config = {
     Twitter: {
         type: 'twitter',
         value: 'twitter.js',
-        style: ['large'],
         link: ['icon']
     },
     Facebook: {
         type: 'facebook',
         value: 'facebook.js',
-        style: ['large'],
         link: ['icon']
     },
     Instagram: {
         type: 'instagram',
         value: 'instagram.js',
-        style: ['large'],
         link: ['icon']
     },
     Telegram: {
         type: 'telegram',
         value: 'telegram.js',
-        style: ['large'],
         link: ['icon']
     },
     哔哩哔哩Bilibili: {
         type: 'bilibili',
         value: 'bilibili.js',
-        style: ['large'],
         link: ['icon']
     },
     Youtube: {
         type: 'youtube',
         value: 'youtube.js',
-        style: ['large'],
         link: ['icon']
     },
     unya: {
