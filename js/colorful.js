@@ -335,14 +335,12 @@ const htmlConfig = {
     <h2>Welcome to Xiaoleng Official Website</h2>
     <p><img src="./images/logo.png" alt="logo"></p>
     <p>这里是每天都在追逐星光梦想的你最可爱的小冷<br>
-    I am ur cutest Xiaoleng, chasing the dreams of starlight every day.</p>
-    <p>与小冷一起怀着对舞台的憧憬和闪闪发光✨的梦想<br>
-    也请来了解最可爱的小偶像小冷<br>
-    Join Xiaoleng as we embrace the allure of the stage and our sparkling dreams✨<br>
-    Also, come get to know Xiaoleng, the cutest idol.</p>
+    I am your cutest Xiaoleng, chasing the dreams of starlight every day.</p>
     <p>让我们沉溺于这场药物💊甜腻的梦中<br>
-    ⚠️请减少od次数⚠️也请安全的使用药物<br>
+    也请来了解你最可爱的小偶像小冷<br>
     Let's indulge in this sweet, 💊drug-filled dream.<br>
+    Also, come get to know Xiaoleng, your cutest idol.</p>
+    <p>⚠️请减少od次数⚠️也请安全的使用药物<br>
     ⚠️Please reduce the number of overdoses⚠️ and use drugs safely.</p>
     <p>这是一个专属于小冷和你的网站<br>
     请多多关注小冷吧~<br>
