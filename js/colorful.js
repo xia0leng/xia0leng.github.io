@@ -334,7 +334,7 @@ const htmlConfig = {
     readme: `<h1>欢迎来到小冷官方网站</h1>
     <h2>Welcome to Xiaoleng Official Website</h2>
     <p><img src="./images/logo.png" alt="logo"></p>
-    <p>这里是你最可爱的每天都在追逐着星光的梦想的小冷<br>
+    <p>这里是每天都在追逐星光梦想的你最可爱的小冷<br>
     I am ur cutest Xiaoleng, chasing the dreams of starlight every day.</p>
     <p>与小冷一起怀着对舞台的憧憬和闪闪发光✨的梦想<br>
     让我们沉溺于这场药物💊甜腻的梦中<br>
