@@ -420,8 +420,8 @@ const htmlConfig = {
     <p><img src="./images/logo.png" alt="logo"></p>
     <p>这里是每天都在追逐星光梦想的你最可爱的小冷<br>
     I am your cutest Xiaoleng, chasing the dreams of starlight every day.</p>
-    <p>与小冷一起怀着对舞台的憧憬和闪闪发光✨的梦想<br>
-    Join Xiaoleng as we embrace the allure of the stage and our sparkling dreams✨</p>
+    <p>和小冷一起在舞台上实现闪闪发光✨的梦想<br>
+    With Xiaoleng, achieve our sparkling dreams on stage✨</p>
     <p>让我们沉溺于这场药物💊甜腻的梦中<br>
     Let's indulge in this sweet, 💊drug-filled dream.<br>
     也请来了解你最可爱的小偶像小冷<br>
