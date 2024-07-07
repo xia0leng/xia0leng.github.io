@@ -295,7 +295,7 @@ var config = {
                 style: ['large']
             }
         },
-        desc: '这是对overdose.wiki上所列出的所有药物说明的备份存档，目前只提供中文版本<br> This is a backup archive of all the drug descriptions listed on overdose.wiki, currently available only in Chinese.<br> ⚠️请减少od次数⚠️也请安全的使用药物<br> ⚠️Please reduce the number of overdoses⚠️ and use drugs safely.',
+        desc: '这是对odwiki上所列出的所有药物说明的备份存档，目前只提供中文版本<br> This is a backup archive of all the drug descriptions listed on odwiki, currently available only in Chinese.<br> ⚠️请减少od次数⚠️也请安全的使用药物<br> ⚠️Please reduce the number of overdoses⚠️ and use drugs safely.',
         style: ['medium'],
         link: ['entry', 'icon']
     },
