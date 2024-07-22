@@ -415,8 +415,8 @@ var config = {
 };
 
 const htmlConfig = {
-    readme: `<h1>欢迎来到小冷官方网站</h1>
-    <h2>Welcome to Xiaoleng Official Website</h2>
+    readme: `<h1 style="line-height: 100%; margin-block-start: 0.5em; margin-block-end: 0.05em;">欢迎来到小冷官方网站</h1>
+    <h2 style="line-height: 100%; margin-block-start: 0em; margin-block-end: 0em;">Welcome to Xiaoleng Official Website</h2>
     <p><img src="./images/logo.png" alt="logo"></p>
     <p>这里是每天都在追逐星光梦想的你最可爱的小冷<br>
     I am your cutest Xiaoleng, chasing the dreams of starlight every day.</p>
