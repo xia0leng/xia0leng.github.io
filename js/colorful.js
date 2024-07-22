@@ -376,9 +376,9 @@ var config = {
         style: ['medium'],
         link: ['entry', 'icon']
     },
-    Twitter: {
-        type: 'twitter',
-        value: 'twitter.js',
+    X: {
+        type: 'x',
+        value: 'x.js',
         link: ['icon']
     },
     Facebook: {
@@ -672,7 +672,7 @@ function execute(key, action) {
             template.innerHTML = await response.text();
             createWindow(name, template.content, config);
         },
-        twitter: async () => {
+        x: async () => {
             const script = document.createElement('script');
             script.setAttribute('src', `../js/${action.value}`);
             const newWindow = createWindow(name, null, config);
@@ -800,8 +800,8 @@ function makeIcon(key, action) {
         icon = 'url';
     } else if (action.type == 'iframe') {
         icon = 'url';
-    } else if (action.type == 'twitter') {
-        icon = 'twitter';
+    } else if (action.type == 'x') {
+        icon = 'x';
     } else if (action.type == 'facebook') {
         icon = 'facebook';
     } else if (action.type == 'instagram') {
