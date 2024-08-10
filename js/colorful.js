@@ -391,6 +391,11 @@ var config = {
         value: 'instagram.js',
         link: ['icon']
     },
+    Threads: {
+        type: 'threads',
+        value: 'threads.js',
+        link: ['icon']
+    },
     Telegram: {
         type: 'telegram',
         value: 'telegram.js',
@@ -693,6 +698,13 @@ function execute(key, action) {
             window.root = newWindow.children[1];
             newWindow.appendChild(script);
         },
+        threads: async () => {
+            const script = document.createElement('script');
+            script.setAttribute('src', `../js/${action.value}`);
+            const newWindow = createWindow(name, null, config);
+            window.root = newWindow.children[1];
+            newWindow.appendChild(script);
+        },
         telegram: async () => {
             const script = document.createElement('script');
             script.setAttribute('src', `../js/${action.value}`);
@@ -806,6 +818,8 @@ function makeIcon(key, action) {
         icon = 'facebook';
     } else if (action.type == 'instagram') {
         icon = 'instagram';
+    } else if (action.type == 'threads') {
+        icon = 'threads';
     } else if (action.type == 'telegram') {
         icon = 'telegram';
     } else if (action.type == 'bilibili') {
