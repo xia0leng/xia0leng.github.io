@@ -12,3 +12,19 @@ body {
 #__next {
     background: inherit;
 }
+
+
+.l-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* 保证水平居中 */
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+.l-single {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
