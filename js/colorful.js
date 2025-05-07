@@ -377,43 +377,50 @@ var config = {
         link: ['entry', 'icon']
     },
     X: {
-        type: 'x',
+        type: 'js',
+		icon:'x',
         value: 'x.js',
         link: ['icon'],
 		style: ['small']
     },
     Facebook: {
-        type: 'facebook',
+        type: 'js',
+		icon:'facebook',
         value: 'facebook.js',
         link: ['icon'],
 		style: ['small']
     },
     Instagram: {
-        type: 'instagram',
+        type: 'js',
+		icon:'instagram',
         value: 'instagram.js',
         link: ['icon'],
 		style: ['small']
     },
     Threads: {
-        type: 'threads',
+        type: 'js',
+		icon:'threads',
         value: 'threads.js',
         link: ['icon'],
 		style: ['small']
     },
     Telegram: {
-        type: 'telegram',
+        type: 'js',
+		icon:'telegram',
         value: 'telegram.js',
         link: ['icon'],
 		style: ['small']
     },
     哔哩哔哩Bilibili: {
-        type: 'bilibili',
+        type: 'js',
+		icon:'bilibili',
         value: 'bilibili.js',
         link: ['icon'],
 		style: ['small']
     },
     Youtube: {
-        type: 'youtube',
+        type: 'js',
+		icon:'youtube',
         value: 'youtube.js',
         link: ['icon'],
 		style: ['small']
@@ -684,55 +691,6 @@ function execute(key, action) {
             template.innerHTML = await response.text();
             createWindow(name, template.content, config);
         },
-        x: async () => {
-            const script = document.createElement('script');
-            script.setAttribute('src', `../js/${action.value}`);
-            const newWindow = createWindow(name, null, config);
-            window.root = newWindow.children[1];
-            newWindow.appendChild(script);
-        },
-        facebook: async () => {
-            const script = document.createElement('script');
-            script.setAttribute('src', `../js/${action.value}`);
-            const newWindow = createWindow(name, null, config);
-            window.root = newWindow.children[1];
-            newWindow.appendChild(script);
-        },
-        instagram: async () => {
-            const script = document.createElement('script');
-            script.setAttribute('src', `../js/${action.value}`);
-            const newWindow = createWindow(name, null, config);
-            window.root = newWindow.children[1];
-            newWindow.appendChild(script);
-        },
-        threads: async () => {
-            const script = document.createElement('script');
-            script.setAttribute('src', `../js/${action.value}`);
-            const newWindow = createWindow(name, null, config);
-            window.root = newWindow.children[1];
-            newWindow.appendChild(script);
-        },
-        telegram: async () => {
-            const script = document.createElement('script');
-            script.setAttribute('src', `../js/${action.value}`);
-            const newWindow = createWindow(name, null, config);
-            window.root = newWindow.children[1];
-            newWindow.appendChild(script);
-        },
-        bilibili: async () => {
-            const script = document.createElement('script');
-            script.setAttribute('src', `../js/${action.value}`);
-            const newWindow = createWindow(name, null, config);
-            window.root = newWindow.children[1];
-            newWindow.appendChild(script);
-        },
-        youtube: async () => {
-            const script = document.createElement('script');
-            script.setAttribute('src', `../js/${action.value}`);
-            const newWindow = createWindow(name, null, config);
-            window.root = newWindow.children[1];
-            newWindow.appendChild(script);
-        },
         md: async () => {
             const response = htmlConfig[action.value];
             const template = document.createElement('template');
@@ -819,20 +777,6 @@ function makeIcon(key, action) {
         icon = 'url';
     } else if (action.type == 'iframe') {
         icon = 'url';
-    } else if (action.type == 'x') {
-        icon = 'x';
-    } else if (action.type == 'facebook') {
-        icon = 'facebook';
-    } else if (action.type == 'instagram') {
-        icon = 'instagram';
-    } else if (action.type == 'threads') {
-        icon = 'threads';
-    } else if (action.type == 'telegram') {
-        icon = 'telegram';
-    } else if (action.type == 'bilibili') {
-        icon = 'bilibili';
-    } else if (action.type == 'youtube') {
-        icon = 'youtube';
     } else if (action.type == 'game') {
         icon = 'game';
     } else if (action.type == 'js') {
