@@ -345,6 +345,20 @@ var config = {
                 value: 'bitmexchinese.js',
                 style: ['small']
             },
+			internet11: {
+                name: 'Google Authenticator (Android)',
+                type: 'js',
+				icon:'authenticator',
+                value: 'authenticatorandroid.js',
+                style: ['small']
+            },
+			internet12: {
+                name: 'Google Authenticator (iOS)',
+                type: 'js',
+				icon:'authenticator',
+                value: 'authenticatorandroid.js',
+                style: ['small']
+            },
         },
         desc: '不是小冷挣到钱最多的交易所，但是是小冷最喜欢的交易所<br> It&#39;s not the exchange where I made the most money, but it&#39;s my favorite.',
         style: ['medium'],
