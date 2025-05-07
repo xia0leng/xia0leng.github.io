@@ -482,7 +482,7 @@ var config = {
 				style: ['small']
     		},
         },
-        desc: '本台将不定期播送来自小冷的：<br>自拍、照片、对你们的喜欢，以及情绪碎片<br> This station will occasionally bring you broadcasts from Xiaoleng:<br>Selfies, photos, my affection for you, and fragments of emotion.',
+        desc: '本台将不定期播送来自小冷的：<br>自拍、照片、对你们的喜欢，以及情绪碎片<br> This station will occasionally bring you broadcasts from Xiaoleng:<br>selfies, photos, my affection for you, and fragments of emotion.',
         style: ['medium'],
         link: ['entry', 'icon']
     }
