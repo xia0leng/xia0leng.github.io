@@ -408,6 +408,12 @@ var config = {
         style: ['medium'],
         link: ['entry', 'icon']
     },
+    unya: {
+        name: '混沌 Chaos',
+        type: 'js',
+        value: 'unya.js',
+        link: ['icon']
+    },
 	radio: {
         name: '冷喵广播 Follow me',
         type: 'folder',
@@ -465,12 +471,6 @@ var config = {
         desc: '本台将不定期播送来自小冷的：<br>自拍、照片、对你们的喜欢，以及情绪碎片<br> This station will occasionally bring you broadcasts from Xiaoleng:<br>Selfies, photos, my affection for you, and fragments of emotion.',
         style: ['medium'],
         link: ['entry', 'icon']
-    },
-    unya: {
-        name: '混沌 Chaos',
-        type: 'js',
-        value: 'unya.js',
-        link: ['icon']
     }
 };
 
