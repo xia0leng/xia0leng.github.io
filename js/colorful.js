@@ -338,8 +338,15 @@ var config = {
                 value: 'bitmexsignup.js',
                 style: ['small']
             },
+			internet10: {
+                name: '中文聊天 Chat Group - Chinese',
+                type: 'js',
+				icon:'telegram',
+                value: 'bitmexchinese.js',
+                style: ['small']
+            },
         },
-        desc: '不是小冷挣钱最多的地方，但是是小冷最喜欢的地方<br> It&#39;s not where I made the most money, but it&#39;s my favorite exchange.',
+        desc: '不是小冷挣到钱最多的交易所，但是是小冷最喜欢的交易所<br> It&#39;s not the exchange where I made the most money, but it&#39;s my favorite.',
         style: ['medium'],
         link: ['entry', 'icon']
     },
@@ -400,54 +407,56 @@ var config = {
         style: ['medium'],
         link: ['entry', 'icon']
     },
-    X: {
-        type: 'js',
-		icon:'x',
-        value: 'x.js',
-        link: ['icon'],
-		style: ['small']
-    },
-    Facebook: {
-        type: 'js',
-		icon:'facebook',
-        value: 'facebook.js',
-        link: ['icon'],
-		style: ['small']
-    },
-    Instagram: {
-        type: 'js',
-		icon:'instagram',
-        value: 'instagram.js',
-        link: ['icon'],
-		style: ['small']
-    },
-    Threads: {
-        type: 'js',
-		icon:'threads',
-        value: 'threads.js',
-        link: ['icon'],
-		style: ['small']
-    },
-    Telegram: {
-        type: 'js',
-		icon:'telegram',
-        value: 'telegram.js',
-        link: ['icon'],
-		style: ['small']
-    },
-    哔哩哔哩Bilibili: {
-        type: 'js',
-		icon:'bilibili',
-        value: 'bilibili.js',
-        link: ['icon'],
-		style: ['small']
-    },
-    Youtube: {
-        type: 'js',
-		icon:'youtube',
-        value: 'youtube.js',
-        link: ['icon'],
-		style: ['small']
+	radio: {
+        name: '冷喵广播 Follow me',
+        type: 'folder',
+        value: {
+			X: {
+				type: 'js',
+				icon:'x',
+				value: 'x.js',
+				style: ['small']
+			},
+			Telegram: {
+        		type: 'js',
+				icon:'telegram',
+        		value: 'telegram.js',
+				style: ['small']
+    		},
+			Facebook: {
+				type: 'js',
+				icon:'facebook',
+				value: 'facebook.js',
+				style: ['small']
+			},
+    		Instagram: {
+				type: 'js',
+				icon:'instagram',
+				value: 'instagram.js',
+				style: ['small']
+			},
+			Threads: {
+				type: 'js',
+				icon:'threads',
+				value: 'threads.js',
+				style: ['small']
+    		},
+    		哔哩哔哩Bilibili: {
+        		type: 'js',
+				icon:'bilibili',
+        		value: 'bilibili.js',
+				style: ['small']
+			},
+    		Youtube: {
+        		type: 'js',
+				icon:'youtube',
+        		value: 'youtube.js',
+				style: ['small']
+    		},
+        },
+        desc: '本台将不定期播送来自小冷的：<br>自拍、照片、对你们的喜欢，以及情绪碎片<br> This station will occasionally bring you broadcasts from Xiaoleng:<br>Selfies, photos, my affection for you, and fragments of emotion.',
+        style: ['medium'],
+        link: ['entry', 'icon']
     },
     unya: {
         name: '混沌 Chaos',
