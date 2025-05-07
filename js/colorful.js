@@ -353,6 +353,7 @@ var config = {
     liq: {
         name: 'Liq™',
         type: 'folder',
+		icon:'darkness',
         value: {
             internet8: {
                 name: 'L²S²',
@@ -410,6 +411,7 @@ var config = {
 	radio: {
         name: '冷喵广播 Follow me',
         type: 'folder',
+		icon:'radio',
         value: {
 			X: {
 				type: 'js',
