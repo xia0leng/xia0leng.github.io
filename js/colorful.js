@@ -319,6 +319,30 @@ var config = {
         },
         link: ['entry']
     },
+	bitmex: {
+        name: 'BitMEX',
+        type: 'folder',
+		icon:'bitmex',
+        value: {
+            internet8: {
+                name: '交易面板 Trade Panel',
+                type: 'js',
+				icon:'bitmex',
+                value: 'bitmexapp.js',
+                style: ['small']
+            },
+			internet9: {
+                name: '注册 Sign Up',
+                type: 'js',
+				icon:'bitmex',
+                value: 'bitmexsignup.js',
+                style: ['small']
+            },
+        },
+        desc: '不是小冷挣钱最多的地方，但是是小冷最喜欢的地方<br> It&#39;s not where I made the most money, but it&#39;s my favorite exchange.',
+        style: ['medium'],
+        link: ['entry', 'icon']
+    },
     liq: {
         name: 'Liq™',
         type: 'folder',
