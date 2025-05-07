@@ -379,37 +379,44 @@ var config = {
     X: {
         type: 'x',
         value: 'x.js',
-        link: ['icon']
+        link: ['icon'],
+		style: ['small']
     },
     Facebook: {
         type: 'facebook',
         value: 'facebook.js',
-        link: ['icon']
+        link: ['icon'],
+		style: ['small']
     },
     Instagram: {
         type: 'instagram',
         value: 'instagram.js',
-        link: ['icon']
+        link: ['icon'],
+		style: ['small']
     },
     Threads: {
         type: 'threads',
         value: 'threads.js',
-        link: ['icon']
+        link: ['icon'],
+		style: ['small']
     },
     Telegram: {
         type: 'telegram',
         value: 'telegram.js',
-        link: ['icon']
+        link: ['icon'],
+		style: ['small']
     },
     哔哩哔哩Bilibili: {
         type: 'bilibili',
         value: 'bilibili.js',
-        link: ['icon']
+        link: ['icon'],
+		style: ['small']
     },
     Youtube: {
         type: 'youtube',
         value: 'youtube.js',
-        link: ['icon']
+        link: ['icon'],
+		style: ['small']
     },
     unya: {
         name: '混沌 Chaos',
