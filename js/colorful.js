@@ -339,7 +339,7 @@ var config = {
                 style: ['small']
             },
 			internet10: {
-                name: '中文 Chat Group',
+                name: '中文 CN Chat Group',
                 type: 'js',
 				icon:'telegram',
                 value: 'bitmexchinese.js',
