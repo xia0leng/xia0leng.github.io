@@ -339,7 +339,7 @@ var config = {
                 style: ['small']
             },
 			internet10: {
-                name: '中文聊天 Chat Group - Chinese',
+                name: '中文 Chat Group',
                 type: 'js',
 				icon:'telegram',
                 value: 'bitmexchinese.js',
@@ -419,10 +419,16 @@ var config = {
 				value: 'x.js',
 				style: ['small']
 			},
-			Telegram: {
+			tg_Channel: {
         		type: 'js',
 				icon:'telegram',
         		value: 'telegram.js',
+				style: ['small']
+    		},
+			tg_Group: {
+        		type: 'js',
+				icon:'telegram',
+        		value: 'telegramgroup.js',
 				style: ['small']
     		},
     		Instagram: {
