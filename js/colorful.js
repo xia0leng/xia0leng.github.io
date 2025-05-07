@@ -423,12 +423,6 @@ var config = {
         		value: 'telegram.js',
 				style: ['small']
     		},
-			Facebook: {
-				type: 'js',
-				icon:'facebook',
-				value: 'facebook.js',
-				style: ['small']
-			},
     		Instagram: {
 				type: 'js',
 				icon:'instagram',
@@ -441,6 +435,12 @@ var config = {
 				value: 'threads.js',
 				style: ['small']
     		},
+			Facebook: {
+				type: 'js',
+				icon:'facebook',
+				value: 'facebook.js',
+				style: ['small']
+			},
     		哔哩哔哩Bilibili: {
         		type: 'js',
 				icon:'bilibili',
