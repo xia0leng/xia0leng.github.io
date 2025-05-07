@@ -346,17 +346,17 @@ var config = {
                 style: ['small']
             },
 			internet11: {
-                name: 'Google Authenticator (Android)',
+                name: 'Authenticator (Android)',
                 type: 'js',
 				icon:'authenticator',
                 value: 'authenticatorandroid.js',
                 style: ['small']
             },
 			internet12: {
-                name: 'Google Authenticator (iOS)',
+                name: 'Authenticator (iOS)',
                 type: 'js',
 				icon:'authenticator',
-                value: 'authenticatorandroid.js',
+                value: 'authenticatorios.js',
                 style: ['small']
             },
         },
