@@ -1,3 +1,20 @@
+// colorful.js 顶部添加
+let __deferredInstallPrompt = null;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  __deferredInstallPrompt = e;
+  console.log("✔ 安装提示准备好了");
+});
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(reg => console.log('Service Worker 注册成功:', reg))
+      .catch(err => console.log('Service Worker 注册失败:', err));
+  });
+}
+
 var config = {
     readme: {
         name: '欢迎 Welcome',
@@ -936,14 +953,6 @@ async function loadCounter(counterUrl) {
         divCounter.textContent = '*******';
     }
     document.querySelector('.status').appendChild(divCounter);
-}
-
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
-      .then(reg => console.log('Service Worker 注册成功:', reg))
-      .catch(err => console.log('Service Worker 注册失败:', err));
-  });
 }
 
 prepareDom();
