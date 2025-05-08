@@ -492,7 +492,7 @@ var config = {
     	type: 'js',
     	icon: 'install',
     	value: 'install.js',
-		link: ['entry', 'icon']
+		link: ['entry', 'icon'],
     	style: ['small']
 	}
 };
