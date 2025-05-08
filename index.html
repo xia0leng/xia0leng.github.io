@@ -42,16 +42,28 @@ body{cursor:url('cursor.png'),auto;
 
 
 <script>
-    let pwaEvent = null
-    window.addEventListener('beforeinstallprompt', e => {
-      pwaEvent = e
-      btn.style.display = 'block'
+  // 全局变量挂到 window 上，便于 install.js 等模块访问
+  window.pwaEvent = null;
 
-      pwaEvent.userChoice.then(res => {
-        console.log(res.outcome)
-      })
-    })
-  </script>
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault(); // 阻止浏览器自动弹出
+    window.pwaEvent = e;
+
+    // 如果你在 index.html 页面本身想显示一个安装按钮（可选）
+    const btn = document.getElementById('install-btn');
+    if (btn) {
+      btn.style.display = 'block';
+
+      btn.addEventListener('click', async () => {
+        window.pwaEvent.prompt();
+        const result = await window.pwaEvent.userChoice;
+        console.log(result.outcome);
+        window.pwaEvent = null;
+      });
+    }
+  });
+</script>
+
 
 
   <link rel="stylesheet" href="./css/colorful.css">
