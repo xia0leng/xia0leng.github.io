@@ -1,19 +1,10 @@
-// colorful.js 顶部添加
-let __deferredInstallPrompt = null;
+window.__deferredInstallPrompt = null;
 
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
-  __deferredInstallPrompt = e;
-  console.log("✔ 安装提示准备好了");
+  window.__deferredInstallPrompt = e;
+  console.log("✔ PWA 安装提示已缓存，可用于按钮触发");
 });
-
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
-      .then(reg => console.log('Service Worker 注册成功:', reg))
-      .catch(err => console.log('Service Worker 注册失败:', err));
-  });
-}
 
 var config = {
     readme: {
