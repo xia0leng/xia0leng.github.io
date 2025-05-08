@@ -1,11 +1,3 @@
-window.__deferredInstallPrompt = null;
-
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  window.__deferredInstallPrompt = e;
-  console.log("✔ PWA 安装提示已缓存，可用于按钮触发");
-});
-
 var config = {
     readme: {
         name: '欢迎 Welcome',

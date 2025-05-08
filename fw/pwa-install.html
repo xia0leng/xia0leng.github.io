@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>安装 Xiaoleng App</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#c5bcff">
+  <script>
+    let deferredPrompt = null;
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      document.getElementById('status').textContent = "✅ 可安装！点击按钮继续";
+    });
+
+    function doInstall() {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then(choice => {
+          if (choice.outcome === 'accepted') {
+            document.getElementById('status').textContent = "🎉 安装成功！";
+          } else {
+            document.getElementById('status').textContent = "❌ 你取消了安装～";
+          }
+          deferredPrompt = null;
+        });
+      } else {
+        alert("浏览器尚未触发安装提示喵～");
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>安装 Xiaoleng 官方 App 💜</h1>
+  <p id="status">⏳ 等待浏览器准备安装...</p>
+  <button onclick="doInstall()">点击安装</button>
+</body>
+</html>
