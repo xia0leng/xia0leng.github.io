@@ -41,7 +41,17 @@ body{cursor:url('cursor.png'),auto;
  </style>     
 
 
+<script>
+    let pwaEvent = null
+    window.addEventListener('beforeinstallprompt', e => {
+      pwaEvent = e
+      btn.style.display = 'block'
 
+      pwaEvent.userChoice.then(res => {
+        console.log(res.outcome)
+      })
+    })
+  </script>
 
 
   <link rel="stylesheet" href="./css/colorful.css">

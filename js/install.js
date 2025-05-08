@@ -1,1 +1,1 @@
-window.location.href = "/fw/install.html";
+<button id="btn" style="display:none" onclick="pwaEvent.prompt()">添加</button>
