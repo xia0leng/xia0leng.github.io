@@ -1,1 +1,1 @@
-window.location.href = "/fw/pwa-install.html";
+window.location.href = "/fw/install.html";
