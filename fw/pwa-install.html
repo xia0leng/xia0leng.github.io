@@ -1,40 +1,41 @@
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-  <meta charset="UTF-8">
-  <title>安装 Xiaoleng App</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#c5bcff">
-  <script>
-    let deferredPrompt = null;
+<button id="install-btn" style="padding: 10px 20px;">安装 App</button>
+<div id="ios-tip" style="display: none; padding: 10px; border: 1px solid #ccc;">
+  请点击 Safari 底部的 <strong>“分享”按钮</strong>，然后选择 <strong>“添加到主屏幕”</strong> 来安装此应用。
+</div>
 
-    window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault();
-      deferredPrompt = e;
-      document.getElementById('status').textContent = "✅ 可安装！点击按钮继续";
+<script>
+  let deferredPrompt;
+
+  // 检测 beforeinstallprompt 支持
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault(); // 防止自动弹出
+    deferredPrompt = e;
+    document.getElementById('install-btn').style.display = 'block';
+  });
+
+  // 检测 iOS + Safari
+  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+  if (isIOS && isSafari) {
+    document.getElementById('install-btn').style.display = 'block';
+    document.getElementById('install-btn').addEventListener('click', () => {
+      document.getElementById('ios-tip').style.display = 'block';
     });
-
-    function doInstall() {
+  } else {
+    document.getElementById('install-btn').addEventListener('click', async () => {
       if (deferredPrompt) {
         deferredPrompt.prompt();
-        deferredPrompt.userChoice.then(choice => {
-          if (choice.outcome === 'accepted') {
-            document.getElementById('status').textContent = "🎉 安装成功！";
-          } else {
-            document.getElementById('status').textContent = "❌ 你取消了安装～";
-          }
-          deferredPrompt = null;
-        });
+        const choiceResult = await deferredPrompt.userChoice;
+        if (choiceResult.outcome === 'accepted') {
+          console.log('用户接受安装');
+        } else {
+          console.log('用户取消安装');
+        }
+        deferredPrompt = null;
       } else {
-        alert("浏览器尚未触发安装提示喵～");
+        alert('当前设备不支持自动安装，请尝试使用 Chrome 浏览器访问。');
       }
-    }
-  </script>
-</head>
-<body>
-  <h1>安装 Xiaoleng 官方 App 💜</h1>
-  <p id="status">⏳ 等待浏览器准备安装...</p>
-  <button onclick="doInstall()">点击安装</button>
-</body>
-</html>
+    });
+  }
+</script>
