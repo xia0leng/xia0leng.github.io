@@ -489,9 +489,9 @@ var config = {
     },
 	install: {
 		name: '安装 Install',
-    	type: 'js',
+    	type: 'url',
     	icon: 'install',
-    	value: 'install.js',
+    	value: './install.html',
 		link: ['entry', 'icon'],
     	style: ['small']
 	}
