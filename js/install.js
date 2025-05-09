@@ -18,6 +18,6 @@ document.getElementById('install-btn').addEventListener('click', async () => {
     }
     window.pwaEvent = null;
   } else {
-    alert("你使用了不支持的浏览器，或处于隐身模式\nYou are using an unsupported browser or are in incognito mode.\n\niOS用户请点击 Safari 底部的“分享”按钮，然后选择“添加到主屏幕”来安装此应用\nFor iOS users, please tap the \"Share\" button at the bottom of Safari, then select \"Add to Home Screen\" to install this app.");
+    alert("你使用了不支持的浏览器，或处于隐身模式\nYou are using an unsupported browser or are in incognito mode.\n\niOS用户请使用safari，并点击 Safari 底部的“分享”按钮，然后选择“添加到主屏幕”来安装此应用\nFor iOS users, please use Safari. Tap the \"Share\" button at the bottom, then select \"Add to Home Screen\" to install this app.");
   }
 });
