@@ -64,7 +64,14 @@ body{cursor:url('cursor.png'),auto;
   });
 </script>
 
-
+<script>
+  // 注册 sw.js 用于 PWA 安装识别
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+      .then(() => console.log('✅ Service Worker 注册成功'))
+      .catch(err => console.warn('❌ Service Worker 注册失败', err));
+  }
+</script>
 
   <link rel="stylesheet" href="./css/colorful.css">
   <script defer="" src="./js/colorful.js"></script>
