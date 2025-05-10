@@ -387,30 +387,6 @@ var config = {
         style: ['medium'],
         link: ['entry', 'icon']
     },
-    game: {
-        name: '游戏 Games',
-        type: 'folder',
-		icon:'game',
-        value: {
-            internet8: {
-                name: '寻找唐可可 Find-Keke',
-                type: 'iframe',
-				icon:'bitmex',
-                value: './find-keke/index.html',
-                style: ['large']
-            },
-			internet9: {
-                name: '人生重开模拟器 LifeRestart',
-                type: 'iframe',
-				icon:'bitmex',
-                value: './llss/index.html',
-                style: ['large']
-            },
-        },
-        desc: 'Liq™ Engine是我们的下一代数字货币衍生品交易引擎<br> Liq™ Engine is our next generation of cryptocurrency derivatives trading engine.',
-        style: ['medium'],
-        link: ['entry', 'icon']
-    },
     support: {
         name: '支持 Support',
         type: 'folder',
