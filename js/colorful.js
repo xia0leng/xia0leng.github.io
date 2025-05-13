@@ -326,6 +326,22 @@ var config = {
         },
         link: ['entry']
     },
+	articles: {
+        name: '文章 Articles',
+        type: 'folder',
+		icon:'folder',
+        value: {
+            internet8: {
+                name: '对话小冷「从7万到 A7：用逻辑和数据打造高胜率的交易系统」',
+                type: 'md2',
+                value: './articles/1922157354659021001.html',
+                style: ['large']
+            },
+        },
+        desc: '小冷的想法和对你的喜欢都在这里<br> All of my thoughts—and my fondness for you—are right here.',
+        style: ['medium'],
+        link: ['entry', 'icon']
+    },
 	bitmex: {
         name: 'BitMEX',
         type: 'folder',
