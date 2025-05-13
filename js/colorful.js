@@ -329,7 +329,7 @@ var config = {
 	articles: {
         name: '文章 Articles',
         type: 'folder',
-		icon:'folder',
+		icon:'articles',
         value: {
             internet8: {
                 name: '对话小冷「从7万到 A7：用逻辑和数据打造高胜率的交易系统」',
