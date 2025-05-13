@@ -20,13 +20,6 @@ var config = {
                 value: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxlnww%2Fposts%2Fpfbid0Y6qcAH1VSmjXbta3bo9Seyy9z6Upe9brqXMznhHAi73FJFdZvhggcmDfHnMmBfLXl&show_text=true',
                 style: ['large']
             },
-			DIDgWYFgwur: {
-                name: 'DIDgWYFgwur',
-                type: 'iframe',
-				icon:'img',
-                value: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxlnww%2Fposts%2Fpfbid02iPxjErtPBT3LCsbTNaXuAZKRnCXRL8RAA53eJv2Lj5WGkD8H8ZG119ZnpZVZRe3l&show_text=true',
-                style: ['large']
-            },
 			DH0HZ8Nvc0p: {
                 name: 'DH0HZ8Nvc0p',
                 type: 'iframe',
