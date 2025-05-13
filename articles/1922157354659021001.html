@@ -21,6 +21,8 @@
     a {
       color: #ff794d;
       text-decoration: underline;
+	  overflow-wrap:anywhere;   /* 现代写法，优先用 */
+      word-break:break-all;     /* 兼容旧浏览器备用 */
     }
     a:hover {
 	  color: #d24dff;
