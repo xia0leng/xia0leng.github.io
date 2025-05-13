@@ -380,43 +380,43 @@ var config = {
                     Dissociation: {
 						name: '解离',
 						type: '123',
-						value: './fw/drugs/DPH.html',
+						value: './fw/effects/Dissociation.html',
 						style: ['large']
 					},
 					Antidissociation: {
 						name: '反解离',
 						type: '123',
-						value: './fw/drugs/compound.html',
+						value: './fw/effects/Antidissociation.html',
 						style: ['large']
 					},
 					Delirium: {
 						name: '谵妄',
 						type: '123',
-						value: './fw/drugs/compound.html',
+						value: './fw/effects/Delirium.html',
 						style: ['large']
 					},
 					Introduction_to_Hallucination: {
 						name: '幻觉简述',
 						type: '123',
-						value: './fw/drugs/compound.html',
+						value: './fw/effects/Introduction_to_Hallucination.html',
 						style: ['large']
 					},
 					Opioids: {
 						name: '阿片类麻醉',
 						type: '123',
-						value: './fw/drugs/compound.html',
+						value: './fw/drugs/Opioids.html',
 						style: ['large']
 					},
 					BZD: {
 						name: '苯二氮卓类',
 						type: '123',
-						value: './fw/drugs/compound.html',
+						value: './fw/drugs/BZD.html',
 						style: ['large']
 					},
 					SRIs: {
 						name: '血清素再摄取抑制SRI',
 						type: '123',
-						value: './fw/drugs/compound.html',
+						value: './fw/drugs/SRIs.html',
 						style: ['large']
 					},
                 },
