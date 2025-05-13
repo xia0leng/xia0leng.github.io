@@ -415,7 +415,7 @@ var config = {
 	bitmex: {
         name: 'BitMEX',
         type: 'folder',
-		icon:'bitmex',
+		icon:'bitmexxln',
         value: {
             internet8: {
                 name: '交易面板 Trade Panel',
@@ -934,6 +934,8 @@ function makeIcon(key, action) {
         icon = 'game';
     } else if (action.type == 'js') {
         icon = 'exe';
+	} else if (action.type == 'md2') {
+        icon = 'md2';
     }
     const template = document.createElement('template');
     template.innerHTML = `
