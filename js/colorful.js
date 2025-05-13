@@ -425,8 +425,8 @@ var config = {
 			drugcombination: {
                 name: '药物联用',
                 type: 'md2',
-                value: 'odw.js',
-                style: ['small']
+                value: './fw/effects/Combination_drugs.html',
+                style: ['large']
             },
 			odw: {
                 name: 'OverdoseWiki',
