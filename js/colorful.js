@@ -539,6 +539,7 @@ var config = {
             internet8: {
                 name: 'L²S²',
                 type: 'iframe',
+				icon:'L²S²',
                 value: './llss/index.html',
                 style: ['large']
             },
