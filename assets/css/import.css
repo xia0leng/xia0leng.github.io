@@ -123,8 +123,11 @@ a:active,
 a:hover {
   outline: 0; }
 
+p a {
+  color: #9306e0;
+}
+
 p a:hover {
-  outline: 0;
   color: #ff794d;
 }
 
