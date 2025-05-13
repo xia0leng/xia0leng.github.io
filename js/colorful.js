@@ -422,6 +422,12 @@ var config = {
                 },
 				style: ['medium']
             },
+			drugcombination: {
+                name: '药物联用',
+                type: 'md2',
+                value: 'odw.js',
+                style: ['small']
+            },
 			odw: {
                 name: 'OverdoseWiki',
                 type: 'js',
@@ -992,9 +998,7 @@ function makeIcon(key, action) {
         icon = 'game';
     } else if (action.type == 'js') {
         icon = 'exe';
-	} else if (action.type == 'md2') {
-        icon = 'md2';
-    }
+	}
     const template = document.createElement('template');
     template.innerHTML = `
         <div class="iconwrap">
