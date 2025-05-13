@@ -82,288 +82,295 @@ var config = {
         name: '药物 Medication',
         type: 'okusuri',
         value: {
-            DXM: {
-                name: '右美沙芬',
-                type: '123',
-                value: './fw/medication/DXM.html',
-                style: ['large']
-            },
-            The_harm_of_dextromethorphan: {
-                name: '右美沙芬的危害专题',
-                type: '123',
-                value: './fw/medication/The_harm_of_dextromethorphan.html',
-                style: ['large']
-            },
-            ATD: {
-                name: '金刚烷胺',
-                type: '123',
-                value: './fw/medication/ATD.html',
-                style: ['large']
-            },
-            PR: {
-                name: '普瑞巴林',
-                type: '123',
-                value: './fw/medication/PR.html',
-                style: ['large']
-            },
-            CDI: {
-                name: '可待因',
-                type: '123',
-                value: './fw/medication/CDI.html',
-                style: ['large']
-            },
-            DHCDI: {
-                name: '二氢可待因/白兔BRON其一',
-                type: '123',
-                value: './fw/medication/DHCDI.html',
-                style: ['large']
-            },
-            MMT: {
-                name: '美金刚',
-                type: '123',
-                value: './fw/medication/MMT.html',
-                style: ['large']
-            },
-            TMD: {
-                name: '曲马多',
-                type: '123',
-                value: './fw/medication/TMD.html',
-                style: ['large']
-            },
-            ZD: {
-                name: 'Z药物',
-                type: '123',
-                value: './fw/medication/ZD.html',
-                style: ['large']
-            },
-            BZD: {
-                name: '苯二氮卓类药物',
-                type: '123',
-                value: './fw/medication/BZD.html',
-                style: ['large']
-            },
-            Opioids: {
-                name: '阿片类药物',
-                type: '123',
-                value: './fw/medication/Opioids.html',
-                style: ['large']
-            },
-            RTL: {
-                name: '哌醋甲酯',
-                type: '123',
-                value: './fw/medication/RTL.html',
-                style: ['large']
-            },
-            KTM: {
-                name: '氯胺酮',
-                type: '123',
-                value: './fw/medication/KTM.html',
-                style: ['large']
-            },
-            EtOH: {
-                name: '乙醇',
-                type: '123',
-                value: './fw/medication/EtOH.html',
-                style: ['large']
-            },
-            Cigarette: {
-                name: '香烟',
-                type: '123',
-                value: './fw/medication/Cigarette.html',
-                style: ['large']
-            },
-            ACL: {
-                name: '槟榔碱',
-                type: '123',
-                value: './fw/medication/ACL.html',
-                style: ['large']
-            },
-            SRIs: {
-                name: '血清素再摄取抑制剂',
-                type: '123',
-                value: './fw/medication/SRIs.html',
-                style: ['large']
-            },
-            AES: {
-                name: '止吐药',
-                type: '123',
-                value: './fw/medication/AES.html',
-                style: ['large']
-            },
-            VPA: {
-                name: '丙戊酸',
-                type: '123',
-                value: './fw/medication/VPA.html',
-                style: ['large']
-            },
-            NFP: {
-                name: '奈福泮',
-                type: '123',
-                value: './fw/medication/NFP.html',
-                style: ['large']
-            },
-            DPX: {
-                name: '地芬诺酯',
-                type: '123',
-                value: './fw/medication/DPX.html',
-                style: ['large']
-            },
-            QTP: {
-                name: '喹硫平',
-                type: '123',
-                value: './fw/medication/QTP.html',
-                style: ['large']
-            },
-            RPD: {
-                name: '利培酮',
-                type: '123',
-                value: './fw/medication/RPD.html',
-                style: ['large']
-            },
-            DMH: {
-                name: '茶苯海明',
-                type: '123',
-                value: './fw/medication/DMH.html',
-                style: ['large']
-            },
-            PVR: {
-                name: '喷托维林',
-                type: '123',
-                value: './fw/medication/PVR.html',
-                style: ['large']
-            },
-            THP: {
-                name: '苯海索',
-                type: '123',
-                value: './fw/medication/THP.html',
-                style: ['large']
-            },
-            EI: {
-                name: '酶抑制剂',
-                type: '123',
-                value: './fw/medication/EI.html',
-                style: ['large']
-            },
-            SPM: {
-                name: '补充剂',
-                type: '123',
-                value: './fw/medication/SPM.html',
-                style: ['large']
-            },
-            CFI: {
-                name: '咖啡因',
-                type: '123',
-                value: './fw/medication/CFI.html',
-                style: ['large']
-            },
-            TAN: {
-                name: '茶氨酸',
-                type: '123',
-                value: './fw/medication/TAN.html',
-                style: ['large']
-            },
-            MGT: {
-                name: '苏糖酸镁',
-                type: '123',
-                value: './fw/medication/MGT.html',
-                style: ['large']
-            },
-            PCT: {
-                name: '吡拉西坦',
-                type: '123',
-                value: './fw/medication/PCT.html',
-                style: ['large']
-            },
-            MOP: {
-                name: '吗啡',
-                type: '123',
-                value: './fw/medication/MOP.html',
-                style: ['large']
-            },
-            GBP: {
-                name: '加巴喷丁',
-                type: '123',
-                value: './fw/medication/GBP.html',
-                style: ['large']
-            },
-            BCF: {
-                name: '巴氯芬',
-                type: '123',
-                value: './fw/medication/BCF.html',
-                style: ['large']
-            },
-            PPF: {
-                name: '丙泊酚',
-                type: '123',
-                value: './fw/medication/PPF.html',
-                style: ['large']
-            },
-            ZPD: {
-                name: '唑吡坦',
-                type: '123',
-                value: './fw/medication/ZPD.html',
-                style: ['large']
-            },
-            ZPO: {
-                name: '扎来普隆',
-                type: '123',
-                value: './fw/medication/ZPO.html',
-                style: ['large']
-            },
-            ZPC: {
-                name: '佐匹克隆',
-                type: '123',
-                value: './fw/medication/ZPC.html',
-                style: ['large']
-            },
-            DPD: {
-                name: '地芬尼多',
-                type: '123',
-                value: './fw/medication/DPD.html',
-                style: ['large']
-            },
-            PMZ: {
-                name: '异丙嗪',
-                type: '123',
-                value: './fw/medication/PMZ.html',
-                style: ['large']
-            },
-            TXT: {
-                name: '托莫西汀',
-                type: '123',
-                value: './fw/medication/TXT.html',
-                style: ['large']
-            },
-            OZP: {
-                name: '奥氮平',
-                type: '123',
-                value: './fw/medication/OZP.html',
-                style: ['large']
-            },
-            ARP: {
-                name: '阿立哌唑',
-                type: '123',
-                value: './fw/medication/ARP.html',
-                style: ['large']
-            },
-            ASP: {
-                name: '氨磺必利',
-                type: '123',
-                value: './fw/medication/ASP.html',
-                style: ['large']
-            },
-            compound: {
-                name: '复方专题',
-                type: '123',
-                value: './fw/medication/compound.html',
-                style: ['large']
-            },
-            DPH: {
-                name: '苯海拉明',
-                type: '123',
-                value: './fw/medication/DPH.html',
-                style: ['large']
-            },
+			drugs: {
+                name: '药物列表 Drugs',
+                type: 'folder',
+                value: {
+            		DXM: {
+                		name: '右美沙芬',
+                		type: '123',
+                		value: './fw/medication/DXM.html',
+                		style: ['large']
+            		},
+            		The_harm_of_dextromethorphan: {
+						name: '右美沙芬的危害专题',
+						type: '123',
+						value: './fw/medication/The_harm_of_dextromethorphan.html',
+						style: ['large']
+					},
+					ATD: {
+						name: '金刚烷胺',
+						type: '123',
+						value: './fw/medication/ATD.html',
+						style: ['large']
+					},
+					PR: {
+						name: '普瑞巴林',
+						type: '123',
+						value: './fw/medication/PR.html',
+						style: ['large']
+					},
+					CDI: {
+						name: '可待因',
+						type: '123',
+						value: './fw/medication/CDI.html',
+						style: ['large']
+					},
+					DHCDI: {
+						name: '二氢可待因/白兔BRON其一',
+						type: '123',
+						value: './fw/medication/DHCDI.html',
+						style: ['large']
+					},
+					MMT: {
+						name: '美金刚',
+						type: '123',
+						value: './fw/medication/MMT.html',
+						style: ['large']
+					},
+					TMD: {
+						name: '曲马多',
+						type: '123',
+						value: './fw/medication/TMD.html',
+						style: ['large']
+					},
+					ZD: {
+						name: 'Z药物',
+						type: '123',
+						value: './fw/medication/ZD.html',
+						style: ['large']
+					},
+					BZD: {
+						name: '苯二氮卓类药物',
+						type: '123',
+						value: './fw/medication/BZD.html',
+						style: ['large']
+					},
+					Opioids: {
+						name: '阿片类药物',
+						type: '123',
+						value: './fw/medication/Opioids.html',
+						style: ['large']
+					},
+					RTL: {
+						name: '哌醋甲酯',
+						type: '123',
+						value: './fw/medication/RTL.html',
+						style: ['large']
+					},
+					KTM: {
+						name: '氯胺酮',
+						type: '123',
+						value: './fw/medication/KTM.html',
+						style: ['large']
+					},
+					EtOH: {
+						name: '乙醇',
+						type: '123',
+						value: './fw/medication/EtOH.html',
+						style: ['large']
+					},
+					Cigarette: {
+						name: '香烟',
+						type: '123',
+						value: './fw/medication/Cigarette.html',
+						style: ['large']
+					},
+					ACL: {
+						name: '槟榔碱',
+						type: '123',
+						value: './fw/medication/ACL.html',
+						style: ['large']
+					},
+					SRIs: {
+						name: '血清素再摄取抑制剂',
+						type: '123',
+						value: './fw/medication/SRIs.html',
+						style: ['large']
+					},
+					AES: {
+						name: '止吐药',
+						type: '123',
+						value: './fw/medication/AES.html',
+						style: ['large']
+					},
+					VPA: {
+						name: '丙戊酸',
+						type: '123',
+						value: './fw/medication/VPA.html',
+						style: ['large']
+					},
+					NFP: {
+						name: '奈福泮',
+						type: '123',
+						value: './fw/medication/NFP.html',
+						style: ['large']
+					},
+					DPX: {
+						name: '地芬诺酯',
+						type: '123',
+						value: './fw/medication/DPX.html',
+						style: ['large']
+					},
+					QTP: {
+						name: '喹硫平',
+						type: '123',
+						value: './fw/medication/QTP.html',
+						style: ['large']
+					},
+					RPD: {
+						name: '利培酮',
+						type: '123',
+						value: './fw/medication/RPD.html',
+						style: ['large']
+					},
+					DMH: {
+						name: '茶苯海明',
+						type: '123',
+						value: './fw/medication/DMH.html',
+						style: ['large']
+					},
+					PVR: {
+						name: '喷托维林',
+						type: '123',
+						value: './fw/medication/PVR.html',
+						style: ['large']
+					},
+					THP: {
+						name: '苯海索',
+						type: '123',
+						value: './fw/medication/THP.html',
+						style: ['large']
+					},
+					EI: {
+						name: '酶抑制剂',
+						type: '123',
+						value: './fw/medication/EI.html',
+						style: ['large']
+					},
+					SPM: {
+						name: '补充剂',
+						type: '123',
+						value: './fw/medication/SPM.html',
+						style: ['large']
+					},
+					CFI: {
+						name: '咖啡因',
+						type: '123',
+						value: './fw/medication/CFI.html',
+						style: ['large']
+					},
+					TAN: {
+						name: '茶氨酸',
+						type: '123',
+						value: './fw/medication/TAN.html',
+						style: ['large']
+					},
+					MGT: {
+						name: '苏糖酸镁',
+						type: '123',
+						value: './fw/medication/MGT.html',
+						style: ['large']
+					},
+					PCT: {
+						name: '吡拉西坦',
+						type: '123',
+						value: './fw/medication/PCT.html',
+						style: ['large']
+					},
+					MOP: {
+						name: '吗啡',
+						type: '123',
+						value: './fw/medication/MOP.html',
+						style: ['large']
+					},
+					GBP: {
+						name: '加巴喷丁',
+						type: '123',
+						value: './fw/medication/GBP.html',
+						style: ['large']
+					},
+					BCF: {
+						name: '巴氯芬',
+						type: '123',
+						value: './fw/medication/BCF.html',
+						style: ['large']
+					},
+					PPF: {
+						name: '丙泊酚',
+						type: '123',
+						value: './fw/medication/PPF.html',
+						style: ['large']
+					},
+					ZPD: {
+						name: '唑吡坦',
+						type: '123',
+						value: './fw/medication/ZPD.html',
+						style: ['large']
+					},
+					ZPO: {
+						name: '扎来普隆',
+						type: '123',
+						value: './fw/medication/ZPO.html',
+						style: ['large']
+					},
+					ZPC: {
+						name: '佐匹克隆',
+						type: '123',
+						value: './fw/medication/ZPC.html',
+						style: ['large']
+					},
+					DPD: {
+						name: '地芬尼多',
+						type: '123',
+						value: './fw/medication/DPD.html',
+						style: ['large']
+					},
+					PMZ: {
+						name: '异丙嗪',
+						type: '123',
+						value: './fw/medication/PMZ.html',
+						style: ['large']
+					},
+					TXT: {
+						name: '托莫西汀',
+						type: '123',
+						value: './fw/medication/TXT.html',
+						style: ['large']
+					},
+					OZP: {
+						name: '奥氮平',
+						type: '123',
+						value: './fw/medication/OZP.html',
+						style: ['large']
+					},
+					ARP: {
+						name: '阿立哌唑',
+						type: '123',
+						value: './fw/medication/ARP.html',
+						style: ['large']
+					},
+					ASP: {
+						name: '氨磺必利',
+						type: '123',
+						value: './fw/medication/ASP.html',
+						style: ['large']
+					},
+					compound: {
+						name: '复方专题',
+						type: '123',
+						value: './fw/medication/compound.html',
+						style: ['large']
+					},
+					DPH: {
+						name: '苯海拉明',
+						type: '123',
+						value: './fw/medication/DPH.html',
+						style: ['large']
+					},
+				},
+				style: ['medium']
+			},
 			odw: {
                 name: 'OverdoseWiki',
                 type: 'js',
