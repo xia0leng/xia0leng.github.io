@@ -84,7 +84,7 @@ var config = {
                 style: ['large']
             },
         },
-        desc: 'Liq™ Engine是我们的下一代数字货币衍生品交易引擎<br> Liq™ Engine is our next generation of cryptocurrency derivatives trading engine.',
+        desc: '这里汇聚了小冷的所有闪耀瞬间：舞台闪光、日常萌拍、偶尔流露的病娇小表情<br> All my shining moments—stage highlights, everyday cuteness, and the occasional yandere glance.<br> ⚠️照片页面iframe来源是Facebook，在墙内打不开是正常的<br> ⚠️Content is embedded from Facebook; use a VPN or proxy if it doesn’t load.',
         style: ['medium'],
         link: ['entry', 'icon']
     },
