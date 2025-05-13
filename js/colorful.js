@@ -390,7 +390,7 @@ var config = {
     liq: {
         name: 'Liq™',
         type: 'folder',
-		icon:'darkness',
+		icon:'liq',
         value: {
             internet8: {
                 name: 'L²S²',
