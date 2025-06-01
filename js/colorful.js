@@ -48,18 +48,11 @@ var config = {
                 value: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxlnww%2Fposts%2Fpfbid0j3Zu2BXd8bJmLggVciM8h2VPjQn5Cw82TBSvGTH9isQCdnezQnGDmBHmwPDGv3TXl&show_text=true',
                 style: ['large']
             },
-			DNHq7wZlKv: {
-                name: 'DNHq7wZlKv',
+			C7eX1azhrv3: {
+                name: 'C7eX1azhrv3',
                 type: 'iframe',
 				icon:'img',
-                value: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxlnww%2Fposts%2Fpfbid0QnEw8REMmuxeUku8L9idviJiArJuRGfLiqq2XHSFT8k91UcNMegdQoZ1NM1WHfzxl&show_text=true',
-                style: ['large']
-            },
-			CJruVf3bYA: {
-                name: 'CJruVf3bYA',
-                type: 'iframe',
-				icon:'img',
-                value: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxlnww%2Fposts%2Fpfbid0o4Jh6BVyKEg3P6LPnmvZ1qrqvVJBcQDPgUh9FPeidsqDkUV9vd9DJ5xkXsdrqxa9l&show_text=true',
+                value: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxlnww%2Fposts%2Fpfbid02tdzWwZ1Bjt9PATq4pwsbVvG7zAB19XmE5KGUABs48UyBNipJ1iVTNhHyHJRAPN62l&show_text=true',
                 style: ['large']
             },
 			DArqX9LmCe: {
@@ -69,14 +62,6 @@ var config = {
                 value: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxlnww%2Fposts%2Fpfbid0oXPa2Sg5Ytnp7r4pU73q6YJmYGPScoURecVX3hxotqD25hfbk3FHYAkcNJmbiuWjl&show_text=true',
                 style: ['large']
             },
-			BQ7tPhYzNc: {
-                name: 'BQ7tPhYzNc',
-                type: 'iframe',
-				icon:'img',
-                value: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxlnww%2Fposts%2Fpfbid02GwVKfHcecXQcevULHPvQzVpp5MdRjS9jFeoKsSnqo9747JhVomDnDV6TyosdVsval&show_text=true',
-                style: ['large']
-            },
-			 },
 			CAxJr5KnZD: {
                 name: 'CAxJr5KnZD',
                 type: 'iframe',
