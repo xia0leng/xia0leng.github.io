@@ -13,32 +13,11 @@ var config = {
         type: 'folder',
 		icon:'photos',
         value: {
-			DKT086vfXT: {
-                name: 'DKT086-vfXT',
-                type: 'iframe',
-				icon:'img',
-                value: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxlnww%2Fposts%2Fpfbid0kbZrtpnLFs7B3E7erLG9igL7tH1thaSvPBLAruYRHCPPDN622bs5vUrkvaoHnQ2Wl&show_text=true',
-                style: ['large']
-            },
-			DKRZUANOU2M: {
-                name: 'DKRZUANOU2M',
-                type: 'iframe',
-				icon:'img',
-                value: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxlnww%2Fposts%2Fpfbid0oxcianjpKoWbgSp7GheWpmV47vefVeH1VXrbo1bwMmQU8U7RVXdQVWv1gqe3xVeCl&show_text=true',
-                style: ['large']
-            },
 			DKFLBivUdQ: {
                 name: 'DKFL-BivUdQ',
                 type: 'iframe',
 				icon:'img',
                 value: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxlnww%2Fposts%2Fpfbid04EKaL2mssTNjAmniRhHRQ2fG1HvRDv6n8umwAHNvZW1vfKjUkAhE9HEwg5bsSpXMl&show_text=true',
-                style: ['large']
-            },
-			DKCfbj6slE7: {
-                name: 'DKCfbj6slE7',
-                type: 'iframe',
-				icon:'img',
-                value: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxlnww%2Fposts%2Fpfbid0XMvsAGkUkP53RFRjSm2FLmVsDBKKXmeQ4GEydSowq1rrvt8coK4UYrj7xa3iNcusl&show_text=true',
                 style: ['large']
             },
 			DJvZVaBIbKD: {
