@@ -632,16 +632,10 @@ var config = {
 				value: 'x.js',
 				style: ['small']
 			},
-			tg_Channel: {
+			Telegram: {
         		type: 'js',
 				icon:'telegram',
         		value: 'telegram.js',
-				style: ['small']
-    		},
-			tg_Group: {
-        		type: 'js',
-				icon:'telegram',
-        		value: 'telegramgroup.js',
 				style: ['small']
     		},
     		Instagram: {
