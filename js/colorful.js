@@ -48,13 +48,56 @@ var config = {
                 value: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxlnww%2Fposts%2Fpfbid0j3Zu2BXd8bJmLggVciM8h2VPjQn5Cw82TBSvGTH9isQCdnezQnGDmBHmwPDGv3TXl&show_text=true',
                 style: ['large']
             },
-			C7eX1azhrv3: {
-                name: 'C7eX1azhrv3',
+			DNHq7wZlKv: {
+                name: 'DNHq7wZlKv',
                 type: 'iframe',
 				icon:'img',
-                value: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxlnww%2Fposts%2Fpfbid02tdzWwZ1Bjt9PATq4pwsbVvG7zAB19XmE5KGUABs48UyBNipJ1iVTNhHyHJRAPN62l&show_text=true',
+                value: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxlnww%2Fposts%2Fpfbid0QnEw8REMmuxeUku8L9idviJiArJuRGfLiqq2XHSFT8k91UcNMegdQoZ1NM1WHfzxl&show_text=true',
                 style: ['large']
             },
+			CJruVf3bYA: {
+                name: 'CJruVf3bYA',
+                type: 'iframe',
+				icon:'img',
+                value: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxlnww%2Fposts%2Fpfbid0o4Jh6BVyKEg3P6LPnmvZ1qrqvVJBcQDPgUh9FPeidsqDkUV9vd9DJ5xkXsdrqxa9l&show_text=true',
+                style: ['large']
+            },
+			DArqX9LmCe: {
+                name: 'DArqX9LmCe',
+                type: 'iframe',
+				icon:'img',
+                value: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxlnww%2Fposts%2Fpfbid0oXPa2Sg5Ytnp7r4pU73q6YJmYGPScoURecVX3hxotqD25hfbk3FHYAkcNJmbiuWjl&show_text=true',
+                style: ['large']
+            },
+			BQ7tPhYzNc: {
+                name: 'BQ7tPhYzNc',
+                type: 'iframe',
+				icon:'img',
+                value: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxlnww%2Fposts%2Fpfbid02GwVKfHcecXQcevULHPvQzVpp5MdRjS9jFeoKsSnqo9747JhVomDnDV6TyosdVsval&show_text=true',
+                style: ['large']
+            },
+			 },
+			CAxJr5KnZD: {
+                name: 'CAxJr5KnZD',
+                type: 'iframe',
+				icon:'img',
+                value: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxlnww%2Fposts%2Fpfbid0xFFXBCc9m3oigvCMTUGREpjy4iDzbY76hwzxL3mdzhsgH7QZymLnNTExNhKhQ2eHl&show_text=true',
+                style: ['large']
+            },
+			DZy18LrMku: {
+                name: 'DZy18LrMku',
+                type: 'iframe',
+				icon:'img',
+                value: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxlnww%2Fposts%2Fpfbid02eN5hDEzMbreYqSWYsXcDEuAvjXrLtkVDrHySz1TnFTCCQiEdtXNZH3YaEEhdpVo2l&show_text=true',
+                style: ['large']
+            },
+			BFn7eAcWQy: {
+                name: 'BFn7eAcWQy',
+                type: 'iframe',
+				icon:'img',
+                value: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxlnww%2Fposts%2Fpfbid02G4hvf3fSvMZsMFvqNhRzmkKxTLDs6Ycz8zrZja2m3njUvJf8whAyc5oMfkABcGh4l&show_text=true',
+                style: ['large']
+			
         },
         desc: '这里汇聚了小冷的所有闪耀瞬间：舞台闪光、日常萌拍、偶尔流露的病娇小表情<br> All my shining moments—stage highlights, everyday cuteness, and the occasional yandere glance.<br> ⚠️照片iframe来源是Facebook，在墙内打不开是正常的<br> ⚠️Content is embedded from Facebook; use a VPN or proxy if it doesn&#39;t load.',
         style: ['medium'],
