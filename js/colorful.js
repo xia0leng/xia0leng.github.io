@@ -656,24 +656,12 @@ var config = {
 				value: 'threads.js',
 				style: ['small']
     		},
-			Facebook: {
-				type: 'js',
-				icon:'facebook',
-				value: 'facebook.js',
-				style: ['small']
-			},
     		哔哩哔哩Bilibili: {
         		type: 'js',
 				icon:'bilibili',
         		value: 'bilibili.js',
 				style: ['small']
 			},
-    		Youtube: {
-        		type: 'js',
-				icon:'youtube',
-        		value: 'youtube.js',
-				style: ['small']
-    		},
         },
         desc: '本台将不定期播送来自小冷的：<br>自拍、照片、对你们的喜欢，以及情绪碎片<br> This station will occasionally bring you broadcasts from Xiaoleng:<br>selfies, photos, my affection for you, and fragments of emotion.',
         style: ['medium'],
