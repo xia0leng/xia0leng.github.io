@@ -67,6 +67,37 @@ var config = {
         style: ['medium'],
         link: ['entry', 'icon']
     },
+	stagevideos: {
+        name: '舞台录像 Stage Videos',
+        type: 'folder',
+		icon:'stage',
+        value: {
+			DKFLBivUdQ: {
+                name: '#あくあ色ぱれっと',
+                type: 'url',
+				icon:'videos',
+                value: './fw/stagevideos/05.html',
+                style: ['large']
+            },
+			DJvZVaBIbKD: {
+                name: 'CHASE!',
+                type: 'url',
+				icon:'videos',
+                value: './fw/stagevideos/04.html',
+                style: ['large']
+            },
+			DB5h7o7IqJp: {
+                name: 'Tiny Stars',
+                type: 'url',
+				icon:'videos',
+                value: './fw/stagevideos/01.html',
+                style: ['large']
+            },
+        },
+        desc: '这里收藏了小冷在舞台上最闪亮的瞬间<br> Here my brightest magical moments on stage.<br> ⚠️视频iframe来源是Facebook，在墙内打不开是正常的<br> ⚠️Content is embedded from Facebook; use a VPN or proxy if it doesn&#39;t load.',
+        style: ['medium'],
+        link: ['entry', 'icon']
+    },
     medication: {
         name: '药物 Medication',
         type: 'okusuri',
