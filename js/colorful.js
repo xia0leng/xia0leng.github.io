@@ -1,19 +1,18 @@
 var config = {
     readme: {
+		start: true,
         name: '欢迎 Welcome',
         type: 'md',
         value: 'readme',
         style: ['medium'],
         link: ['entry', 'icon'],
-        icon: 'help',
-        start: true
+        icon: 'help'
     },
 	notice: {
         name: '提示 Notice',
         type: 'md',
         value: 'notice',
-        style: ['small'],
-        start: true
+        style: ['small']
     },
 	photos: {
         name: '照片 Photos',
