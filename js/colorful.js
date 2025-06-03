@@ -465,7 +465,7 @@ var config = {
                 type: 'js',
 				icon:'odw',
                 value: 'odw.js',
-                style: ['small']
+                style: ['ultrasmall']
             }
         },
         desc: '这是对odwiki上所列出的所有药物说明的备份存档，目前只提供中文版本<br> This is a backup archive of all the drug descriptions listed on odwiki, currently available only in Chinese.<br> ⚠️请减少od次数⚠️也请安全的使用药物<br> ⚠️Please reduce the number of overdoses⚠️ and use drugs safely.',
@@ -518,35 +518,35 @@ var config = {
                 type: 'js',
 				icon:'bitmex',
                 value: 'bitmexapp.js',
-                style: ['small']
+                style: ['ultrasmall']
             },
 			internet9: {
                 name: '注册 Sign Up',
                 type: 'js',
 				icon:'bitmex',
                 value: 'bitmexsignup.js',
-                style: ['small']
+                style: ['ultrasmall']
             },
 			internet10: {
                 name: '中文 CN Chat Group',
                 type: 'js',
 				icon:'telegram',
                 value: 'bitmexchinese.js',
-                style: ['small']
+                style: ['ultrasmall']
             },
 			internet11: {
                 name: 'Authenticator (Android)',
                 type: 'js',
 				icon:'authenticator',
                 value: 'authenticatorandroid.js',
-                style: ['small']
+                style: ['ultrasmall']
             },
 			internet12: {
                 name: 'Authenticator (iOS)',
                 type: 'js',
 				icon:'authenticator',
                 value: 'authenticatorios.js',
-                style: ['small']
+                style: ['ultrasmall']
             },
         },
         desc: '不是小冷挣到钱最多的交易所，但是是小冷最喜欢的交易所<br> It&#39;s not the exchange where I made the most money, but it&#39;s my favorite.',
@@ -624,31 +624,31 @@ var config = {
 				type: 'js',
 				icon:'x',
 				value: 'x.js',
-				style: ['small']
+				style: ['ultrasmall']
 			},
 			Telegram: {
         		type: 'js',
 				icon:'telegram',
         		value: 'telegram.js',
-				style: ['small']
+				style: ['ultrasmall']
     		},
     		Instagram: {
 				type: 'js',
 				icon:'instagram',
 				value: 'instagram.js',
-				style: ['small']
+				style: ['ultrasmall']
 			},
 			Threads: {
 				type: 'js',
 				icon:'threads',
 				value: 'threads.js',
-				style: ['small']
+				style: ['ultrasmall']
     		},
     		哔哩哔哩Bilibili: {
         		type: 'js',
 				icon:'bilibili',
         		value: 'bilibili.js',
-				style: ['small']
+				style: ['ultrasmall']
 			},
         },
         desc: '本台将不定期播送来自小冷的：<br>自拍、照片、对你们的喜欢，以及情绪碎片<br> This station will occasionally bring you broadcasts from Xiaoleng:<br>selfies, photos, my affection for you, and fragments of emotion.',
@@ -661,7 +661,7 @@ var config = {
     	icon: 'install',
     	value: 'install.js',
 		link: ['entry', 'icon'],
-    	style: ['small']
+    	style: ['ultrasmall']
 	}
 };
 
