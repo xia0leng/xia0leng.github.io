@@ -231,8 +231,8 @@ iframe {
 }
 
 .window.ultrasmall {
-  width: min(24vw, 36vh);
-  height: 24vh;
+  width: min(32vw, 48vh);
+  height: 32vh;
 }
 
 .window.small {
@@ -256,8 +256,8 @@ iframe {
 
 @media (max-width: 600px) {
   .window.ultrasmall {
-    width: 51vw;
-    height: 18vh;
+    width: 68vw;
+    height: 24vh;
   }
   .window.small {
     width: 85vw;
