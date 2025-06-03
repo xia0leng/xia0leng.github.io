@@ -9,9 +9,16 @@ var config = {
         icon: 'help'
     },
 	notice: {
-        name: '提示 Notice',
+        name: '提示 Alert',
         type: 'md',
-        value: 'notice'
+        value: 'notice',
+		style: ['ultrasmall']
+    },
+	event05: {
+        name: '通知 Notice',
+        type: 'md',
+        value: 'event05',
+		style: ['ultrasmall'],
     },
 	photos: {
         name: '照片 Photos',
@@ -677,6 +684,9 @@ const htmlConfig = {
     I am your cutest Xiaoleng, chasing the dreams of starlight every day.</p>
     <p>请多多关注小冷吧~<br>
     Please pay more attention to Xiaoleng~</p>`,
+	event05: `
+    <p>小冷6月20日在上海AC漫展有演出！来找我玩喵~<br>
+    I’ll be performing at the Shanghai AC Anime Convention on June 20! Come and see me~</p>`,
 }
 const urlConfig = {'pasta.html': 'pasta.html'};
 let windowId = 0;
