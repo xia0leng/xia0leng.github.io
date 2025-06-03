@@ -685,8 +685,10 @@ const htmlConfig = {
     <p>请多多关注小冷吧~<br>
     Please pay more attention to Xiaoleng~</p>`,
 	event05: `
-    <p>小冷6月20日在上海AC漫展有演出！来找我玩喵~<br>
-    I’ll be performing at the Shanghai AC Anime Convention on June 20! Come and see me~</p>`,
+    <p>小冷6月20日在上海AC漫展有演出！<br>
+    I’ll be performing at the Shanghai AC Anime Convention on June 20!</p>
+    <p>来找我玩喵~<br>
+     Come and see me~</p>`,
 }
 const urlConfig = {'pasta.html': 'pasta.html'};
 let windowId = 0;
