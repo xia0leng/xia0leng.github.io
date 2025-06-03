@@ -8,6 +8,13 @@ var config = {
         icon: 'help',
         start: true
     },
+	notice: {
+        name: '提示 Notice',
+        type: 'md',
+        value: 'notice',
+        style: ['small'],
+        start: true
+    },
 	photos: {
         name: '照片 Photos',
         type: 'folder',
@@ -665,6 +672,11 @@ const htmlConfig = {
     Let's indulge in this sweet, 💊drug-filled dream.<br>
     也请来了解你最可爱的小偶像小冷<br>
     Also, come get to know Xiaoleng, your cutest idol.</p>
+    <p>请多多关注小冷吧~<br>
+    Please pay more attention to Xiaoleng~</p>`,
+	notice: `
+    <p>这里是每天都在追逐星光梦想的你最可爱的小冷<br>
+    I am your cutest Xiaoleng, chasing the dreams of starlight every day.</p>
     <p>请多多关注小冷吧~<br>
     Please pay more attention to Xiaoleng~</p>`,
 }
