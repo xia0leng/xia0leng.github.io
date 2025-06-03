@@ -11,8 +11,7 @@ var config = {
 	notice: {
         name: '提示 Notice',
         type: 'md',
-        value: 'notice',
-        style: ['small']
+        value: 'notice'
     },
 	photos: {
         name: '照片 Photos',
