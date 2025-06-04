@@ -90,27 +90,13 @@ font-size: 16px;
         }  
     </style>
 
-<script>
-  try {
-    // Chrome 108+ 必须能执行这段代码
-    document.querySelector(':has(div)');
-    document.documentElement.classList.add('has-has');
-  } catch (e) {
-    // do nothing
+	    <style>  
+@supports selector(:has(*)) {
+  #fallback {
+    display: none;
   }
-</script>
-
-<style>
-/* 默认显示 fallback */
-#fallback-warning {
-  display: block;
 }
-
-/* 如果支持 :has()，说明浏览器是 Chrome 108+，可以隐藏 */
-.has-has #fallback-warning {
-  display: none;
-}
-</style>
+    </style>
   
 </head>
 
