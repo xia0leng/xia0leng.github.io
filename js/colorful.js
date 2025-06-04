@@ -585,6 +585,23 @@ var config = {
         style: ['medium'],
         link: ['entry', 'icon']
     },
+	liyuu: {
+        name: 'Liyuu',
+        type: 'folder',
+		icon:'liq',
+        value: {
+            internet8: {
+                name: 'L²S²',
+                type: 'iframe',
+				icon:'L²S²',
+                value: './llss/index.html',
+                style: ['large']
+            },
+        },
+        desc: 'Liq™ Engine是我们的下一代数字货币衍生品交易引擎<br> Liq™ Engine is our next generation of cryptocurrency derivatives trading engine.',
+        style: ['medium'],
+        link: ['entry', 'icon']
+    },
     support: {
         name: '支持 Support',
         type: 'folder',
