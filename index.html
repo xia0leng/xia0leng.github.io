@@ -91,8 +91,8 @@ font-size: 16px;
     </style>
 
 	    <style>  
-        @supports (display: grid) {
-  #fallback{
+@supports selector(:has(*)) {
+  #fallback {
     display: none;
   }
 }
