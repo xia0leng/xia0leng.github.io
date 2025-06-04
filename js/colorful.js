@@ -20,24 +20,6 @@ var config = {
         value: 'event05',
 		style: ['ultrasmall'],
     },
-	emotional01: {
-        name: '警告 Alert',
-        type: 'md',
-        value: 'emotional01',
-		style: ['ultrasmall'],
-    },
-	emotional02: {
-        name: '警告 Alert',
-        type: 'md',
-        value: 'emotional02',
-		style: ['ultrasmall'],
-    },
-	emotional03: {
-        name: '警告 Alert',
-        type: 'md',
-        value: 'emotional03',
-		style: ['ultrasmall'],
-    },
 	photos: {
         name: '照片 Photos',
         type: 'folder',
@@ -680,7 +662,25 @@ var config = {
     	value: 'install.js',
 		link: ['entry', 'icon'],
     	style: ['ultrasmall']
-	}
+	},
+	emotional01: {
+        name: '警告 Alert',
+        type: 'md',
+        value: 'emotional01',
+		style: ['ultrasmall'],
+    },
+	emotional02: {
+        name: '警告 Alert',
+        type: 'md',
+        value: 'emotional02',
+		style: ['ultrasmall'],
+    },
+	emotional03: {
+        name: '警告 Alert',
+        type: 'md',
+        value: 'emotional03',
+		style: ['ultrasmall'],
+    }
 };
 
 const htmlConfig = {
