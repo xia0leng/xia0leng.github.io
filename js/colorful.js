@@ -8,12 +8,6 @@ var config = {
         link: ['entry', 'icon'],
         icon: 'help'
     },
-	notice: {
-        name: '通知 Notice',
-        type: 'md',
-        value: 'notice',
-		style: ['ultrasmall']
-    },
 	event05: {
         name: '通知 Notice',
         type: 'md',
@@ -663,6 +657,12 @@ var config = {
 		link: ['entry', 'icon'],
     	style: ['ultrasmall']
 	},
+	notice: {
+        name: '通知 Notice',
+        type: 'md',
+        value: 'notice',
+		style: ['ultrasmall']
+    },
 	emotional01: {
         name: '警告 Alert',
         type: 'md',
