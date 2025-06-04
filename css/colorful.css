@@ -121,17 +121,24 @@ iframe {
 
 .shortcut-arrow {
   position: absolute;
-  left: 2px;
-  bottom: 2px;
-  font-size: 11px;
+  left: 0px;
+  bottom: 5px;
+  font-size: 13px;
   font-weight: bold;
   color: black;
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: 0px 2px;
-  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0px 4px; /* 上下 1px，左右 4px */
+  border-radius: 3px;
   pointer-events: none;
   z-index: 10;
+  line-height: 1.5; /* 保证正方形压缩 */
+  height: 15px;
+  width: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 
 .iconwrap > .icon > .tag {
   font-size: 16px;
