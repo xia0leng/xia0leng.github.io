@@ -714,13 +714,13 @@ var config = {
     	icon: 'install',
     	value: 'install.js',
 		link: ['entry', 'icon'],
-    	style: ['ultrasmall']
+    	style: ['install']
 	},
 	notice: {
         name: '通知 Notice',
         type: 'md',
         value: 'notice',
-		style: ['install']
+		style: ['ultrasmall']
     },
 	emotional01: {
         name: '警告 Alert',
