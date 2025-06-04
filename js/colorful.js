@@ -68,8 +68,8 @@ var config = {
                 value: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxlnww%2Fposts%2Fpfbid0oXPa2Sg5Ytnp7r4pU73q6YJmYGPScoURecVX3hxotqD25hfbk3FHYAkcNJmbiuWjl&show_text=true',
                 style: ['large']
             },
-			Instagram: {
-				name: '来ins看图喵 Ins',
+			instagram: {
+				name: 'Instagram',
 				type: 'js',
 				icon:'instagram',
 				value: 'instagram.js',
@@ -106,15 +106,15 @@ var config = {
                 value: './fw/stagevideos/01.html',
                 style: ['large']
             },
-			哔哩哔哩Bilibili: {
-				name: '来b站听唱歌喵 bili',
+			bilibili: {
+				name: '哔哩哔哩Bilibili',
         		type: 'js',
 				icon:'bilibili',
         		value: 'bilibili.js',
 				style: ['ultrasmall']
 			},
-			YouTube: {
-				name: '去yt看舞台喵 YT',
+			youtube: {
+				name: 'YouTube',
         		type: 'js',
 				icon:'youtube',
         		value: 'youtube.js',
@@ -651,31 +651,36 @@ var config = {
         type: 'folder',
 		icon:'radio',
         value: {
-			X: {
+			x: {
+				name: 'X',
 				type: 'js',
 				icon:'x',
 				value: 'x.js',
 				style: ['ultrasmall']
 			},
-			Telegram: {
+			telegram: {
+				name: 'Telegram',
         		type: 'js',
 				icon:'telegram',
         		value: 'telegram.js',
 				style: ['ultrasmall']
     		},
-    		Instagram: {
+    		instagram: {
+				name: 'Instagram',
 				type: 'js',
 				icon:'instagram',
 				value: 'instagram.js',
 				style: ['ultrasmall']
 			},
-			Threads: {
+			threads: {
+				name: 'Threads',
 				type: 'js',
 				icon:'threads',
 				value: 'threads.js',
 				style: ['ultrasmall']
     		},
-    		哔哩哔哩Bilibili: {
+    		bilibili: {
+				name: '哔哩哔哩Bilibili',
         		type: 'js',
 				icon:'bilibili',
         		value: 'bilibili.js',
