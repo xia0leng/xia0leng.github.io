@@ -588,7 +588,7 @@ var config = {
 	liyuu: {
         name: 'Liyuu',
         type: 'folder',
-		icon:'liyuu',
+		icon:'liq',
         value: {
             internet8: {
                 name: 'L²S²',
