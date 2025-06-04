@@ -698,10 +698,13 @@ const htmlConfig = {
     <p>请多多关注小冷吧~<br>
     Please pay more attention to Xiaoleng~</p>`,
 	notice: `
-    <p>这里是每天都在追逐星光梦想的你最可爱的小冷<br>
-    I am your cutest Xiaoleng, chasing the dreams of starlight every day.</p>
-    <p>请多多关注小冷吧~<br>
-    Please pay more attention to Xiaoleng~</p>`,
+    <p>小冷有点难过喵 🥺<br>
+	照片、舞台录像、Liq™和 支持 / 联系，在大陆网络下是打不开的……<br>
+    I feel a bit sad, nya 🥺<br>
+	Photos, Stage Videos, Liq™ and Support / Contact aren’t available under mainland China’s network...</p>
+    <p>要不要试试 ✨开个VPN✨ 或用国外网络，就可以一起玩辣！<br>
+    Try using a VPN or a foreign network—   
+	and everything will open up like magic! ✨ </p>`,
 	event05: `
     <p>小冷6月20日在上海AC漫展有演出！<br>
     I’ll perform at Shanghai AC on June 20!</p>
