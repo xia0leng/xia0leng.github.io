@@ -817,11 +817,6 @@ function prepareDom() {
     document.body.appendChild(template.content);
 }
 
-window.addEventListener('DOMContentLoaded', () => {
-  const fallback = document.getElementById('fallback');
-  if (fallback) fallback.remove();
-});
-
 function putWindowOnTop(window) {
     const allWindows = document.querySelectorAll('.window');
     for (const w of allWindows) {
@@ -1220,6 +1215,10 @@ async function loadDesktop() {
             location.href = '/error';
         }
     }
+	window.addEventListener('DOMContentLoaded', () => {
+  	const fallback = document.getElementById('fallback');
+  	if (fallback) fallback.remove();
+	});
 }
 
 async function loadCounter(counterUrl) {
