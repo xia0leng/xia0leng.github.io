@@ -8,7 +8,7 @@ var config = {
         link: ['entry', 'icon'],
         icon: 'help'
     },
-	notice: {
+	alert: {
         name: '提示 Alert',
         type: 'md',
         value: 'notice',
@@ -679,7 +679,7 @@ const htmlConfig = {
     Also, come get to know Xiaoleng, your cutest idol.</p>
     <p>请多多关注小冷吧~<br>
     Please pay more attention to Xiaoleng~</p>`,
-	notice: `
+	alert: `
     <p>这里是每天都在追逐星光梦想的你最可爱的小冷<br>
     I am your cutest Xiaoleng, chasing the dreams of starlight every day.</p>
     <p>请多多关注小冷吧~<br>
