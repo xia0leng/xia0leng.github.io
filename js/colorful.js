@@ -74,6 +74,7 @@ var config = {
 				type: 'js',
 				icon:'instagram',
 				value: 'instagram.js',
+				external: true,
 				style: ['ultrasmall']
 			},
         },
@@ -113,6 +114,7 @@ var config = {
         		type: 'js',
 				icon:'bilibili',
         		value: 'bilibili.js',
+				external: true,
 				style: ['ultrasmall']
 			},
 			youtube: {
@@ -121,6 +123,7 @@ var config = {
         		type: 'js',
 				icon:'youtube',
         		value: 'youtube.js',
+				external: true,
 				style: ['ultrasmall']
     		},
         },
@@ -483,6 +486,7 @@ var config = {
                 type: 'js',
 				icon:'odw',
                 value: 'odw.js',
+				external: true,
                 style: ['ultrasmall']
             }
         },
@@ -536,6 +540,7 @@ var config = {
                 type: 'js',
 				icon:'bitmex',
                 value: 'bitmexapp.js',
+				external: true,
                 style: ['ultrasmall']
             },
 			internet9: {
@@ -543,6 +548,7 @@ var config = {
                 type: 'js',
 				icon:'bitmex',
                 value: 'bitmexsignup.js',
+				external: true,
                 style: ['ultrasmall']
             },
 			internet10: {
@@ -550,6 +556,7 @@ var config = {
                 type: 'js',
 				icon:'telegram',
                 value: 'bitmexchinese.js',
+				external: true,
                 style: ['ultrasmall']
             },
 			internet11: {
@@ -557,6 +564,7 @@ var config = {
                 type: 'js',
 				icon:'authenticator',
                 value: 'authenticatorandroid.js',
+				external: true,
                 style: ['ultrasmall']
             },
 			internet12: {
@@ -564,6 +572,7 @@ var config = {
                 type: 'js',
 				icon:'authenticator',
                 value: 'authenticatorios.js',
+				external: true,
                 style: ['ultrasmall']
             },
         },
@@ -659,6 +668,7 @@ var config = {
 				type: 'js',
 				icon:'x',
 				value: 'x.js',
+				external: true,
 				style: ['ultrasmall']
 			},
 			telegram: {
@@ -666,6 +676,7 @@ var config = {
         		type: 'js',
 				icon:'telegram',
         		value: 'telegram.js',
+				external: true,
 				style: ['ultrasmall']
     		},
     		instagram: {
@@ -673,6 +684,7 @@ var config = {
 				type: 'js',
 				icon:'instagram',
 				value: 'instagram.js',
+				external: true,
 				style: ['ultrasmall']
 			},
 			threads: {
@@ -680,6 +692,7 @@ var config = {
 				type: 'js',
 				icon:'threads',
 				value: 'threads.js',
+				external: true,
 				style: ['ultrasmall']
     		},
     		bilibili: {
@@ -687,6 +700,7 @@ var config = {
         		type: 'js',
 				icon:'bilibili',
         		value: 'bilibili.js',
+				external: true,
 				style: ['ultrasmall']
 			},
         },
@@ -1099,13 +1113,37 @@ function makeIcon(key, action) {
         icon = 'exe';
 	}
     const template = document.createElement('template');
-    template.innerHTML = `
-        <div class="iconwrap">
-            <div class="icon">
-                <img src="./images/${icon}.png" alt="${icon}">
-                <div class="tag">${name}</div>
-            </div>
-        </div>`;
+
+	template.innerHTML = `
+    	<div class="iconwrap">
+        	<div class="icon">
+            	<img src="./images/${icon}.png" alt="${icon}">
+            	<div class="tag">${name}</div>
+        	</div>
+    	</div>`;
+
+	// 后处理：添加快捷方式箭头
+	const iconEl = template.content.querySelector('.icon');
+	const imgEl = iconEl.querySelector('img');
+
+	// 包装 img 成一个可定位容器
+	const wrapper = document.createElement('div');
+	wrapper.style.position = 'relative';
+	wrapper.style.display = 'inline-block';
+	wrapper.appendChild(imgEl); // 把 img 移进去
+
+	// 添加箭头
+	if (action && action.external) {
+		const arrow = document.createElement('div');
+    	arrow.className = 'shortcut-arrow';
+    	arrow.textContent = '↗';
+    	wrapper.appendChild(arrow);
+	}
+
+	// 插回原来位置
+	iconEl.insertBefore(wrapper, iconEl.firstChild);
+
+
     if (action.type) {
         template.content.querySelector('.icon').addEventListener('click', (ev) => { console.log(key, action); execute(key, action); });
     }

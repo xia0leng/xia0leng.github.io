@@ -113,6 +113,26 @@ iframe {
   image-rendering: pixelated;
 }
 
+.iconwrap > .icon > div > img {
+  width: 48px;
+  height: 48px;
+  image-rendering: pixelated;
+}
+
+.shortcut-arrow {
+  position: absolute;
+  left: 2px;
+  bottom: 2px;
+  font-size: 11px;
+  font-weight: bold;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 0px 2px;
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 10;
+}
+
 .iconwrap > .icon > .tag {
   font-size: 16px;
   line-height: 115%;
