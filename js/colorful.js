@@ -1229,10 +1229,10 @@ async function loadCounter(counterUrl) {
     document.querySelector('.status').appendChild(divCounter);
 }
 
-prepareDom();
-loadDesktop();
-
 window.addEventListener('DOMContentLoaded', () => {
   const fallback = document.getElementById('fallback');
   if (fallback) fallback.remove();
 });
+
+prepareDom();
+loadDesktop();
