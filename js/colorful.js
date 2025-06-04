@@ -915,6 +915,7 @@ function createWindow(title, content, config) {
 
 function execute(key, action) {
     let name = key;
+	let windowTitle = action.title || action.name;
     if (action.name) {
         name = action.name;
     }
@@ -927,7 +928,7 @@ function execute(key, action) {
         html: () => {
             const template = document.createElement('template');
             template.innerHTML = action.value;
-            createWindow(name, template.content, config);
+            createWindow(windowTitle, template.content, config);
         },
         okusuri: () => {
             let hash = action.hash;
@@ -942,7 +943,7 @@ function execute(key, action) {
                 action.value[file].hash = hash + '/' + file;
                 template.content.querySelector('.folder').appendChild(makeIcon(file, action.value[file]));
             }
-            createWindow(name, template.content, config);
+            createWindow(windowTitle, template.content, config);
         },
         youxi: () => {
             let hash = action.hash;
@@ -957,7 +958,7 @@ function execute(key, action) {
                 action.value[file].hash = hash + '/' + file;
                 template.content.querySelector('.folder').appendChild(makeIcon(file, action.value[file]));
             }
-            createWindow(name, template.content, config);
+            createWindow(windowTitle, template.content, config);
         },
         sex: () => {
             let hash = action.hash;
@@ -972,7 +973,7 @@ function execute(key, action) {
                 action.value[file].hash = hash + '/' + file;
                 template.content.querySelector('.folder').appendChild(makeIcon(file, action.value[file]));
             }
-            createWindow(name, template.content, config);
+            createWindow(windowTitle, template.content, config);
         },
         123: async () => {
             console.log(111111);
@@ -980,7 +981,7 @@ function execute(key, action) {
             console.log(response, 'jhgf');
             const template = document.createElement('template');
             template.innerHTML = await response.text();
-            createWindow(name, template.content, config);
+            createWindow(windowTitle, template.content, config);
         },
         game: async () => {
             console.log(111111);
@@ -988,7 +989,7 @@ function execute(key, action) {
             console.log(response, 'jhgf');
             const template = document.createElement('template');
             template.innerHTML = await response.text();
-            createWindow(name, template.content, config);
+            createWindow(windowTitle, template.content, config);
         },
         sese: async () => {
             console.log(111111);
@@ -996,7 +997,7 @@ function execute(key, action) {
             console.log(response, 'jhgf');
             const template = document.createElement('template');
             template.innerHTML = await response.text();
-            createWindow(name, template.content, config);
+            createWindow(windowTitle, template.content, config);
         },
         url: async () => {
             console.log(111111);
@@ -1004,13 +1005,13 @@ function execute(key, action) {
             console.log(response, 'jhgf');
             const template = document.createElement('template');
             template.innerHTML = await response.text();
-            createWindow(name, template.content, config);
+            createWindow(windowTitle, template.content, config);
         },
         md: async () => {
             const response = htmlConfig[action.value];
             const template = document.createElement('template');
             template.innerHTML = response;
-            createWindow(name, template.content, config);
+            createWindow(windowTitle, template.content, config);
         },
         md2: async () => {
             console.log(111111);
@@ -1018,7 +1019,7 @@ function execute(key, action) {
             console.log(response, 'jhgf');
             const template = document.createElement('template');
             template.innerHTML = await response.text();
-            createWindow(name, template.content, config);
+            createWindow(windowTitle, template.content, config);
         },
         folder: () => {
             let hash = action.hash;
@@ -1033,18 +1034,18 @@ function execute(key, action) {
                 action.value[file].hash = hash + '/' + file;
                 template.content.querySelector('.folder').appendChild(makeIcon(file, action.value[file]));
             }
-            createWindow(name, template.content, config);
+            createWindow(windowTitle, template.content, config);
         },
         iframe: () => {
             const iframe = document.createElement('iframe');
             iframe.setAttribute('src', `${action.value}`);
             iframe.setAttribute('scrolling', 'no');
-            createWindow(name, iframe, config);
+            createWindow(windowTitle, iframe, config);
         },
         js: () => {
             const script = document.createElement('script');
             script.setAttribute('src', `../js/${action.value}`);
-            const newWindow = createWindow(name, null, config);
+            const newWindow = createWindow(windowTitle, null, config);
             window.root = newWindow.children[1];
             newWindow.appendChild(script);
         }
