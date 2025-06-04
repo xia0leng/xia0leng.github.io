@@ -1231,8 +1231,3 @@ async function loadCounter(counterUrl) {
 
 prepareDom();
 loadDesktop();
-
-try {
-  const fbEl = document.getElementById('fallback');
-  if (fbEl) fbEl.style.display = 'none';
-} catch (e) {}
