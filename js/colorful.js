@@ -9,7 +9,7 @@ var config = {
         icon: 'help'
     },
 	notice: {
-        name: '提示 Alert',
+        name: '通知 Notice',
         type: 'md',
         value: 'notice',
 		style: ['ultrasmall']
