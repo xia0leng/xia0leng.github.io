@@ -20,6 +20,24 @@ var config = {
         value: 'event05',
 		style: ['ultrasmall'],
     },
+	emotional01: {
+        name: '警告 Alert',
+        type: 'md',
+        value: 'emotional01',
+		style: ['ultrasmall'],
+    },
+	emotional02: {
+        name: '警告 Alert',
+        type: 'md',
+        value: 'emotional02',
+		style: ['ultrasmall'],
+    },
+	emotional03: {
+        name: '警告 Alert',
+        type: 'md',
+        value: 'emotional03',
+		style: ['ultrasmall'],
+    },
 	photos: {
         name: '照片 Photos',
         type: 'folder',
@@ -689,6 +707,15 @@ const htmlConfig = {
     I’ll perform at Shanghai AC on June 20!</p>
     <p>来找我玩喵~<br>
      Come and see me~</p>`,
+	emotional01: `
+    <p>要喜欢小冷喵~<br>
+     Please like me a lot, nya~</p>`,
+	emotional02: `
+    <p>最喜欢你了！<br>
+     I like you the most!</p>`,
+	emotional03: `
+    <p>你没有超级超级喜欢小冷，气气喵<br>
+     You did not super super like me, I’m mad now</p>`,
 }
 const urlConfig = {'pasta.html': 'pasta.html'};
 let windowId = 0;
