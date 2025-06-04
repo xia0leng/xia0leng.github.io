@@ -69,8 +69,8 @@ var config = {
                 style: ['large']
             },
 			instagram: {
-				name: '来ins看图喵',
-				title: 'Instagram Ins',
+				name: '来ins看图喵 Ins',
+				title: 'Instagram',
 				type: 'js',
 				icon:'instagram',
 				value: 'instagram.js',
