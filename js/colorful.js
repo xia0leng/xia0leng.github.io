@@ -742,6 +742,15 @@ var config = {
     }
 };
 
+
+// 如果浏览器不支持 :has 选择器，说明是旧版（例如 Chrome 107、Safari 15 以下）
+const isOldBrowser = !CSS.supports("selector(:has(*))");
+
+// 禁用欢迎弹窗，避免遮挡 fallback 提示
+if (isOldBrowser && config.readme) {
+  config.readme.start = false;
+}
+
 const htmlConfig = {
     readme: `<h1 style="line-height: 100%; margin-block-start: 0.5em; margin-block-end: 0.05em;">欢迎来到小冷官方网站</h1>
     <h2 style="line-height: 100%; margin-block-start: 0em; margin-block-end: 0em;">Welcome to Xiaoleng Official Website</h2>
