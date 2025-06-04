@@ -1134,10 +1134,11 @@ function makeIcon(key, action) {
 
 	// 添加箭头
 	if (action && action.external) {
-		const arrow = document.createElement('div');
-    	arrow.className = 'shortcut-arrow';
-    	arrow.textContent = '↗';
-    	wrapper.appendChild(arrow);
+		const arrow = document.createElement('img');
+		arrow.src = './images/externel.png';
+		arrow.alt = 'external';
+		arrow.className = 'shortcut-arrow';
+		wrapper.appendChild(arrow);
 	}
 
 	// 插回原来位置
