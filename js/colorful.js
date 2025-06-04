@@ -720,7 +720,7 @@ var config = {
         name: '通知 Notice',
         type: 'md',
         value: 'notice',
-		style: ['ultrasmall']
+		style: ['install']
     },
 	emotional01: {
         name: '警告 Alert',
