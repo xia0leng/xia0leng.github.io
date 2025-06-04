@@ -698,9 +698,9 @@ const htmlConfig = {
     <p>请多多关注小冷吧~<br>
     Please pay more attention to Xiaoleng~</p>`,
 	notice: `
-    <p>说起来…照片、舞台录像、Liq™和 支持 / 联系，在大陆网络下是打不开的🥺<br>
-	Btw...Photos, Stage Videos, Liq™ and Support / Contact aren’t available under mainland China’s network. 🥺</p>
-    <p>要不要试试 ✨开个VPN✨ 或用国外网络，就可以一起玩辣！<br>
+    <p>说起来…网站上的很多功能，在大陆网络下是打不开的🥺<br>
+	Btw... Many features on this site aren’t available under mainland China’s network. 🥺</p>
+    <p>要不要试试 ✨开个VPN✨ 或用国外网络，就可以和小冷一起玩辣！<br>
     Try using a VPN or a foreign network—   
 	and everything will open up like magic! ✨</p>`,
 	event05: `
