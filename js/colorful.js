@@ -817,6 +817,11 @@ function prepareDom() {
     document.body.appendChild(template.content);
 }
 
+window.addEventListener('DOMContentLoaded', () => {
+  const fallback = document.getElementById('fallback');
+  if (fallback) fallback.remove();
+});
+
 function putWindowOnTop(window) {
     const allWindows = document.querySelectorAll('.window');
     for (const w of allWindows) {
@@ -1228,11 +1233,6 @@ async function loadCounter(counterUrl) {
     }
     document.querySelector('.status').appendChild(divCounter);
 }
-
-window.addEventListener('DOMContentLoaded', () => {
-  const fallback = document.getElementById('fallback');
-  if (fallback) fallback.remove();
-});
 
 prepareDom();
 loadDesktop();
