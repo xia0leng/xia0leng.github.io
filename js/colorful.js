@@ -69,7 +69,8 @@ var config = {
                 style: ['large']
             },
 			instagram: {
-				name: 'Instagram',
+				name: '来ins看图喵',
+				title: 'Instagram Ins',
 				type: 'js',
 				icon:'instagram',
 				value: 'instagram.js',
@@ -107,14 +108,16 @@ var config = {
                 style: ['large']
             },
 			bilibili: {
-				name: '哔哩哔哩Bilibili',
+				name: '来b站听唱歌喵 bili',
+				title: '哔哩哔哩 Bilibili',
         		type: 'js',
 				icon:'bilibili',
         		value: 'bilibili.js',
 				style: ['ultrasmall']
 			},
 			youtube: {
-				name: 'YouTube',
+				name: '去yt看舞台喵 YT',
+				title: 'YouTube',
         		type: 'js',
 				icon:'youtube',
         		value: 'youtube.js',
@@ -680,7 +683,7 @@ var config = {
 				style: ['ultrasmall']
     		},
     		bilibili: {
-				name: '哔哩哔哩Bilibili',
+				name: '哔哩哔哩 Bilibili',
         		type: 'js',
 				icon:'bilibili',
         		value: 'bilibili.js',
