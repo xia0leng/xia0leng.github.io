@@ -69,7 +69,7 @@ var config = {
                 style: ['large']
             },
 			Instagram: {
-				name: '来ins看图喵 Instagram',
+				name: '来ins看图喵 Ins',
 				type: 'js',
 				icon:'instagram',
 				value: 'instagram.js',
@@ -107,14 +107,14 @@ var config = {
                 style: ['large']
             },
 			哔哩哔哩Bilibili: {
-				name: '来b站听唱歌喵',
+				name: '来b站听唱歌喵 bili',
         		type: 'js',
 				icon:'bilibili',
         		value: 'bilibili.js',
 				style: ['ultrasmall']
 			},
 			YouTube: {
-				name: '去yt看舞台喵 Youtube',
+				name: '去yt看舞台喵 YT',
         		type: 'js',
 				icon:'youtube',
         		value: 'youtube.js',
