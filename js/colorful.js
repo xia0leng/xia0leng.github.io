@@ -1215,10 +1215,6 @@ async function loadDesktop() {
             location.href = '/error';
         }
     }
-	window.addEventListener('DOMContentLoaded', () => {
-  	const fallback = document.getElementById('fallback');
-  	if (fallback) fallback.remove();
-	});
 }
 
 async function loadCounter(counterUrl) {
@@ -1235,3 +1231,8 @@ async function loadCounter(counterUrl) {
 
 prepareDom();
 loadDesktop();
+
+try {
+  const fbEl = document.getElementById('fallback');
+  if (fbEl) fbEl.style.display = 'none';
+} catch (e) {}
