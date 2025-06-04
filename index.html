@@ -89,7 +89,14 @@ color:blue;
 font-size: 16px;
         }  
     </style>
-  
+
+	    <style>  
+        @supports (display: grid) {
+  #fallback{
+    display: none;
+  }
+}
+    </style>
   
 </head>
 
