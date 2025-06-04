@@ -1231,3 +1231,8 @@ async function loadCounter(counterUrl) {
 
 prepareDom();
 loadDesktop();
+
+window.addEventListener('DOMContentLoaded', () => {
+  const fallback = document.getElementById('fallback');
+  if (fallback) fallback.remove();
+});
