@@ -4,6 +4,7 @@ var config = {
         name: '欢迎 Welcome',
         type: 'md',
         value: 'readme',
+		urlPath: '/',
         style: ['medium'],
         link: ['entry', 'icon'],
         icon: 'help'
@@ -751,6 +752,19 @@ if (isOldBrowser && config.readme) {
   config.readme.start = false;
 }
 
+// ✅ 自动获取 colorful.js 所在目录，并指向对应的 images 目录
+const baseImagePath = (() => {
+  const scripts = document.getElementsByTagName('script');
+  for (let s of scripts) {
+    if (s.src && s.src.includes('colorful.js')) {
+      const url = new URL(s.src, location.href);
+      url.pathname = url.pathname.replace(/\/[^/]+$/, '/../images/');
+      return url.href;
+    }
+  }
+  return '../images/';
+})();
+
 const htmlConfig = {
     readme: `<h1 style="line-height: 100%; margin-block-start: 0.5em; margin-block-end: 0.05em;">欢迎来到小冷官方网站</h1>
     <h2 style="line-height: 100%; margin-block-start: 0em; margin-block-end: 0em;">Welcome to Xiaoleng Official Website</h2>
@@ -788,6 +802,8 @@ const htmlConfig = {
 }
 const urlConfig = {'pasta.html': 'pasta.html'};
 let windowId = 0;
+
+const resolvePath = (key, action) => action.urlPath || ('/' + key);
 
 function prepareDom() {
     const template = document.createElement('template');
@@ -839,6 +855,8 @@ function putWindowOnTop(window) {
         activeTask.classList.remove('active');
     }
     document.getElementById(`t${window.id.slice(1)}`).classList.add('active');
+	const path = window.dataset.urlPath || '/';
+	history.pushState({}, '', path);
 }
 
 function makeWindow(title, style) {
@@ -892,6 +910,7 @@ function makeWindow(title, style) {
     template.content.querySelector('.minimize').addEventListener('click', (ev) => {
         document.getElementById(`t${divWindow.id.slice(1)}`).classList.remove('active');
         divWindow.style.display = 'none';
+		updatePathForNoWindows();
     });
 
     function maximizeFn(ev) {
@@ -908,17 +927,19 @@ function makeWindow(title, style) {
     template.content.querySelector('.close').addEventListener('click', (ev) => {
         document.getElementById(`t${divWindow.id.slice(1)}`).remove();
         divWindow.remove();
+		updatePathForNoWindows();
     });
 
     return divWindow;
 }
 
-function createWindow(title, content, config) {
+function createWindow(title, content, config, urlPath = '/') {
     const style = config && config.style ? config.style : [];
     const divWindow = makeWindow(title, style);
     if (content) {
         divWindow.children[1].appendChild(content);
     }
+	divWindow.dataset.urlPath = urlPath;
     document.querySelector('.desktop').appendChild(divWindow);
     divWindow.style.left = `${Math.floor(0.5 * Math.random() * (document.querySelector('.arena').offsetWidth - divWindow.offsetWidth))}px`;
     divWindow.style.top = `${Math.floor(0.33 * Math.random() * (document.querySelector('.arena').offsetHeight - divWindow.offsetHeight))}px`;
@@ -936,7 +957,7 @@ function createWindow(title, content, config) {
     return divWindow;
 }
 
-function execute(key, action) {
+function execute(key, action, urlPath = resolvePath(key, action)) {
     let name = key;
 	let windowTitle = action.title || action.name;
     if (action.name) {
@@ -947,11 +968,13 @@ function execute(key, action) {
         config.style = action.style;
     }
     const handler = {
-        text: () => { createWindow(name, document.createTextNode(action.value), config); },
+        text: () => { 
+			createWindow(name, document.createTextNode(action.value), config, urlPath);
+		},
         html: () => {
             const template = document.createElement('template');
             template.innerHTML = action.value;
-            createWindow(windowTitle, template.content, config);
+            createWindow(windowTitle, template.content, config, urlPath);
         },
         okusuri: () => {
             let hash = action.hash;
@@ -966,37 +989,7 @@ function execute(key, action) {
                 action.value[file].hash = hash + '/' + file;
                 template.content.querySelector('.folder').appendChild(makeIcon(file, action.value[file]));
             }
-            createWindow(windowTitle, template.content, config);
-        },
-        youxi: () => {
-            let hash = action.hash;
-            if (!hash) { hash = '#' + key; }
-            const desc = action.desc ? action.desc : '';
-            const template = document.createElement('template');
-            template.innerHTML = `
-                <div class="folder-meta"><span>${name}</span><span>${hash}</span></div>
-                <div class="folder-desc">${desc}</div>
-                <div class="folder"></div>`;
-            for (const file in action.value) {
-                action.value[file].hash = hash + '/' + file;
-                template.content.querySelector('.folder').appendChild(makeIcon(file, action.value[file]));
-            }
-            createWindow(windowTitle, template.content, config);
-        },
-        sex: () => {
-            let hash = action.hash;
-            if (!hash) { hash = '#' + key; }
-            const desc = action.desc ? action.desc : '';
-            const template = document.createElement('template');
-            template.innerHTML = `
-                <div class="folder-meta"><span>${name}</span><span>${hash}</span></div>
-                <div class="folder-desc">${desc}</div>
-                <div class="folder"></div>`;
-            for (const file in action.value) {
-                action.value[file].hash = hash + '/' + file;
-                template.content.querySelector('.folder').appendChild(makeIcon(file, action.value[file]));
-            }
-            createWindow(windowTitle, template.content, config);
+            createWindow(windowTitle, template.content, config, urlPath);
         },
         123: async () => {
             console.log(111111);
@@ -1004,23 +997,7 @@ function execute(key, action) {
             console.log(response, 'jhgf');
             const template = document.createElement('template');
             template.innerHTML = await response.text();
-            createWindow(windowTitle, template.content, config);
-        },
-        game: async () => {
-            console.log(111111);
-            const response = await fetch(`${action.value}`);
-            console.log(response, 'jhgf');
-            const template = document.createElement('template');
-            template.innerHTML = await response.text();
-            createWindow(windowTitle, template.content, config);
-        },
-        sese: async () => {
-            console.log(111111);
-            const response = await fetch(`${action.value}`);
-            console.log(response, 'jhgf');
-            const template = document.createElement('template');
-            template.innerHTML = await response.text();
-            createWindow(windowTitle, template.content, config);
+            createWindow(windowTitle, template.content, config, urlPath);
         },
         url: async () => {
             console.log(111111);
@@ -1028,13 +1005,13 @@ function execute(key, action) {
             console.log(response, 'jhgf');
             const template = document.createElement('template');
             template.innerHTML = await response.text();
-            createWindow(windowTitle, template.content, config);
+            createWindow(windowTitle, template.content, config, urlPath);
         },
         md: async () => {
             const response = htmlConfig[action.value];
             const template = document.createElement('template');
             template.innerHTML = response;
-            createWindow(windowTitle, template.content, config);
+            createWindow(windowTitle, template.content, config, urlPath);
         },
         md2: async () => {
             console.log(111111);
@@ -1042,7 +1019,7 @@ function execute(key, action) {
             console.log(response, 'jhgf');
             const template = document.createElement('template');
             template.innerHTML = await response.text();
-            createWindow(windowTitle, template.content, config);
+            createWindow(windowTitle, template.content, config, urlPath);
         },
         folder: () => {
             let hash = action.hash;
@@ -1057,18 +1034,18 @@ function execute(key, action) {
                 action.value[file].hash = hash + '/' + file;
                 template.content.querySelector('.folder').appendChild(makeIcon(file, action.value[file]));
             }
-            createWindow(windowTitle, template.content, config);
+            createWindow(windowTitle, template.content, config, urlPath);
         },
         iframe: () => {
             const iframe = document.createElement('iframe');
             iframe.setAttribute('src', `${action.value}`);
             iframe.setAttribute('scrolling', 'no');
-            createWindow(windowTitle, iframe, config);
+            createWindow(windowTitle, iframe, config, urlPath);
         },
         js: () => {
             const script = document.createElement('script');
             script.setAttribute('src', `../js/${action.value}`);
-            const newWindow = createWindow(windowTitle, null, config);
+            const newWindow = createWindow(windowTitle, null, config, urlPath);
             window.root = newWindow.children[1];
             newWindow.appendChild(script);
         }
@@ -1106,30 +1083,24 @@ function makeIcon(key, action) {
         icon = 'folder';
     } else if (action.type == '123') {
         icon = '123';
-    } else if (action.type == 'youxi') {
-        icon = 'youxi';
-    } else if (action.type == 'sex') {
-        icon = 'sex';
     } else if (action.type == 'okusuri') {
         icon = 'okusuri';
     } else if (action.type == 'url') {
         icon = 'url';
     } else if (action.type == 'iframe') {
         icon = 'url';
-    } else if (action.type == 'game') {
-        icon = 'game';
     } else if (action.type == 'js') {
         icon = 'exe';
 	}
     const template = document.createElement('template');
 
 	template.innerHTML = `
-    	<div class="iconwrap">
-        	<div class="icon">
-            	<img src="./images/${icon}.png" alt="${icon}">
-            	<div class="tag">${name}</div>
-        	</div>
-    	</div>`;
+    <div class="iconwrap">
+        <div class="icon">
+            <img src="${baseImagePath}${icon}.png" alt="${icon}">
+            <div class="tag">${name}</div>
+        </div>
+    </div>`;
 
 	// 后处理：添加快捷方式箭头
 	const iconEl = template.content.querySelector('.icon');
@@ -1155,7 +1126,7 @@ function makeIcon(key, action) {
 
 
     if (action.type) {
-        template.content.querySelector('.icon').addEventListener('click', (ev) => { console.log(key, action); execute(key, action); });
+        template.content.querySelector('.icon').addEventListener('click', (ev) => { execute(key, action, resolvePath(key, action)); });
     }
     return template.content;
 }
@@ -1181,30 +1152,43 @@ function processConfig1(config, startUp) {
     }
 }
 
-function processConfig(config, startUp) {
+function processConfig(config, startUp, parentPath = '') {
     for (const key in config) {
         const value = config[key];
-        if (value.type == 'folder') {
-            processConfig(value.value, startUp);
+
+        // 自动生成完整路径（除非已写 urlPath）
+        const fullPath = parentPath + '/' + key;
+        if (!value.urlPath) {
+            value.urlPath = fullPath;
         }
+
+		// ✅ 若是嵌套结构（文件夹或药物结构），递归处理其内容
+		const nestedTypes = ['folder', 'okusuri'];
+		if (nestedTypes.includes(value.type)) {
+    		processConfig(value.value, startUp, fullPath);
+		}
+
+        // 添加入口和图标
         if (value.link) {
             for (const link of value.link) {
-                if (link == 'entry') {
+                if (link === 'entry') {
                     createEntry(key, value);
-                } else if (link == 'icon') {
+                } else if (link === 'icon') {
                     document.querySelector('.desktop').appendChild(makeIcon(key, value));
                 }
             }
         }
+
+        // 启动窗口（首次加载）
         if (startUp && value.start) {
-            execute(key, value);
+            execute(key, value, value.urlPath);
         }
     }
 }
 
 async function loadDesktop() {
     const path = location.hash ? decodeURI(location.hash.slice(1)).split('/') : null;
-    processConfig(config, !path);
+    processConfig(config, !path, '');
     if (path) {
         const traverse = { key: null, value: null, next: config };
         let error = false;
@@ -1240,3 +1224,28 @@ async function loadCounter(counterUrl) {
 
 prepareDom();
 loadDesktop();
+
+window.addEventListener('popstate', () => {
+  const path = location.pathname;
+
+  // 先关闭所有窗口
+  document.querySelectorAll('.window').forEach(win => win.remove());
+
+  // 找出路径对应的 config key，比如 '/odwiki' => 'medication'
+  const key = path.split('/')[1]; // eg. 'odwiki'
+  if (!key) return;
+
+  const action = config[key];
+  if (action) {
+    action.hash = `#${key}`;
+    execute(key, action, path);
+  }
+});
+
+function updatePathForNoWindows() {
+    const windows = document.querySelectorAll('.window');
+    const visible = [...windows].some(w => w.style.display !== 'none');
+    if (!visible) {
+        history.pushState({}, '', '/');
+    }
+}
