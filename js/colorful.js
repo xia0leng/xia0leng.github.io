@@ -950,7 +950,6 @@ function makeWindow(title, style) {
 function createWindow(title, content, config, urlPath = '/') {
     const style = config && config.style ? config.style : [];
     const divWindow = makeWindow(title, style);
-	divWindow.dataset.urlPath = urlPath;  // 每次重设，避免叠加
     if (content) {
         divWindow.children[1].appendChild(content);
     }
