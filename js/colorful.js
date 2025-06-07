@@ -669,6 +669,7 @@ var config = {
 				type: 'js',
 				icon:'x',
 				value: 'x.js',
+				urlPath: 'x',
 				external: true,
 				style: ['ultrasmall']
 			},
@@ -677,6 +678,7 @@ var config = {
         		type: 'js',
 				icon:'telegram',
         		value: 'telegram.js',
+				urlPath: 'follow-me/telegram',
 				external: true,
 				style: ['ultrasmall']
     		},
