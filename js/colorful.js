@@ -1218,8 +1218,15 @@ async function loadDesktop() {
     if (result) {
         execute(result.key, result.action, location.pathname);
     } else {
-        history.pushState({}, '', '/');
-    }
+    // 若未匹配任何窗口项，显示 GitHub Pages 的 404 页面（地址栏保持不动）
+    const iframe = document.createElement('iframe');
+    iframe.setAttribute('src', '/404');
+    iframe.setAttribute('style', 'width:100%;height:100%;border:none;');
+    const div = document.createElement('div');
+    div.appendChild(iframe);
+    createWindow('404 Not Found', div, { style: ['medium'] }, location.pathname);
+  }
+
 }
 
 async function loadCounter(counterUrl) {
@@ -1249,9 +1256,16 @@ window.addEventListener('popstate', () => {
 
   if (result) {
     execute(result.key, result.action, location.pathname);
-  } else {
-    history.pushState({}, '', '/'); // 未匹配，返回首页
-  }
+      } else {
+        // 若未匹配任何窗口项，显示 GitHub Pages 的 404 页面（地址栏保持不动）
+        const iframe = document.createElement('iframe');
+        iframe.setAttribute('src', '/404');
+        iframe.setAttribute('style', 'width:100%;height:100%;border:none;');
+        const div = document.createElement('div');
+        div.appendChild(iframe);
+        createWindow('404 Not Found', div, { style: ['medium'] }, location.pathname);
+    }
+
 });
 
 function updatePathForNoWindows() {
