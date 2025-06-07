@@ -1218,21 +1218,20 @@ async function loadDesktop() {
     if (result) {
         execute(result.key, result.action, location.pathname);
     } else {
-    // 若未匹配任何窗口项，显示 GitHub Pages 的 404 页面（地址栏保持不动）
-		const res = await fetch('/404.html');
-        const html = await res.text();
+    	// 若未匹配任何窗口项，显示 GitHub Pages 的 404 页面（地址栏保持不动）
+       	fetch('/404.html')
+            .then(res => res.text())
+            .then(html => {
+                const bodyStart = html.indexOf('<body');
+                const bodyOpen = html.indexOf('>', bodyStart) + 1;
+                const bodyEnd = html.indexOf('</body>');
+                const bodyContent = html.slice(bodyOpen, bodyEnd).trim() || '<p>404 Not Found</p>';
 
-        // 安全提取 <body> 内内容
-        const bodyStart = html.indexOf('<body');
-        const bodyOpen = html.indexOf('>', bodyStart) + 1;
-        const bodyEnd = html.indexOf('</body>');
-        const bodyContent = html.slice(bodyOpen, bodyEnd).trim() || '<p>404 Not Found</p>';
+                const template = document.createElement('template');
+                template.innerHTML = bodyContent;
 
-        const template = document.createElement('template');
-        template.innerHTML = bodyContent;
-
-        createWindow('404 Not Found', template.content, { style: ['medium'] }, location.pathname);
-    	}
+                createWindow('404 Not Found', template.content, { style: ['medium'] }, location.pathname);
+            });
 	}
 
 async function loadCounter(counterUrl) {
@@ -1263,21 +1262,21 @@ window.addEventListener('popstate', () => {
   if (result) {
     execute(result.key, result.action, location.pathname);
       } else {
-        // 若未匹配任何窗口项，显示 GitHub Pages 的 404 页面（地址栏保持不动）
-		const res = await fetch('/404.html');
-        const html = await res.text();
+    	// 若未匹配任何窗口项，显示 GitHub Pages 的 404 页面（地址栏保持不动）
+       	fetch('/404.html')
+            .then(res => res.text())
+            .then(html => {
+                const bodyStart = html.indexOf('<body');
+                const bodyOpen = html.indexOf('>', bodyStart) + 1;
+                const bodyEnd = html.indexOf('</body>');
+                const bodyContent = html.slice(bodyOpen, bodyEnd).trim() || '<p>404 Not Found</p>';
 
-        const bodyStart = html.indexOf('<body');
-        const bodyOpen = html.indexOf('>', bodyStart) + 1;
-        const bodyEnd = html.indexOf('</body>');
-        const bodyContent = html.slice(bodyOpen, bodyEnd).trim() || '<p>404 Not Found</p>';
+                const template = document.createElement('template');
+                template.innerHTML = bodyContent;
 
-        const template = document.createElement('template');
-        template.innerHTML = bodyContent;
-
-        createWindow('404 Not Found', template.content, { style: ['medium'] }, location.pathname);
-    }
-});
+                createWindow('404 Not Found', template.content, { style: ['medium'] }, location.pathname);
+            });
+	  }
 
 function updatePathForNoWindows() {
     const windows = document.querySelectorAll('.window');
