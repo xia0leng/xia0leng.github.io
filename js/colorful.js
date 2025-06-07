@@ -589,11 +589,12 @@ var config = {
         type: 'folder',
 		icon:'liq',
         value: {
-            internet8: {
+            llss: {
                 name: 'L²S²',
                 type: 'iframe',
 				icon:'L²S²',
                 value: './llss/index.html',
+				urlPath: 'llss',
                 style: ['large']
             },
         },
@@ -606,11 +607,12 @@ var config = {
         type: 'folder',
 		icon:'liq',
         value: {
-            internet8: {
+            llss: {
                 name: 'L²S²',
                 type: 'iframe',
 				icon:'L²S²',
                 value: './llss/index.html',
+				urlPath: 'llss',
                 style: ['large']
             },
         },
@@ -622,14 +624,15 @@ var config = {
         type: 'folder',
 		icon:'support',
         value: {
-            internet8: {
+            contact: {
                 name: '联系 Contact',
                 type: 'url',
 				icon:'support',
                 value: './contact.html',
+				urlPath: 'contact',
                 style: ['large']
             },
-            internet9: {
+            pgp: {
                 name: 'PGP Public Key Block',
                 type: 'md2',
                 value: './support/pgp.html',
@@ -649,6 +652,7 @@ var config = {
                 name: '条款和隐私声明 Terms &amp; Privacy Notice',
                 type: 'md2',
                 value: './terms.html',
+				urlPath: 'terms',
                 style: ['large']
             },
             dh: {
@@ -946,6 +950,7 @@ function makeWindow(title, style) {
 function createWindow(title, content, config, urlPath = '/') {
     const style = config && config.style ? config.style : [];
     const divWindow = makeWindow(title, style);
+	divWindow.dataset.urlPath = urlPath;  // 每次重设，避免叠加
     if (content) {
         divWindow.children[1].appendChild(content);
     }
