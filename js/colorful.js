@@ -1206,26 +1206,19 @@ function processConfig(config, startUp, parentPath = '') {
 }
 
 async function loadDesktop() {
-    const path = location.hash ? decodeURI(location.hash.slice(1)).split('/') : null;
-    processConfig(config, !path, '');
-    if (path) {
-        const traverse = { key: null, value: null, next: config };
-        let error = false;
-        for (const frag of path) {
-            if (!frag) { continue; }
-            if (!traverse.next) { error = true; break; }
-            if (traverse.next[frag]) {
-                traverse.key = frag;
-                traverse.value = traverse.next[frag];
-                traverse.next = traverse.value.type == 'folder' ? traverse.value.value : null;
-            } else { error = true; break; }
-        }
-        if (!error) {
-            traverse.value.hash = location.hash;
-            execute(traverse.key, traverse.value);
-        } else {
-            location.href = '/error';
-        }
+    const segments = location.pathname.split('/').filter(Boolean);
+
+    // 初始化 config，生成图标与菜单
+    processConfig(config, segments.length === 0, '');
+
+    if (segments.length === 0) return;
+
+    // 若 pathname 有具体内容，尝试打开对应窗口
+    const result = findActionByPath(segments);
+    if (result) {
+        execute(result.key, result.action, location.pathname);
+    } else {
+        history.pushState({}, '', '/');
     }
 }
 
@@ -1244,20 +1237,20 @@ async function loadCounter(counterUrl) {
 prepareDom();
 loadDesktop();
 
+// ✅ 监听浏览器前进后退，解析 pathname 自动还原窗口
 window.addEventListener('popstate', () => {
-  const path = location.pathname;
+  const segments = location.pathname.split('/').filter(Boolean);
 
-  // 先关闭所有窗口
+  // 关闭所有窗口
   document.querySelectorAll('.window').forEach(win => win.remove());
 
-  // 找出路径对应的 config key，比如 '/odwiki' => 'medication'
-  const key = path.split('/')[1]; // eg. 'odwiki'
-  if (!key) return;
+  // 尝试查找匹配的 config 项
+  const result = findActionByPath(segments);
 
-  const action = config[key];
-  if (action) {
-    action.hash = `#${key}`;
-    execute(key, action, path);
+  if (result) {
+    execute(result.key, result.action, location.pathname);
+  } else {
+    history.pushState({}, '', '/'); // 未匹配，返回首页
   }
 });
 
@@ -1267,4 +1260,33 @@ function updatePathForNoWindows() {
     if (!visible) {
         history.pushState({}, '', '/');
     }
+}
+
+// ✅ 根据 pathname 自动匹配 config 中的 action
+function findActionByPath(pathSegments, cfg = config) {
+  let current = cfg;
+  let key = null;
+  for (let i = 0; i < pathSegments.length; i++) {
+    const segment = pathSegments[i];
+    let matched = false;
+
+    for (const k in current) {
+      const item = current[k];
+      // 比较 path 最后部分是否匹配 urlPath
+      if ((item.urlPath || '').replace(/^\/+/, '') === pathSegments.slice(0, i + 1).join('/')) {
+        key = k;
+        if (i === pathSegments.length - 1) {
+          return { key, action: item };
+        } else if (item.value) {
+          current = item.value;
+          matched = true;
+          break;
+        }
+      }
+    }
+
+    if (!matched) return null;
+  }
+
+  return null;
 }
