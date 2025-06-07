@@ -1151,24 +1151,44 @@ function makeIcon(key, action) {
 }
 
 function processConfig1(config, startUp) {
-    for (const key in config) {
-        const value = config[key];
-        if (value.type == 'folder') {
-            processConfig(value.value, startUp);
-        }
-        if (value.link) {
-            for (const link of value.link) {
-                if (link == 'entry') {
-                    createEntry(key, value);
-                } else if (link == 'icon') {
-                    document.querySelector('.desktop').appendChild(makeIcon(key, value));
-                }
-            }
-        }
-        if (startUp && value.start) {
-            execute(key, value);
-        }
-    }
+	window.addEventListener('DOMContentLoaded', () => {
+	  const segments = location.pathname.split('/').filter(Boolean);
+	  const pathKey = segments[segments.length - 1] || 'readme';
+
+	  const startQueue = [];
+
+	  // ✅ 优先插入 event 弹窗
+	  for (const key of Object.keys(config)) {
+		if (/^event\d+$/.test(key) && config[key].start) {
+		  startQueue.push(key);
+		}
+	  }
+
+	  // ✅ 插入路径对应窗口（如 photos）
+	  if (config[pathKey]?.start && !startQueue.includes(pathKey)) {
+		startQueue.push(pathKey);
+	  }
+
+	  // ✅ 插入 emotional 弹窗（最后执行）
+	  for (const key of Object.keys(config)) {
+		if (/^emotional\d+$/.test(key) && config[key].start) {
+		  startQueue.push(key);
+		}
+	  }
+
+	  // ✅ 执行弹窗，并将其挂在目标窗口下（如 photos）
+	  const delayBetween = 400;
+	  startQueue.forEach((key, i) => {
+		const action = config[key];
+
+		setTimeout(() => {
+		  const parentKey = pathKey;
+		  const parentWin = document.querySelector(`.window[data-key="${parentKey}"]`);
+		  execute(key, action, location.pathname, parentWin);
+		}, i * delayBetween);
+	  });
+	});
+
 }
 
 function processConfig(config, startUp, parentPath = '') {
