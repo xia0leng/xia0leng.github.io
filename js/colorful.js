@@ -630,7 +630,7 @@ var config = {
                 type: 'url',
 				icon:'support',
                 value: './contact.html',
-				urlPath: '/contact',
+				urlPath: 'contact',
                 style: ['large']
             },
             pgp: {
