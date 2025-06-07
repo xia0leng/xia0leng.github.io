@@ -1219,11 +1219,12 @@ async function loadDesktop() {
         execute(result.key, result.action, location.pathname);
     } else {
     // 若未匹配任何窗口项，显示 GitHub Pages 的 404 页面（地址栏保持不动）
-    fetch('/404')
+	fetch('/404')
   		.then(resp => resp.text())
   		.then(html => {
-    		const template = document.createElement('template');
-    		template.innerHTML = html;
+			const bodyContent = html.split('<body')[1]?.split('>')[1]?.split('</body>')[0] || '<p>404 Not Found</p>';
+			const template = document.createElement('template');
+    		template.innerHTML = bodyContent;
     		createWindow('404 Not Found', template.content, { style: ['medium'] }, location.pathname);
   		});
   	}
@@ -1262,8 +1263,9 @@ window.addEventListener('popstate', () => {
         fetch('/404')
   		.then(resp => resp.text())
   		.then(html => {
+			const bodyContent = html.split('<body')[1]?.split('>')[1]?.split('</body>')[0] || '<p>404 Not Found</p>';
     		const template = document.createElement('template');
-    		template.innerHTML = html;
+    		template.innerHTML = bodyContent;
     		createWindow('404 Not Found', template.content, { style: ['medium'] }, location.pathname);
   		});
     }
