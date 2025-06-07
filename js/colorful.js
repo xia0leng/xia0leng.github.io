@@ -1222,11 +1222,16 @@ async function loadDesktop() {
 	fetch('/404')
   		.then(resp => resp.text())
   		.then(html => {
-			const bodyContent = html.split('<body')[1]?.split('>')[1]?.split('</body>')[0] || '<p>404 Not Found</p>';
-			const template = document.createElement('template');
+    		// 尝试只提取 <body>...</body> 内部的 HTML，防止嵌套 <html><head> 出现结构问题
+    		const bodyContent = html.split('<body')[1]?.split('>')[1]?.split('</body>')[0] || '<p>404 Not Found</p>';
+
+    		// 将提取出的内容解析为 DOM 节点
+    		const template = document.createElement('template');
     		template.innerHTML = bodyContent;
+
+    		// 调用 createWindow 插入到 SPA 桌面窗口中
     		createWindow('404 Not Found', template.content, { style: ['medium'] }, location.pathname);
-  		});
+		});
   	}
 
 }
@@ -1260,14 +1265,19 @@ window.addEventListener('popstate', () => {
     execute(result.key, result.action, location.pathname);
       } else {
         // 若未匹配任何窗口项，显示 GitHub Pages 的 404 页面（地址栏保持不动）
-        fetch('/404')
-  		.then(resp => resp.text())
-  		.then(html => {
-			const bodyContent = html.split('<body')[1]?.split('>')[1]?.split('</body>')[0] || '<p>404 Not Found</p>';
-    		const template = document.createElement('template');
-    		template.innerHTML = bodyContent;
-    		createWindow('404 Not Found', template.content, { style: ['medium'] }, location.pathname);
-  		});
+		fetch('/404')
+  			.then(resp => resp.text())
+  			.then(html => {
+    			// 尝试只提取 <body>...</body> 内部的 HTML，防止嵌套 <html><head> 出现结构问题
+    			const bodyContent = html.split('<body')[1]?.split('>')[1]?.split('</body>')[0] || '<p>404 Not Found</p>';
+
+    			// 将提取出的内容解析为 DOM 节点
+    			const template = document.createElement('template');
+    			template.innerHTML = bodyContent;
+
+    			// 调用 createWindow 插入到 SPA 桌面窗口中
+    			createWindow('404 Not Found', template.content, { style: ['medium'] }, location.pathname);
+			});
     }
 });
 
