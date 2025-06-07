@@ -75,6 +75,7 @@ var config = {
 				type: 'js',
 				icon:'instagram',
 				value: 'instagram.js',
+				urlPath: 'instagram',
 				external: true,
 				style: ['ultrasmall']
 			},
@@ -115,6 +116,7 @@ var config = {
         		type: 'js',
 				icon:'bilibili',
         		value: 'bilibili.js',
+				urlPath: 'bilibili',
 				external: true,
 				style: ['ultrasmall']
 			},
@@ -124,6 +126,7 @@ var config = {
         		type: 'js',
 				icon:'youtube',
         		value: 'youtube.js',
+				urlPath: 'youtube',
 				external: true,
 				style: ['ultrasmall']
     		},
@@ -642,16 +645,17 @@ var config = {
         type: 'folder',
 		icon:'legal',
         value: {
-            internet8: {
+            terms: {
                 name: '条款和隐私声明 Terms &amp; Privacy Notice',
                 type: 'md2',
                 value: './terms.html',
                 style: ['large']
             },
-            internet9: {
+            dh: {
                 name: '数据处理要求 Data Handling Requirement',
                 type: 'md2',
                 value: './legal/data-handle.html',
+				urlPath: 'legal/data-handle',
                 style: ['large']
             }
         },
@@ -678,7 +682,7 @@ var config = {
         		type: 'js',
 				icon:'telegram',
         		value: 'telegram.js',
-				urlPath: 'follow-me/telegram',
+				urlPath: 'telegram',
 				external: true,
 				style: ['ultrasmall']
     		},
@@ -686,6 +690,7 @@ var config = {
 				name: 'Instagram',
 				type: 'js',
 				icon:'instagram',
+				urlPath: 'instagram',
 				value: 'instagram.js',
 				external: true,
 				style: ['ultrasmall']
@@ -695,6 +700,7 @@ var config = {
 				type: 'js',
 				icon:'threads',
 				value: 'threads.js',
+				urlPath: 'threads',
 				external: true,
 				style: ['ultrasmall']
     		},
@@ -703,6 +709,7 @@ var config = {
         		type: 'js',
 				icon:'bilibili',
         		value: 'bilibili.js',
+				urlPath: 'bilibili',
 				external: true,
 				style: ['ultrasmall']
 			},
