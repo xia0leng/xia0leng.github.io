@@ -75,7 +75,7 @@ var config = {
 				type: 'js',
 				icon:'instagram',
 				value: 'instagram.js',
-				urlPath: 'instagram',
+				urlPath: '/instagram',
 				external: true,
 				style: ['ultrasmall']
 			},
@@ -116,7 +116,7 @@ var config = {
         		type: 'js',
 				icon:'bilibili',
         		value: 'bilibili.js',
-				urlPath: 'bilibili',
+				urlPath: '/bilibili',
 				external: true,
 				style: ['ultrasmall']
 			},
@@ -126,7 +126,7 @@ var config = {
         		type: 'js',
 				icon:'youtube',
         		value: 'youtube.js',
-				urlPath: 'youtube',
+				urlPath: '/youtube',
 				external: true,
 				style: ['ultrasmall']
     		},
@@ -594,7 +594,7 @@ var config = {
                 type: 'iframe',
 				icon:'L²S²',
                 value: './llss/index.html',
-				urlPath: 'llss',
+				urlPath: '/llss',
                 style: ['large']
             },
         },
@@ -612,7 +612,7 @@ var config = {
                 type: 'iframe',
 				icon:'L²S²',
                 value: './llss/index.html',
-				urlPath: 'llss',
+				urlPath: '/llss',
                 style: ['large']
             },
         },
@@ -629,7 +629,7 @@ var config = {
                 type: 'url',
 				icon:'support',
                 value: './contact.html',
-				urlPath: 'contact',
+				urlPath: '/contact',
                 style: ['large']
             },
             pgp: {
@@ -677,7 +677,7 @@ var config = {
 				type: 'js',
 				icon:'x',
 				value: 'x.js',
-				urlPath: 'x',
+				urlPath: '/x',
 				external: true,
 				style: ['ultrasmall']
 			},
@@ -686,7 +686,7 @@ var config = {
         		type: 'js',
 				icon:'telegram',
         		value: 'telegram.js',
-				urlPath: 'telegram',
+				urlPath: '/telegram',
 				external: true,
 				style: ['ultrasmall']
     		},
@@ -694,8 +694,8 @@ var config = {
 				name: 'Instagram',
 				type: 'js',
 				icon:'instagram',
-				urlPath: 'instagram',
 				value: 'instagram.js',
+				urlPath: '/instagram',
 				external: true,
 				style: ['ultrasmall']
 			},
@@ -704,7 +704,7 @@ var config = {
 				type: 'js',
 				icon:'threads',
 				value: 'threads.js',
-				urlPath: 'threads',
+				urlPath: '/threads',
 				external: true,
 				style: ['ultrasmall']
     		},
@@ -713,7 +713,7 @@ var config = {
         		type: 'js',
 				icon:'bilibili',
         		value: 'bilibili.js',
-				urlPath: 'bilibili',
+				urlPath: '/bilibili',
 				external: true,
 				style: ['ultrasmall']
 			},
