@@ -1233,6 +1233,7 @@ async function loadDesktop() {
                 createWindow('404 Not Found', template.content, { style: ['medium'] }, location.pathname);
             });
 	}
+}
 
 async function loadCounter(counterUrl) {
     const divCounter = document.createElement('div');
