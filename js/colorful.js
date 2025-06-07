@@ -13,6 +13,7 @@ var config = {
         name: '通知 Notice',
         type: 'md',
         value: 'event05',
+		urlPath: '/',
 		style: ['ultrasmall'],
     },
 	photos: {
@@ -735,24 +736,28 @@ var config = {
         name: '通知 Notice',
         type: 'md',
         value: 'notice',
+		urlPath: '/',
 		style: ['ultrasmall']
     },
 	emotional01: {
         name: '警告 Alert',
         type: 'md',
         value: 'emotional01',
+		urlPath: '/',
 		style: ['ultrasmall'],
     },
 	emotional02: {
         name: '警告 Alert',
         type: 'md',
         value: 'emotional02',
+		urlPath: '/',
 		style: ['ultrasmall'],
     },
 	emotional03: {
         name: '警告 Alert',
         type: 'md',
         value: 'emotional03',
+		urlPath: '/',
 		style: ['ultrasmall'],
     }
 };
