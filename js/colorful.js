@@ -1234,11 +1234,13 @@ async function loadDesktop() {
             });
 	}
 	
-	// 插入：自动根据 config 中的 start: true 弹窗
+	// ✅ 挂载 start: true 的窗口时，根据当前主窗口决定是否作为子窗口附加
 	for (const [key, action] of Object.entries(config)) {
 		if (typeof action === 'object' && action.start === true) {
 			if (!segments.includes(key)) {
-				execute(key, action, location.pathname);
+				const parentKey = segments[segments.length - 1] || null;
+				const parentWindow = document.querySelector(`.window[data-key="${parentKey}"]`);
+				execute(key, action, location.pathname, parentWindow);
 			}
 		}
 	}
