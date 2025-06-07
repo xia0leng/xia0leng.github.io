@@ -659,7 +659,7 @@ var config = {
                 name: '数据处理要求 Data Handling Requirement',
                 type: 'md2',
                 value: './legal/data-handle.html',
-				urlPath: 'legal/data-handle',
+				urlPath: '/legal/data-handle',
                 style: ['large']
             }
         },
