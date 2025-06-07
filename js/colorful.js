@@ -1278,7 +1278,7 @@ window.addEventListener('popstate', () => {
                 createWindow('404 Not Found', template.content, { style: ['medium'] }, location.pathname);
             });
 	  }
-}
+});
 
 function updatePathForNoWindows() {
     const windows = document.querySelectorAll('.window');
