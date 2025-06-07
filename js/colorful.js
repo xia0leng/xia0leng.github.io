@@ -1219,13 +1219,14 @@ async function loadDesktop() {
         execute(result.key, result.action, location.pathname);
     } else {
     // 若未匹配任何窗口项，显示 GitHub Pages 的 404 页面（地址栏保持不动）
-    const iframe = document.createElement('iframe');
-    iframe.setAttribute('src', '/404');
-    iframe.setAttribute('style', 'width:100%;height:100%;border:none;');
-    const div = document.createElement('div');
-    div.appendChild(iframe);
-    createWindow('404 Not Found', div, { style: ['medium'] }, location.pathname);
-  }
+    fetch('/404')
+  		.then(resp => resp.text())
+  		.then(html => {
+    		const template = document.createElement('template');
+    		template.innerHTML = html;
+    		createWindow('404 Not Found', template.content, { style: ['medium'] }, location.pathname);
+  		});
+  	}
 
 }
 
@@ -1258,14 +1259,14 @@ window.addEventListener('popstate', () => {
     execute(result.key, result.action, location.pathname);
       } else {
         // 若未匹配任何窗口项，显示 GitHub Pages 的 404 页面（地址栏保持不动）
-        const iframe = document.createElement('iframe');
-        iframe.setAttribute('src', '/404');
-        iframe.setAttribute('style', 'width:100%;height:100%;border:none;');
-        const div = document.createElement('div');
-        div.appendChild(iframe);
-        createWindow('404 Not Found', div, { style: ['medium'] }, location.pathname);
+        fetch('/404')
+  		.then(resp => resp.text())
+  		.then(html => {
+    		const template = document.createElement('template');
+    		template.innerHTML = html;
+    		createWindow('404 Not Found', template.content, { style: ['medium'] }, location.pathname);
+  		});
     }
-
 });
 
 function updatePathForNoWindows() {
