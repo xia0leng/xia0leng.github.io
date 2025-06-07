@@ -1235,8 +1235,6 @@ async function loadDesktop() {
     	}
 	}
 
-}
-
 async function loadCounter(counterUrl) {
     const divCounter = document.createElement('div');
     divCounter.classList.add('counter');
