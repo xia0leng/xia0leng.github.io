@@ -1233,16 +1233,16 @@ async function loadDesktop() {
                 createWindow('404 Not Found', template.content, { style: ['medium'] }, location.pathname);
             });
 	}
-	
-	// 插入：自动根据 config 中的 start: true 弹窗
-	for (const [key, action] of Object.entries(config)) {
-		if (typeof action === 'object' && action.start === true) {
-			if (!segments.includes(key)) {
-				execute(key, action, location.pathname);
-			}
-		}
-	}
-
+    // ✅ 所有页面访问时都可能弹窗 event05，但 homepage 附加 readme，其他只弹 event05
+    const pathname = location.pathname;
+    if (pathname === '/') {
+		// 首页逻辑：默认已经通过 config.readme.start 实现了弹窗
+    	// 现在加 event05 作为补充弹窗
+        execute('event05', config.event05, '/');
+    } else {
+		// 非主页任何页面，都额外弹窗 event05
+        execute('event05', config.event05, pathname);
+    }
 }
 
 async function loadCounter(counterUrl) {
