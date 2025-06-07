@@ -1165,11 +1165,9 @@ function processConfig1(config, startUp) {
                 }
             }
         }
-		// 启动窗口（事件弹窗在任何路径都强制启动）
-		const isEvent = /^event\d+$/.test(key);
-		if ((startUp || isEvent) && value.start) {
-			execute(key, value, value.urlPath);
-		}
+        if (startUp && value.start) {
+            execute(key, value);
+        }
     }
 }
 
