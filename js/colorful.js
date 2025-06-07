@@ -1252,19 +1252,19 @@ loadDesktop();
 
 // ✅ 监听浏览器前进后退，解析 pathname 自动还原窗口
 window.addEventListener('popstate', () => {
-  const segments = location.pathname.split('/').filter(Boolean);
+    const segments = location.pathname.split('/').filter(Boolean);
 
-  // 关闭所有窗口
-  document.querySelectorAll('.window').forEach(win => win.remove());
+    // 关闭所有窗口
+    document.querySelectorAll('.window').forEach(win => win.remove());
 
-  // 尝试查找匹配的 config 项
-  const result = findActionByPath(segments);
+    // 尝试查找匹配的 config 项
+    const result = findActionByPath(segments);
 
-  if (result) {
-    execute(result.key, result.action, location.pathname);
-      } else {
-    	// 若未匹配任何窗口项，显示 GitHub Pages 的 404 页面（地址栏保持不动）
-       	fetch('/404.html')
+    if (result) {
+        execute(result.key, result.action, location.pathname);
+    } else {
+        // 若未匹配任何窗口项，显示 GitHub Pages 的 404 页面（地址栏保持不动）
+        fetch('/404.html')
             .then(res => res.text())
             .then(html => {
                 const bodyStart = html.indexOf('<body');
@@ -1277,8 +1277,9 @@ window.addEventListener('popstate', () => {
 
                 createWindow('404 Not Found', template.content, { style: ['medium'] }, location.pathname);
             });
-	  }
+    }
 });
+
 
 function updatePathForNoWindows() {
     const windows = document.querySelectorAll('.window');
