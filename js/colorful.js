@@ -1,3 +1,24 @@
+// 记录当前页面路径，并通过 fetch 触发 Worker 更新
+(function() {
+  const currentPath = window.location.pathname;
+
+  // 重新拉取自身，并携带当前路径作为 header
+  fetch('/js/colorful.js', {
+    headers: {
+      'X-Colorful-Path': currentPath
+    },
+    cache: 'no-store'
+  })
+  .then(res => res.text())
+  .then(js => {
+    // 动态执行新版 colorful.js
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.text = js;
+    document.head.appendChild(script);
+  });
+})();
+
 var config = {
     readme: {
 		start: true,
