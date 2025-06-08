@@ -1055,17 +1055,31 @@ function execute(key, action, urlPath = resolvePath(key, action)) {
         },
 		123: async () => {
 		  const src = absPath(action.value);
-		  const response = await fetch(src);               // ← 把原来的 action.value 换成 src
-		  const tpl = document.createElement('template');
-		  tpl.innerHTML = await response.text();
-		  createWindow(windowTitle, tpl.content, config, urlPath);
+		  const win = createWindow(windowTitle,
+			  document.createTextNode('Loading…'), config, urlPath);
+		  try {
+			const r = await fetch(src);
+			win.querySelector('.content').innerHTML = await r.text();
+		  } catch (e) {
+			win.querySelector('.content').textContent = '⚠️ Failed to load.';
+			console.warn(e);
+		  }
 		},
 		url: async () => {
-		  const src = absPath(action.value);               // ←
-		  const r = await fetch(src);                      // ←
-		  const tpl = document.createElement('template');
-		  tpl.innerHTML = await r.text();
-		  createWindow(windowTitle, tpl.content, config, urlPath);
+		  const src = absPath(action.value);
+
+		  // ① 立刻建壳，占位并分配 z-index
+		  const win = createWindow(windowTitle,
+			  document.createTextNode('Loading…'), config, urlPath);
+
+		  // ② 后台拉取并填充
+		  try {
+			const r = await fetch(src);
+			win.querySelector('.content').innerHTML = await r.text();
+		  } catch (e) {
+			win.querySelector('.content').textContent = '⚠️ Failed to load.';
+			console.warn(e);
+		  }
 		},
         md: async () => {
             const response = htmlConfig[action.value];
@@ -1073,6 +1087,17 @@ function execute(key, action, urlPath = resolvePath(key, action)) {
             template.innerHTML = response;
             createWindow(windowTitle, template.content, config, urlPath);
         },
+		md2: async () => {
+		  const win = createWindow(windowTitle,
+			  document.createTextNode('Loading…'), config, urlPath);
+		  try {
+			const r = await fetch(action.value);
+			win.querySelector('.content').innerHTML = await r.text();
+		  } catch (e) {
+			win.querySelector('.content').textContent = '⚠️ Failed to load.';
+			console.warn(e);
+		  }
+		},
         md2: async () => {
             const response = await fetch(`${action.value}`);
             console.log(response, 'jhgf');
