@@ -1114,29 +1114,34 @@ function execute(key, action, urlPath = resolvePath(key, action)) {
             createWindow(windowTitle, template.content, config, urlPath);
         },
         iframe: () => {
-            /* ① 先建壳窗口：显示 Loading… 字样，占位并分配 z-index */
-            const win = createWindow(
-                windowTitle,
-                document.createTextNode('Loading…'),
-                config,
-                urlPath
-            );
+          /* ① 建壳窗口并放入文本占位 */
+          const win = createWindow(
+            windowTitle,
+            document.createTextNode('Loading…'),
+            config,
+            urlPath
+          );
 
-            /* ② 创建真正的 iframe —— 加载完毕后替换占位 */
-            const iframe = document.createElement('iframe');
-            iframe.src = absPath(action.value);
-            iframe.scrolling = 'no';
-            iframe.style.border = 'none';
+          const content   = win.querySelector('.content');
+          const placeholder = content.firstChild;            // “Loading…” 这行
 
-            iframe.onload = () => {
-                const content = win.querySelector('.content');
-                content.innerHTML = '';            // 清空 Loading…
-                content.appendChild(iframe);       // 注入 iframe
-            };
+          /* ② 创建 iframe，先 display:none 挂到 DOM 里让它开始加载 */
+          const iframe = document.createElement('iframe');
+          iframe.src       = absPath(action.value);
+          iframe.scrolling = 'no';
+          iframe.style.border  = 'none';
+          iframe.style.display = 'none';   // 等 onload 才显示
+          content.appendChild(iframe);
 
-            iframe.onerror = () => {
-                win.querySelector('.content').textContent = '⚠️ Failed to load.';
-            };
+          /* ③ 成功 → 替换占位；失败 → 显示错误文本 */
+          iframe.onload  = () => {
+            placeholder.remove();
+            iframe.style.display = 'block';
+          };
+          iframe.onerror = () => {
+            placeholder.textContent = '⚠️ Failed to load.';
+            iframe.remove();
+          };
         },
 		js: () => {
 		  const script = document.createElement('script');
