@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <title>Xiaoleng</title>
+        <meta name="description" content="Your cutest Xiaoleng✨ | Singing⭕️OD⭕️Cosplay⭕️ | Purple is my support color💜 | Striving to sparkle🤗">
+        <link rel="canonical" href="https://www.xln.moe">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Xiaoleng">
+        <meta property="og:description" content="Your cutest Xiaoleng✨ | Singing⭕️OD⭕️Cosplay⭕️ | Purple is my support color💜 | Striving to sparkle🤗">
+        <meta property="og:url" content="https://www.xln.moe">
+        <meta property="og:image" content="https://xln.moe/assets/img/top/og.jpg">
+        <meta property="og:site_name" content="Xiaoleng">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Xiaoleng">
+        <meta name="twitter:description" content="Your cutest Xiaoleng✨ | Singing⭕️OD⭕️Cosplay⭕️ | Purple is my support color💜 | Striving to sparkle🤗">
+        <meta name="twitter:image" content="https://xln.moe/assets/img/top/og.jpg">
+        <link rel="shortcut icon" href="/assets/img/common/favicon.ico">
+        <link rel="apple-touch-icon" href="/assets/img/common/icon-512.jpg">
+        <meta name="apple-mobile-web-app-title" content="Xiaoleng">
+        <meta name="application-name" content="Xiaoleng">
+        <meta name="msapplication-config" content="https://xln.moe/assets/xml/browserconfig.xml">
+        <meta name="msapplication-TileImage" content="/assets/img/common/icon-512.png">
+        <meta property="fb:app_id" content="596317068497619">
+		<link rel="manifest" href="/manifest.json">
+  		<meta name="theme-color" content="#c5bcff">
+
+<style type="text/css">
+
+
+
+body{cursor:url('cursor.png'),auto;
+    
+     
+   
+
+}
+ </style>     
+
+
+<script>
+  // 全局变量挂到 window 上，便于 install.js 等模块访问
+  window.pwaEvent = null;
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault(); // 阻止浏览器自动弹出
+    window.pwaEvent = e;
+
+    // 如果你在 index.html 页面本身想显示一个安装按钮（可选）
+    const btn = document.getElementById('install-btn');
+    if (btn) {
+      btn.style.display = 'block';
+
+      btn.addEventListener('click', async () => {
+        window.pwaEvent.prompt();
+        const result = await window.pwaEvent.userChoice;
+        console.log(result.outcome);
+        window.pwaEvent = null;
+      });
+    }
+  });
+</script>
+
+<script>
+  // 注册 sw.js 用于 PWA 安装识别
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+      .then(() => console.log('✅ Service Worker 注册成功'))
+      .catch(err => console.warn('❌ Service Worker 注册失败', err));
+  }
+</script>
+
+  <link rel="stylesheet" href="./css/colorful.css">
+  <script defer="" src="./js/colorful.js"></script>
+  
+<link rel="preload" href="./1.ttf" as="font" type="font/ttf" crossorigin>  
+    <style>  
+        @font-face {  
+            font-family: 'Zpix';  
+            src: url('./1.ttf') format('woff');  
+            font-display: swap;  
+        }  
+        body {  
+            font-family: 'Zpix', sans-serif; 
+color:blue;
+font-size: 16px;
+        }  
+    </style>
+
+	    <style>  
+@supports selector(:has(*)) {
+  #fallback {
+    display: none;
+  }
+}
+    </style>
+  
+</head>
+
+<body>
+	<div id="fallback" style="font-family:Zpix,sans-serif; background:#000; color:#fff; padding:1em;">
+  		Xiaoleng Official Website does not support old browsers.<br>
+		Please consider upgrading to the latest version of
+  		<a style="color: #ff794d;" href='https://www.google.com/chrome/' target='_blank' rel='noopener noreferrer'>Chrome</a>
+  		or
+  		<a style="color: #ff794d;" href='https://www.mozilla.org/firefox/' target='_blank' rel='noopener noreferrer'>Firefox</a>.
+	</div>
+</body>
+
+</html>
