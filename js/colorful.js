@@ -1274,11 +1274,8 @@ async function loadDesktop () {
       execute(result.key, result.action, location.pathname);
 
     } else {
-      /* —— 404 情况：先弹 notice/emotional，再建 404，让 404 保最顶 —— */
-      for (const [k, v, p] of popupQueue) {
-        execute(k, v, p);
-      }
-      queueFlushed = true;
+      /* 404：同时异步拉取 HTML，队列稍后自然 flush */
+       const html = await fetch('/404.html').then(r => r.text());
 
       const html = await fetch('/404.html').then(r => r.text());
       const body = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i)?.[1] || '<p>404 Not&nbsp;Found</p>';
