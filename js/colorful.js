@@ -904,21 +904,33 @@ function prepareDom() {
     document.body.appendChild(template.content);
 }
 
-function putWindowOnTop(window) {
-    const allWindows = document.querySelectorAll('.window');
-    for (const w of allWindows) {
-        if (w.style.zIndex > window.style.zIndex) {
-            w.style.zIndex--;
-        }
-    }
-    window.style.zIndex = allWindows.length;
-    const activeTask = document.querySelector('.bar>.taskbar>.task.active');
-    if (activeTask) {
-        activeTask.classList.remove('active');
-    }
-    document.getElementById(`t${window.id.slice(1)}`).classList.add('active');
-	const path = window.dataset.urlPath || '/';
-	history.pushState({}, '', path);
+/* ------------------------------------------------------------------
+   putWindowOnTop
+   · 点击窗口时重新排序 z-index
+   · event 保持底层；error(404) & priority 保持顶层
+   ------------------------------------------------------------------ */
+function putWindowOnTop(win) {
+  const cat = win.dataset.category;
+
+  /* event 窗口永远底层，404(error) & priority 不受点击影响 */
+  if (cat === 'event' || cat === 'priority' || cat === 'error') return;
+
+  /* 仅 normal 类可置顶至 normal 区域最高 */
+  const normals = document.querySelectorAll('.window[data-category="normal"]');
+  const maxZ = normals.length ? Math.max(...[...normals].map(w => +w.style.zIndex)) : 1000;
+  win.style.zIndex = maxZ + 1;
+
+  /* 任务栏同步高亮 */
+  const activeTask = document.querySelector('.bar .task.active');
+  if (activeTask) activeTask.classList.remove('active');
+  const task = document.getElementById(`t${win.id.slice(1)}`);
+  if (task) task.classList.add('active');
+
+  /* 重新压顶 priority 与 error */
+  document.querySelectorAll('.window[data-category="priority"]')
+          .forEach((p, i) => p.style.zIndex = 10000 + i);
+  document.querySelectorAll('.window[data-category="error"]')
+          .forEach((e, i) => e.style.zIndex = 20000 + i);
 }
 
 function makeWindow(title, style) {
@@ -995,28 +1007,60 @@ function makeWindow(title, style) {
     return divWindow;
 }
 
-function createWindow(title, content, config, urlPath = '/') {
-    const style = config && config.style ? config.style : [];
-    const divWindow = makeWindow(title, style);
-    if (content) {
-        divWindow.children[1].appendChild(content);
-    }
-	divWindow.dataset.urlPath = urlPath;
-    document.querySelector('.desktop').appendChild(divWindow);
-    divWindow.style.left = `${Math.floor(0.5 * Math.random() * (document.querySelector('.arena').offsetWidth - divWindow.offsetWidth))}px`;
-    divWindow.style.top = `${Math.floor(0.33 * Math.random() * (document.querySelector('.arena').offsetHeight - divWindow.offsetHeight))}px`;
+/* ------------------------------------------------------------------
+   createWindow
+   · 根据标题自动归类：event / normal / priority / error(404)
+   · 不同类别分配不同 z-index 基准，避免相互遮挡
+   ------------------------------------------------------------------ */
+function createWindow(title, content, cfg, urlPath = '/') {
+  const style = (cfg && cfg.style) ? cfg.style : [];
+  const div   = makeWindow(title, style);
 
-    const divTask = document.createElement('div');
-    divTask.id = `t${divWindow.id.slice(1)}`;
-    divTask.classList.add('task');
-    divTask.textContent = title;
-    divTask.addEventListener('click', (ev) => {
-        divWindow.style.display = 'grid';
-        putWindowOnTop(divWindow);
-    });
-    document.querySelector('.taskbar').appendChild(divTask);
-    putWindowOnTop(divWindow);
-    return divWindow;
+  /* 插入内容 */
+  if (content) div.children[1].appendChild(content);
+
+  /* 路径标记（用于 popstate 与去重） */
+  div.dataset.urlPath = urlPath;
+
+  /* ---------- 分类 ---------- */
+  let cat = 'normal';
+  if (/^event\d+$/i.test(title))                    cat = 'event';
+  else if (title === 'notice' ||
+           /^emotional\d+$/i.test(title))           cat = 'priority';
+  else if (title.startsWith('404'))                 cat = 'error';   // 404 页面
+  div.dataset.category = cat;
+
+  /* ---------- z-index 分配 ---------- */
+  const base =
+      cat === 'error'    ? 20000 :   // 404 永远最高
+      cat === 'priority' ? 10000 :   // notice / emotional
+      cat === 'event'    ? 10    :   // 活动弹窗，最底
+                             1000;   // 普通窗口
+  const same = document.querySelectorAll(`.window[data-category="${cat}"]`).length;
+  div.style.zIndex = base + same;
+
+  /* ---------- 随机初始位置 ---------- */
+  const arena = document.querySelector('.arena');
+  div.style.left = `${Math.floor(0.5 * Math.random() * (arena.offsetWidth  - div.offsetWidth ))}px`;
+  div.style.top  = `${Math.floor(0.33 * Math.random() * (arena.offsetHeight - div.offsetHeight))}px`;
+
+  /* ---------- 加到桌面 ---------- */
+  document.querySelector('.desktop').appendChild(div);
+
+  /* ---------- 任务栏按钮 ---------- */
+  const task = document.createElement('div');
+  task.id = `t${div.id.slice(1)}`;
+  task.classList.add('task');
+  task.textContent = title;
+  task.addEventListener('click', () => {
+    div.style.display = 'grid';
+    putWindowOnTop(div);
+  });
+  document.querySelector('.taskbar').appendChild(task);
+
+  /* 默认置顶一次（按规则） */
+  putWindowOnTop(div);
+  return div;
 }
 
 function execute(key, action, urlPath = resolvePath(key, action)) {
