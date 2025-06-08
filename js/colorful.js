@@ -530,6 +530,7 @@ var config = {
                 name: '对话小冷「从7万到 A7：用逻辑和数据打造高胜率的交易系统」',
                 type: 'md2',
                 value: './articles/1922157354659021001.html',
+				urlPath: '/articles/1922157354659021001',
                 style: ['large']
             },
         },
