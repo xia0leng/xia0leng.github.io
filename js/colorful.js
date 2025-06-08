@@ -1273,15 +1273,21 @@ async function loadDesktop () {
     if (result) {
       execute(result.key, result.action, location.pathname);
 
-    } else {
-      /* 404：同时异步拉取 HTML，队列稍后自然 flush */
-       const html = await fetch('/404.html').then(r => r.text());
+        } else {
+      /* —— 404 情况：先弹 notice / emotional，再建 404 —— */
+      for (const [k, v, p] of popupQueue) {
+        execute(k, v, p);        // 弹窗先出现 → z-index 比 404 低
+      }
+      queueFlushed = true;       // 阻止后面再次 flush
 
       const html = await fetch('/404.html').then(r => r.text());
-      const body = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i)?.[1] || '<p>404 Not&nbsp;Found</p>';
+      const body = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i)?.[1]
+                || '<p>404 Not&nbsp;Found</p>';
+
       const tpl  = document.createElement('template');
       tpl.innerHTML = body;
-      createWindow('404 Not Found', tpl.content, { style: ['medium'] }, location.pathname);
+      createWindow('404 Not Found', tpl.content,
+                   { style: ['medium'] }, location.pathname); // 404 最后创建 → 最顶
     }
   }
 
