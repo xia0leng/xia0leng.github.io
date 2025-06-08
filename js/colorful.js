@@ -1190,50 +1190,82 @@ function makeIcon(key, action) {
     return template.content;
 }
 
-/* ------------------------------------------------------------------
-   新版  processConfig
-   规则：
-     · eventXX          ─► 立即 execute()     (最底层)
-     · notice/emotional ─► 收集到 queue       (稍后弹出，最顶层)
-     · 其它 start:true  ─► 仅在首页立即弹窗
-   ------------------------------------------------------------------ */
-function processConfig(cfg, isRoot, basePath) {
-  const queue = [];
-  basePath = basePath || '/';
+//取代旧的 processConfig —— 只收集弹窗，不 flush
+function processConfig(config,
+                       startUp,
+                       parentPath = '',
+                       popupQueue = []) {        // ← 收集 notice / emotional
+  for (const key in config) {
+    const value = config[key];
 
-  for (const key in cfg) {
-    const item = cfg[key];
+    /* ---------- 自动补 urlPath ---------- */
+    const fullPath = parentPath + '/' + key;
+    if (!value.urlPath) value.urlPath = fullPath;
 
-    /* ─── 递归处理 folder ───────────────── */
-    if (item.type === 'folder' && typeof item.value === 'object') {
-      const nextBase = (item.urlPath ?? (basePath === '/' ? '' : basePath) + '/' + key)
-                         .replace(/\/{2,}/g, '/');
-      queue.push(...processConfig(item.value, isRoot, nextBase));
-      continue;
+    /* ---------- 递归处理子层 ---------- */
+    if (['folder', 'okusuri'].includes(value.type)) {
+      processConfig(value.value, startUp, fullPath, popupQueue);
     }
 
-    /* ─── 计算当前项的 urlPath ───────────── */
-    const urlPath = item.urlPath ??
-                    (basePath === '/' ? '/' + key : basePath + '/' + key);
-
-    /* ─── eventXX：立即执行（最底层）────── */
-    if (/^event\d+$/i.test(key)) {
-      execute(key, item, urlPath);
-      continue;
+    /* ---------- 桌面图标 / 开始菜单 ---------- */
+    if (value.link) {
+      for (const link of value.link) {
+        if (link === 'entry') createEntry(key, value);
+        if (link === 'icon')  document.querySelector('.desktop')
+                                       .appendChild(makeIcon(key, value));
+      }
     }
 
-    /* ─── notice / emotionalXX：稍后统一弹 ─ */
-    if (key === 'notice' || /^emotional\d+$/i.test(key)) {
-      queue.push([key, item, urlPath]);
-      continue;
-    }
+    /* ---------- 收集/弹出窗口 ---------- */
+    const isEventBlock = /^event\d+$/.test(key);
+    const isNotice     = key === 'notice';
+    const isEmotional  = /^emotional\d+$/.test(key);
 
-    /* ─── 其它窗口：首页并且有 start:true 才立即弹── */
-    if (isRoot && item.start) {
-      execute(key, item, urlPath);
+    const mustFollowPage = (isEventBlock || isNotice || isEmotional) && !startUp;
+    const targetPath     = mustFollowPage ? location.pathname : value.urlPath;
+
+    if (isEventBlock && value.start) {
+      /* eventXX：直接弹出但层级最低 */
+      execute(key, value, targetPath);
+
+    } else if ((isNotice || isEmotional) && value.start) {
+      /* notice / emotional：先收集，稍后再弹（保证最顶层） */
+      popupQueue.push([key, value, targetPath]);
+
+    } else if (startUp && value.start) {
+      /* 其它窗口只在首页自动弹一次 */
+      execute(key, value, value.urlPath);
     }
   }
-  return queue;        // 交给 loadDesktop() 第 3 步处理
+  return popupQueue;                                // ← 把队列往上返回
+}
+
+async function loadDesktop() {
+  const segments = location.pathname.split('/').filter(Boolean);
+
+  /* 1️⃣  先跑配置，拿到 notice/emotional 等待队列 */
+  const popupQueue = processConfig(config, segments.length === 0, '');
+
+  /* 2️⃣  如果 URL 指向子页面，优先打开对应窗口 */
+  if (segments.length) {
+    const result = findActionByPath(segments);
+    if (result) {
+      execute(result.key, result.action, location.pathname);
+    } else {
+      await fetch('/404.html')
+        .then(r => r.text()).then(html => {
+          const body = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i)?.[1] || '<p>404 Not Found</p>';
+          const tpl  = document.createElement('template');
+          tpl.innerHTML = body;
+          createWindow('404 Not Found', tpl.content, { style: ['medium'] }, location.pathname);
+        });
+    }
+  }
+
+  /* 3️⃣  最后弹出 notice / emotional → 永远置顶 */
+  for (const [k, v, p] of popupQueue) {
+    execute(k, v, p);
+  }
 }
 
 async function loadCounter(counterUrl) {
