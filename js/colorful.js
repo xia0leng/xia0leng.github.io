@@ -1190,52 +1190,54 @@ function makeIcon(key, action) {
     return template.content;
 }
 
-/* ------------------------------------------------------------------
-   最终版 processConfig
-   ① 先为每个 config 项生成桌面 / START 菜单图标
-   ② eventXX            → 立即 execute()      (最底层)
-   ③ notice / emotional → 推入 queue          (最后弹出，最顶层)
-   ④ 其他窗口           → 仅在首页且 start:true 时执行
-   ------------------------------------------------------------------ */
-function processConfig(cfg, isRoot, basePath) {
-  const queue = [];
-  basePath = basePath || '/';
+//取代旧的 processConfig —— 只收集弹窗，不 flush
+function processConfig(config,
+                       startUp,
+                       parentPath = '',
+                       popupQueue = []) {        // ← 收集 notice / emotional
+  for (const key in config) {
+    const value = config[key];
 
-  for (const key in cfg) {
-    const item = cfg[key];
+    /* ---------- 自动补 urlPath ---------- */
+    const fullPath = parentPath + '/' + key;
+    if (!value.urlPath) value.urlPath = fullPath;
 
-    /* 计算本项 urlPath */
-    const urlPath = item.urlPath ??
-                    (basePath === '/' ? '/' + key : basePath + '/' + key);
-
-    /* ① 生成桌面图标 / START 菜单条目 */
-    createEntry(key, item, urlPath);
-
-    /* 递归处理文件夹 */
-    if (item.type === 'folder' && typeof item.value === 'object') {
-      const nextBase = urlPath.replace(/\/{2,}/g, '/');
-      queue.push(...processConfig(item.value, isRoot, nextBase));
-      continue;
+    /* ---------- 递归处理子层 ---------- */
+    if (['folder', 'okusuri'].includes(value.type)) {
+      processConfig(value.value, startUp, fullPath, popupQueue);
     }
 
-    /* ② eventXX：立即弹出（最底层） */
-    if (/^event\d+$/i.test(key)) {
-      execute(key, item, urlPath);
-      continue;
+    /* ---------- 桌面图标 / 开始菜单 ---------- */
+    if (value.link) {
+      for (const link of value.link) {
+        if (link === 'entry') createEntry(key, value);
+        if (link === 'icon')  document.querySelector('.desktop')
+                                       .appendChild(makeIcon(key, value));
+      }
     }
 
-    /* ③ notice / emotionalXX：排队，最后统一弹（最顶层） */
-    if (key === 'notice' || /^emotional\d+$/i.test(key)) {
-      queue.push([key, item, urlPath]);
-      continue;
-    }
+    /* ---------- 收集/弹出窗口 ---------- */
+    const isEventBlock = /^event\d+$/.test(key);
+    const isNotice     = key === 'notice';
+    const isEmotional  = /^emotional\d+$/.test(key);
 
-    /* ④ 其他窗口：仅首页并且 start:true 才立即弹 */
-    if (isRoot && item.start) {
-      execute(key, item, urlPath);
+    const mustFollowPage = (isEventBlock || isNotice || isEmotional) && !startUp;
+    const targetPath     = mustFollowPage ? location.pathname : value.urlPath;
+
+    if (isEventBlock && value.start) {
+      /* eventXX：直接弹出但层级最低 */
+      execute(key, value, targetPath);
+
+    } else if ((isNotice || isEmotional) && value.start) {
+      /* notice / emotional：先收集，稍后再弹（保证最顶层） */
+      popupQueue.push([key, value, targetPath]);
+
+    } else if (startUp && value.start) {
+      /* 其它窗口只在首页自动弹一次 */
+      execute(key, value, value.urlPath);
     }
   }
-  return queue;  // 交由 loadDesktop() 第 3 步处理
+  return popupQueue;                                // ← 把队列往上返回
 }
 
 async function loadDesktop() {
