@@ -149,6 +149,7 @@ var config = {
                 		name: '右美沙芬',
                 		type: '123',
                 		value: './fw/drugs/DXM.html',
+						urlPath: '/Drugs/DXM',
                 		style: ['large']
             		},
             		The_harm_of_dextromethorphan: {
