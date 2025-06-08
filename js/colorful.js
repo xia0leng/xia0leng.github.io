@@ -788,6 +788,18 @@ if (isOldBrowser && config.readme) {
   config.readme.start = false;
 }
 
+/* ---------- 优先级窗口顺序修正：存在urlPath时notice及emotional也始终排在最后 ---------- */
+{
+  const orderFix = {};
+  for (const k of ['notice', 'emotional01', 'emotional02', 'emotional03']) {
+    if (config[k]) {
+      orderFix[k] = config[k];   // 1️⃣ 备份
+      delete config[k];          // 2️⃣ 删除原位置
+    }
+  }
+  Object.assign(config, orderFix); // 3️⃣ 重新插入到末尾
+}
+
 /* ---------- 把 ./foo/bar → /foo/bar，保持 http(s) 不动 ---------- */
 function absPath(p) {
   if (!p) return p;
