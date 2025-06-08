@@ -1113,12 +1113,31 @@ function execute(key, action, urlPath = resolvePath(key, action)) {
             }
             createWindow(windowTitle, template.content, config, urlPath);
         },
-		iframe: () => {
-		  const iframe = document.createElement('iframe');
-		  iframe.src = absPath(action.value);              // ←
-		  iframe.scrolling = 'no';
-		  createWindow(windowTitle, iframe, config, urlPath);
-		},
+        iframe: () => {
+            /* ① 先建壳窗口：显示 Loading… 字样，占位并分配 z-index */
+            const win = createWindow(
+                windowTitle,
+                document.createTextNode('Loading…'),
+                config,
+                urlPath
+            );
+
+            /* ② 创建真正的 iframe —— 加载完毕后替换占位 */
+            const iframe = document.createElement('iframe');
+            iframe.src = absPath(action.value);
+            iframe.scrolling = 'no';
+            iframe.style.border = 'none';
+
+            iframe.onload = () => {
+                const content = win.querySelector('.content');
+                content.innerHTML = '';            // 清空 Loading…
+                content.appendChild(iframe);       // 注入 iframe
+            };
+
+            iframe.onerror = () => {
+                win.querySelector('.content').textContent = '⚠️ Failed to load.';
+            };
+        },
 		js: () => {
 		  const script = document.createElement('script');
 		  script.src = absPath(`/js/${action.value}`);     // ←
