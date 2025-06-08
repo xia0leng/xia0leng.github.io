@@ -1315,8 +1315,8 @@ window.addEventListener('popstate', () => {
 
 function updatePathAfterChange () {
   /* 只保留仍然可见的窗口 */
-  const visibleWins = [ ...document.querySelectorAll('.window') ]
-                        .filter(w => w.style.display !== 'none');
+  const visibleWins = [ .document.querySelectorAll('.window') ]
+                     .filter(w => w.style.display !== 'none');
 
   /* 桌面空了 → 回到根路径 */
   if (visibleWins.length === 0) {
