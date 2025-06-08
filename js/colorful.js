@@ -428,6 +428,7 @@ var config = {
 						style: ['large']
 					},
 				},
+				urlPath: '/Drugs',
 				style: ['medium']
 			},
 			Effects: {
@@ -478,6 +479,7 @@ var config = {
 						style: ['large']
 					},
                 },
+				urlPath: '/Effects',
 				style: ['medium']
             },
 			drugcombination: {
