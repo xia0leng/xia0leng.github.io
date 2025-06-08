@@ -1098,13 +1098,6 @@ function execute(key, action, urlPath = resolvePath(key, action)) {
 			console.warn(e);
 		  }
 		},
-        md2: async () => {
-            const response = await fetch(`${action.value}`);
-            console.log(response, 'jhgf');
-            const template = document.createElement('template');
-            template.innerHTML = await response.text();
-            createWindow(windowTitle, template.content, config, urlPath);
-        },
         folder: () => {
             let hash = action.hash;
             if (!hash) { hash = '#' + key; }
@@ -1265,31 +1258,41 @@ function processConfig(config,
   return popupQueue;                                // ← 把队列往上返回
 }
 
-async function loadDesktop() {
+async function loadDesktop () {
   const segments = location.pathname.split('/').filter(Boolean);
 
-  /* 1️⃣  先跑配置，拿到 notice/emotional 等待队列 */
+  /* 1️⃣ 先跑配置，拿到 popupQueue（notice / emotional 等） */
   const popupQueue = processConfig(config, segments.length === 0, '');
 
-  /* 2️⃣  如果 URL 指向子页面，优先打开对应窗口 */
+  let queueFlushed = false;          // ← 标记队列是否已提前弹出
+
+  /* 2️⃣ 如果 URL 指向子页面，优先打开；若不存在则出 404 */
   if (segments.length) {
     const result = findActionByPath(segments);
+
     if (result) {
       execute(result.key, result.action, location.pathname);
+
     } else {
-      await fetch('/404.html')
-        .then(r => r.text()).then(html => {
-          const body = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i)?.[1] || '<p>404 Not Found</p>';
-          const tpl  = document.createElement('template');
-          tpl.innerHTML = body;
-          createWindow('404 Not Found', tpl.content, { style: ['medium'] }, location.pathname);
-        });
+      /* —— 404 情况：先弹 notice/emotional，再建 404，让 404 保最顶 —— */
+      for (const [k, v, p] of popupQueue) {
+        execute(k, v, p);
+      }
+      queueFlushed = true;
+
+      const html = await fetch('/404.html').then(r => r.text());
+      const body = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i)?.[1] || '<p>404 Not&nbsp;Found</p>';
+      const tpl  = document.createElement('template');
+      tpl.innerHTML = body;
+      createWindow('404 Not Found', tpl.content, { style: ['medium'] }, location.pathname);
     }
   }
 
-  /* 3️⃣  最后弹出 notice / emotional → 永远置顶 */
-  for (const [k, v, p] of popupQueue) {
-    execute(k, v, p);
+  /* 3️⃣ 其余情况（首页或有效子页）再统一弹 notice / emotional */
+  if (!queueFlushed) {
+    for (const [k, v, p] of popupQueue) {
+      execute(k, v, p);
+    }
   }
 }
 
