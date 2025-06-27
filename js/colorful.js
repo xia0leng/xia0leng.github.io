@@ -493,42 +493,49 @@ var config = {
 						name: '解离',
 						type: 'md2',
 						value: './fw/effects/Dissociation.html',
+						urlPath: '/Effects/Dissociation',
 						style: ['large']
 					},
 					Antidissociation: {
 						name: '反解离',
 						type: 'md2',
 						value: './fw/effects/Antidissociation.html',
+						urlPath: '/Effects/Antidissociation',
 						style: ['large']
 					},
 					Delirium: {
 						name: '谵妄',
 						type: 'md2',
 						value: './fw/effects/Delirium.html',
+						urlPath: '/Effects/Delirium',
 						style: ['large']
 					},
 					Introduction_to_Hallucination: {
 						name: '幻觉简述',
 						type: 'md2',
 						value: './fw/effects/Introduction_to_Hallucination.html',
+						urlPath: '/Effects/Introduction_to_Hallucination',
 						style: ['large']
 					},
 					Opioids: {
 						name: '阿片类麻醉',
 						type: 'md2',
 						value: './fw/drugs/Opioids.html',
+						urlPath: '/Drugs/Opioids',
 						style: ['large']
 					},
 					BZD: {
 						name: '苯二氮卓类',
 						type: 'md2',
 						value: './fw/drugs/BZD.html',
+						urlPath: '/Drugs/BZD',
 						style: ['large']
 					},
 					SRIs: {
 						name: '血清素再摄取抑制SRI',
 						type: 'md2',
 						value: './fw/drugs/SRIs.html',
+						urlPath: '/Drugs/SRIs',
 						style: ['large']
 					},
                 },
