@@ -832,6 +832,16 @@ const baseImagePath = (() => {
 /* === 浏览器标题 / 描述同步 ============================= */
 const pathHeadMap = {};                // urlPath ➜ { title, desc }
 
+/* === 记录首页默认 <title>/<meta> —— 以便“桌面全空”时恢复 === */
+(() => {
+  const t  = document.querySelector('title');
+  const mD = document.querySelector('meta[name="description"]');
+  pathHeadMap['/'] = {
+    title : (t  ? t.textContent : document.title).trim(),
+    desc  : (mD ? mD.getAttribute('content') : '').trim()
+  };
+})();
+
 function applyHead(path) {
   const info = pathHeadMap[path];
   if (!info) return;
