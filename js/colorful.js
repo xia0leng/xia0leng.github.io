@@ -620,11 +620,14 @@ var config = {
     },
 	liyuu: {
         name: 'Liyuu',
+		metaTitle : 'Liyuu | Xiaoleng Official Website',
         type: 'folder',
 		icon:'liq',
         value: {
             llss: {
                 name: 'L²S²',
+				metaTitle : 'L²S² | Xiaoleng Official Website',
+ 				metaDesc  : 'L²S²是我们的下一代数字货币衍生品交易引擎Liq™ Engine的图表扩展<br> L²S² is the chart extension of our next generation cryptocurrency derivatives trading engine, Liq™ Engine.',
                 type: 'iframe',
 				icon:'L²S²',
                 value: './llss/index.html',
@@ -632,7 +635,7 @@ var config = {
                 style: ['large']
             },
         },
-        desc: 'Liq™ Engine是我们的下一代数字货币衍生品交易引擎<br> Liq™ Engine is our next generation of cryptocurrency derivatives trading engine.',
+        desc: 'Liyuu是小冷官方网站提供的反向代理演示入口<br> The Liyuu page is a reverse proxy demonstration gateway provided by the Xiaoleng Official Website.',
         style: ['medium'],
     },
     support: {
