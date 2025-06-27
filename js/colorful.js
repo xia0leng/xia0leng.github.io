@@ -752,6 +752,26 @@ var config = {
 		urlPath: '/browserling',
     	style: ['large']
 	},
+	livecast: {
+		name: 'Livecast',
+		metaTitle : 'Livecast | Xiaoleng Official Website',
+ 		metaDesc  : 'We\'ll be strmeaming our important moments including our concert via the internet to the world.',
+    	type: 'iframe',
+    	icon: '',
+    	value: './livecast.html',
+		urlPath: '/livecast',
+    	style: ['large']
+	},
+	next_event: {
+		name: 'Next Event',
+		metaTitle : 'Next Event | Xiaoleng Official Website',
+ 		metaDesc  : 'Where your cuest idol announces future plan together with you.',
+    	type: 'iframe',
+    	icon: '',
+    	value: './next_event.html',
+		urlPath: '/next_event',
+    	style: ['large']
+	},
 	notice: {
         name: '通知 Notice',
         type: 'md',
