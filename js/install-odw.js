@@ -1,6 +1,6 @@
 window.root.innerHTML = `
   <div style="padding: 20px; font-size: 16px;">
-    <p>可以将od-wiki安装为 App<
+    <p>可以将od-wiki安装为 App
 	</p>
     <button id="install-btn" style="margin-top:10px;">点击安装</button>
   </div>
