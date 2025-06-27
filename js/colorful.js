@@ -1239,7 +1239,7 @@ function execute(key, action, urlPath = resolvePath(key, action)) {
           /* ② 创建 iframe，先 display:none 挂到 DOM 里让它开始加载 */
           const iframe = document.createElement('iframe');
           iframe.src       = absPath(action.value);
-          iframe.scrolling = 'no';
+          iframe.scrolling = 'auto';
           iframe.style.border  = 'none';
           iframe.style.display = 'none';   // 等 onload 才显示
           content.appendChild(iframe);
