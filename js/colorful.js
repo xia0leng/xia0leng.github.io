@@ -144,7 +144,7 @@ var config = {
     odwiki: {
         name: 'OverdoseWiki',
 		metaTitle : 'OverdoseWiki | Xiaoleng Official Website',
-		title: 'OverdoseWikiooo',
+		label: '欢迎来到 od-wiki.com',
         type: 'okusuri',
 		icon: 'odw',
         value: {
@@ -1196,6 +1196,7 @@ function execute(key, action, urlPath = resolvePath(key, action)) {
             let hash = action.hash;
             if (!hash) { hash = '#' + key; }
             const desc = action.desc ? action.desc : '';
+			const inner = action.label || name;
             const template = document.createElement('template');
             template.innerHTML = `
                 <div class="folder-meta"><span>${name}</span><span>${hash}</span></div>
@@ -1286,6 +1287,7 @@ function execute(key, action, urlPath = resolvePath(key, action)) {
             let hash = action.hash;
             if (!hash) { hash = '#' + key; }
             const desc = action.desc ? action.desc : '';
+			const inner = action.label || name;
             const template = document.createElement('template');
             template.innerHTML = `
                 <div class="folder-meta"><span>${name}</span><span>${hash}</span></div>
