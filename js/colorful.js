@@ -1240,6 +1240,7 @@ function execute(key, action, urlPath = resolvePath(key, action)) {
           const iframe = document.createElement('iframe');
           iframe.src       = absPath(action.value);
           iframe.scrolling = 'auto';
+		  iframe.style.overflow = 'auto';
           iframe.style.border  = 'none';
           iframe.style.display = 'none';   // 等 onload 才显示
           content.appendChild(iframe);
