@@ -850,6 +850,26 @@ function applyHead(path) {
 }
 /* ====================================================== */
 
+/* === 解析 HTML 里的 <head> 并立即套用到浏览器 =============== */
+function parseAndApplyHead(htmlText, fallbackTitle, fallbackDesc, urlPath) {
+  const rawHead = htmlText.match(/<head[^>]*>([\s\S]*?)<\/head>/i)?.[1] || '';
+
+  const headObj = pathHeadMap[urlPath] || (pathHeadMap[urlPath] = {});
+
+  headObj.title = rawHead.match(/<title[^>]*>([^<]+)</i)?.[1]
+               || fallbackTitle
+               || headObj.title;
+
+  headObj.desc  = rawHead.match(
+                    /<meta[^>]*name=["']description["'][^>]*content=["']([^"']+)["']/i
+                  )?.[1]
+               || fallbackDesc
+               || headObj.desc;
+
+  applyHead(urlPath);     // ⬅️ 立刻同步到浏览器标题 / 描述
+}
+/* ============================================================= */
+
 const htmlConfig = {
     readme: `<h1 style="line-height: 100%; margin-block-start: 0.5em; margin-block-end: 0.05em;">欢迎来到小冷官方网站</h1>
     <h2 style="line-height: 100%; margin-block-start: 0em; margin-block-end: 0em;">Welcome to Xiaoleng Official Website</h2>
@@ -1106,6 +1126,13 @@ function execute(key, action, urlPath = resolvePath(key, action)) {
 		  // ② 后台拉取并填充
 		  try {
 			const r = await fetch(src);
+			/* —— 解析 <head> 并应用 —— */
+			parseAndApplyHead(
+			  htmlText,
+			  action.metaTitle || action.title || action.name,
+			  action.metaDesc  || action.desc,
+			  urlPath
+			);
 			win.querySelector('.content').innerHTML = await r.text();
 		  } catch (e) {
 			win.querySelector('.content').textContent = '⚠️ Failed to load.';
@@ -1185,12 +1212,9 @@ function execute(key, action, urlPath = resolvePath(key, action)) {
     if (!handler[action.type]) { return; }
     handler[action.type]();
 	
-	pathHeadMap[value.urlPath] = {
-	  /* 优先 metaTitle / metaDesc，没有再退回 title/name/desc */
-	  title : value.metaTitle || value.title || value.name,
-	  desc  : value.metaDesc  || value.desc
-	};
-    applyHead(urlPath);
+	if (value.metaTitle || value.metaDesc) {
+    applyHead(urlPath);      // 首次打开窗口时同步标题 / 描述
+    return newWindow;
 }
 
 function createEntry(key, action) {
