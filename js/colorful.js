@@ -1211,10 +1211,6 @@ function execute(key, action, urlPath = resolvePath(key, action)) {
     };
     if (!handler[action.type]) { return; }
     handler[action.type]();
-	
-	if (value.metaTitle || value.metaDesc) {
-    applyHead(urlPath);      // 首次打开窗口时同步标题 / 描述
-    return newWindow;
 }
 
 function createEntry(key, action) {
