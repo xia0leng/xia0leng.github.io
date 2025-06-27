@@ -141,9 +141,9 @@ var config = {
         style: ['medium'],
         link: ['entry', 'icon']
     },
-    medication: {
-        name: '药物 Medication',
-		metaTitle : 'Medication | Xiaoleng Official Website',
+    odwiki: {
+        name: 'OverdoseWiki',
+		metaTitle : 'OverdoseWiki | Xiaoleng Official Website',
         type: 'okusuri',
         value: {
 			Drugs: {
