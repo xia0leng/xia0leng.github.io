@@ -145,6 +145,7 @@ var config = {
         name: 'OverdoseWiki',
 		metaTitle : 'OverdoseWiki | Xiaoleng Official Website',
         type: 'okusuri',
+		icon:'odw',
         value: {
 			Drugs: {
                 name: '药物列表 Drugs',
