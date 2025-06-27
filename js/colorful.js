@@ -744,6 +744,14 @@ var config = {
 		urlPath: '/passwords',
     	style: ['large']
 	},
+	browserling: {
+		name: 'Browserling',
+    	type: 'iframe',
+    	icon: '',
+    	value: 'https://www.browserling.com',
+		urlPath: '/browserling',
+    	style: ['large']
+	},
 	notice: {
         name: '通知 Notice',
         type: 'md',
