@@ -1193,8 +1193,6 @@ function execute(key, action, urlPath = resolvePath(key, action)) {
     applyHead(urlPath);
 }
 
-}
-
 function createEntry(key, action) {
     console.log(key, action);
     let name = key;
