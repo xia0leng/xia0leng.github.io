@@ -1119,21 +1119,29 @@ function execute(key, action, urlPath = resolvePath(key, action)) {
 		url: async () => {
 		  const src = absPath(action.value);
 
-		  // ① 立刻建壳，占位并分配 z-index
-		  const win = createWindow(windowTitle,
-			  document.createTextNode('Loading…'), config, urlPath);
+		  /* ① 先建一个空壳窗口，占位并分配 z-index */
+		  const win = createWindow(
+			windowTitle,
+			document.createTextNode('Loading…'),
+			config,
+			urlPath
+		  );
 
-		  // ② 后台拉取并填充
+		  /* ② 后台抓取 HTML，解析 <head>，再把正文塞进去 */
 		  try {
-			const r = await fetch(src);
-			/* —— 解析 <head> 并应用 —— */
+			const r         = await fetch(src);
+			const htmlText  = await r.text();                 // 先拿完整 HTML
+
+			/* —— 解析 <title>/<meta description> 并立即同步 —— */
 			parseAndApplyHead(
 			  htmlText,
 			  action.metaTitle || action.title || action.name,
 			  action.metaDesc  || action.desc,
 			  urlPath
 			);
-			win.querySelector('.content').innerHTML = await r.text();
+
+			/* —— 把正文放进窗口 —— */
+			win.querySelector('.content').innerHTML = htmlText;
 		  } catch (e) {
 			win.querySelector('.content').textContent = '⚠️ Failed to load.';
 			console.warn(e);
@@ -1211,6 +1219,14 @@ function execute(key, action, urlPath = resolvePath(key, action)) {
     };
     if (!handler[action.type]) { return; }
     handler[action.type]();
+
+	/* -------- 记录并应用 <title>/<meta> -------- */
+	pathHeadMap[urlPath] = {
+	  title : action.metaTitle || action.title || action.name,
+	  desc  : action.metaDesc  || action.desc
+	};
+	applyHead(urlPath);
+	/* ------------------------------------------- */
 }
 
 function createEntry(key, action) {
