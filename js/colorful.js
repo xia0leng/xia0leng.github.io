@@ -144,8 +144,9 @@ var config = {
     odwiki: {
         name: 'OverdoseWiki',
 		metaTitle : 'OverdoseWiki | Xiaoleng Official Website',
+		title: 'OverdoseWiki',
         type: 'okusuri',
-		icon:'odw',
+		icon: 'odw',
         value: {
 			Drugs: {
                 name: '药物列表 Drugs',
@@ -559,7 +560,7 @@ var config = {
                 style: ['ultrasmall']
             }
         },
-        desc: '这是对odwiki上所列出的所有药物说明的备份存档<br> This is a backup archive of all the drug descriptions listed on odwiki.<br> ⚠️请减少od次数⚠️也请安全的使用药物<br> ⚠️Please reduce the number of overdoses⚠️ and use drugs safely.',
+        desc: 'od-wiki.com是免费且持续更新的参考od知识整合站点。为方便理解，取舍了大量内容，具有充分了解者可离开本站<br> 若需要该网站账号以编辑内容，请主动联系管理人员<br> 若认为该网站出现内容错误，请直接向管理人员投诉',
         style: ['medium'],
         link: ['entry', 'icon']
     },
