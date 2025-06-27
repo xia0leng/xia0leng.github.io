@@ -1185,11 +1185,11 @@ function execute(key, action, urlPath = resolvePath(key, action)) {
     if (!handler[action.type]) { return; }
     handler[action.type]();
 	
-	/* ------ 新增：记录并立刻应用 head 信息 ------ */
-    pathHeadMap[urlPath] = {
-        title: action.title || action.name || key,
-        desc : action.desc  || ''          // 若没有 desc 就留空
-    };
+	pathHeadMap[value.urlPath] = {
+	  /* 优先 metaTitle / metaDesc，没有再退回 title/name/desc */
+	  title : value.metaTitle || value.title || value.name,
+	  desc  : value.metaDesc  || value.desc
+	};
     applyHead(urlPath);
 }
 
