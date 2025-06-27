@@ -833,14 +833,13 @@ const baseImagePath = (() => {
 const pathHeadMap = {};                // urlPath ➜ { title, desc }
 
 /* ▼ 记录首页默认 <title>/<meta> —— 任何时候都可安全读取 */
-const defaultHead = (() => {
-  const t = document.querySelector('title');
-  const d = document.querySelector('meta[name="description"]');
-  return {
-    title : t ? t.textContent.trim()                  : document.title,
-    desc  : d ? d.getAttribute('content').trim()      : ''
-  };
-})();
+const defaultHead = {
+  title : 'Xiaoleng',  // ← 主页 <title>
+  desc  : 'Your cutest Xiaoleng✨ | Singing⭕️OD⭕️Cosplay⭕️ | Purple is my support color💜 | Striving to sparkle🤗'
+};
+
+/* 同时写进映射表，确保任何时候都能回退 */
+pathHeadMap['/'] = { ...defaultHead };
 
 function applyHead(path) {
   /* ① 找到该 path 的专属信息；否则回退到 defaultHead */
