@@ -555,7 +555,7 @@ var config = {
                 name: 'X 官号',
                 type: 'js',
 				icon:'x',
-                value: 'odw.js',
+                value: 'x-odw.js',
 				external: true,
                 style: ['ultrasmall']
             },
@@ -563,7 +563,7 @@ var config = {
                 name: 'Telegram群组',
                 type: 'js',
 				icon:'telegram',
-                value: 'odw.js',
+                value: 'telegram-odw.js',
 				external: true,
                 style: ['ultrasmall']
             },
