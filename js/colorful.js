@@ -829,6 +829,27 @@ const baseImagePath = (() => {
   return '../images/';
 })();
 
+/* === 浏览器标题 / 描述同步 ============================= */
+const pathHeadMap = {};                // urlPath ➜ { title, desc }
+
+function applyHead(path) {
+  const info = pathHeadMap[path];
+  if (!info) return;
+
+  /* <title> */
+  document.title = info.title || document.title;
+
+  /* <meta name="description"> */
+  let meta = document.querySelector('meta[name="description"]');
+  if (!meta) {
+    meta = document.createElement('meta');
+    meta.setAttribute('name', 'description');
+    document.head.appendChild(meta);
+  }
+  if (info.desc) meta.setAttribute('content', info.desc);
+}
+/* ====================================================== */
+
 const htmlConfig = {
     readme: `<h1 style="line-height: 100%; margin-block-start: 0.5em; margin-block-end: 0.05em;">欢迎来到小冷官方网站</h1>
     <h2 style="line-height: 100%; margin-block-start: 0em; margin-block-end: 0em;">Welcome to Xiaoleng Official Website</h2>
@@ -928,6 +949,7 @@ function putWindowOnTop(window) {
     document.getElementById(`t${window.id.slice(1)}`).classList.add('active');
 	const path = window.dataset.urlPath || '/';
 	history.pushState({}, '', path);
+	applyHead(path);        // ← 新增：关闭 / 最小化后同步 head
 }
 
 function makeWindow(title, style) {
@@ -1162,6 +1184,15 @@ function execute(key, action, urlPath = resolvePath(key, action)) {
     };
     if (!handler[action.type]) { return; }
     handler[action.type]();
+	
+	/* ------ 新增：记录并立刻应用 head 信息 ------ */
+    pathHeadMap[urlPath] = {
+        title: action.title || action.name || key,
+        desc : action.desc  || ''          // 若没有 desc 就留空
+    };
+    applyHead(urlPath);
+}
+
 }
 
 function createEntry(key, action) {
@@ -1397,6 +1428,8 @@ function updatePathAfterChange () {
   /* 把地址栏更新成它的 urlPath */
   const path = top.dataset.urlPath || '/';
   history.pushState({}, '', path);
+  applyHead(path);      // ← 新增：切换窗口时同步 <title>/<meta>
+
 }
 
 // ✅ 根据 pathname 自动匹配 config 中的 action 递归在整棵 config 树里查找 urlPath
