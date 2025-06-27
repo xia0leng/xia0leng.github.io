@@ -1228,7 +1228,7 @@ function execute(key, action, urlPath = resolvePath(key, action)) {
 
 	/* -------- 记录并应用 <title>/<meta> -------- */
 	pathHeadMap[urlPath] = {
-	  title : action.metaTitle || action.title || action.name,
+	  title : action.metaTitle || action.title,
 	  desc  : action.metaDesc  || action.desc
 	};
 	applyHead(urlPath);
