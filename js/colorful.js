@@ -551,13 +551,29 @@ var config = {
 				urlPath: '/Effects/Combination_drugs',
                 style: ['large']
             },
-			odw: {
-                name: 'OverdoseWiki',
+			X: {
+                name: 'X 官号',
                 type: 'js',
-				icon:'odw',
+				icon:'x',
                 value: 'odw.js',
 				external: true,
                 style: ['ultrasmall']
+            },
+			telegram: {
+                name: 'Telegram群组',
+                type: 'js',
+				icon:'telegram',
+                value: 'odw.js',
+				external: true,
+                style: ['ultrasmall']
+            },
+			install: {
+                name: '安装od-wiki',
+                type: 'js',
+				icon:'install',
+                value: 'install-odw.js',
+				external: true,
+                style: ['install']
             }
         },
         desc: 'od-wiki.com是免费且持续更新的参考od知识整合站点。为方便理解，取舍了大量内容，具有充分了解者可离开本站',
