@@ -149,7 +149,7 @@ var config = {
 		icon: 'odw',
         value: {
 			Drugs: {
-                name: '药物列表 Drugs',
+                name: '索引-找药看此',
                 type: 'folder',
 				icon:'okusurifolder',
                 value: {
@@ -487,7 +487,7 @@ var config = {
 				style: ['medium']
 			},
 			Effects: {
-                name: '药物效果 Effects',
+                name: '药物效果',
                 type: 'folder',
 				icon:'okusurifolder',
                 value: {
