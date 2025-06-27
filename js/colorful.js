@@ -73,6 +73,7 @@ var config = {
             },
 			instagram: {
 				name: '来ins看图喵 Ins',
+				metaTitle : 'Xiaoleng',
 				title: 'Instagram',
 				type: 'js',
 				icon:'instagram',
@@ -115,6 +116,7 @@ var config = {
             },
 			bilibili: {
 				name: '来b站听唱歌喵 bili',
+				metaTitle : 'Xiaoleng',
 				title: '哔哩哔哩 Bilibili',
         		type: 'js',
 				icon:'bilibili',
@@ -125,6 +127,7 @@ var config = {
 			},
 			youtube: {
 				name: '去yt看舞台喵 YT',
+				metaTitle : 'Xiaoleng',
 				title: 'YouTube',
         		type: 'js',
 				icon:'youtube',
