@@ -832,13 +832,18 @@ const baseImagePath = (() => {
 /* === 浏览器标题 / 描述同步 ============================= */
 const pathHeadMap = {};                // urlPath ➜ { title, desc }
 
-/* ▼ 记录首页默认 <title>/<meta> —— 任何时候都可安全读取 */
-const defaultHead = (() => {
-  const t = document.querySelector('title');
-  const d = document.querySelector('meta[name="description"]');
-  return {
-    title : t ? t.textContent.trim()                  : document.title,
-    desc  : d ? d.getAttribute('content').trim()      : ''
+/* === 把“首页默认值”记录成 <head> 中 *最后* 一个 title/description === */
+(() => {
+  /* 取到所有 <title>，用最后一个（即最底部、本来属于 index.html 的） */
+  const titles = document.querySelectorAll('title');
+  const metas  = document.querySelectorAll('meta[name="description"]');
+
+  const t  = titles.length ? titles[titles.length - 1] : null;
+  const mD = metas.length  ? metas[metas.length  - 1] : null;
+
+  pathHeadMap['/'] = {
+    title : t  ? t.textContent.trim()             : document.title,
+    desc  : mD ? mD.getAttribute('content').trim() : ''
   };
 })();
 
