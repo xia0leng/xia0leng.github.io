@@ -18,6 +18,7 @@ var config = {
     },
 	photos: {
         name: '照片 Photos',
+		metaTitle : 'Photos | Xiaoleng Official Website',
         type: 'folder',
 		icon:'photos',
         value: {
@@ -87,6 +88,7 @@ var config = {
     },
 	stagevideos: {
         name: '舞台录像 Stage Videos',
+		metaTitle : 'Stage Videos | Xiaoleng Official Website',
         type: 'folder',
 		icon:'stage',
         value: {
@@ -138,6 +140,7 @@ var config = {
     },
     medication: {
         name: '药物 Medication',
+		metaTitle : 'Medication | Xiaoleng Official Website',
         type: 'okusuri',
         value: {
 			Drugs: {
@@ -524,6 +527,7 @@ var config = {
     },
 	articles: {
         name: '文章 Articles',
+		metaTitle : 'Articles | Xiaoleng Official Website',
         type: 'folder',
 		icon:'articles',
         value: {
@@ -541,6 +545,7 @@ var config = {
     },
 	bitmex: {
         name: 'BitMEX',
+		metaTitle : 'BitMEX | Xiaoleng Official Website',
         type: 'folder',
 		icon:'bitmexxln',
         value: {
@@ -591,11 +596,14 @@ var config = {
     },
     liq: {
         name: 'Liq™',
+		metaTitle : 'Liq™ | Xiaoleng Official Website',
         type: 'folder',
 		icon:'liq',
         value: {
             llss: {
                 name: 'L²S²',
+				metaTitle : 'L²S² | Xiaoleng Official Website',
+ 				metaDesc  : 'L²S²是我们的下一代数字货币衍生品交易引擎Liq™ Engine的图表扩展<br> L²S² is the chart extension of our next generation cryptocurrency derivatives trading engine, Liq™ Engine.',
                 type: 'iframe',
 				icon:'L²S²',
                 value: './llss/index.html',
@@ -626,6 +634,7 @@ var config = {
     },
     support: {
         name: '支持 Support',
+		metaTitle : 'Support | Xiaoleng Official Website',
         type: 'folder',
 		icon:'support',
         value: {
@@ -650,6 +659,7 @@ var config = {
     },
     legal: {
         name: '法律 Legal',
+		metaTitle : 'Legal | Xiaoleng Official Website',
         type: 'folder',
 		icon:'legal',
         value: {
@@ -674,6 +684,7 @@ var config = {
     },
 	radio: {
         name: '冷喵广播 Follow me',
+		metaTitle : 'Follow me | Xiaoleng Official Website',
         type: 'folder',
 		icon:'radio',
         value: {
