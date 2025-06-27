@@ -144,7 +144,7 @@ var config = {
     odwiki: {
         name: 'OverdoseWiki',
 		metaTitle : 'OverdoseWiki | Xiaoleng Official Website',
-		title: 'OverdoseWiki',
+		title: 'OverdoseWikiooo',
         type: 'okusuri',
 		icon: 'odw',
         value: {
