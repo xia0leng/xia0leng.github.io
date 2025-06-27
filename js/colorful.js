@@ -832,31 +832,32 @@ const baseImagePath = (() => {
 /* === 浏览器标题 / 描述同步 ============================= */
 const pathHeadMap = {};                // urlPath ➜ { title, desc }
 
-/* === 记录首页默认 <title>/<meta> —— 以便“桌面全空”时恢复 === */
-(() => {
-  const t  = document.querySelector('title');
-  const mD = document.querySelector('meta[name="description"]');
-  pathHeadMap['/'] = {
-    title : (t  ? t.textContent : document.title).trim(),
-    desc  : (mD ? mD.getAttribute('content') : '').trim()
+/* ▼ 记录首页默认 <title>/<meta> —— 任何时候都可安全读取 */
+const defaultHead = (() => {
+  const t = document.querySelector('title');
+  const d = document.querySelector('meta[name="description"]');
+  return {
+    title : t ? t.textContent.trim()                  : document.title,
+    desc  : d ? d.getAttribute('content').trim()      : ''
   };
 })();
 
 function applyHead(path) {
-  const info = pathHeadMap[path];
-  if (!info) return;
+  /* ① 找到该 path 的专属信息；否则回退到 defaultHead */
+  const info = pathHeadMap[path] || {};
+  const final = (info.title || info.desc) ? info : defaultHead;
 
-  /* <title> */
-  document.title = info.title || document.title;
+  /* ② <title> */
+  if (final.title) document.title = final.title;
 
-  /* <meta name="description"> */
+  /* ③ <meta name="description"> */
   let meta = document.querySelector('meta[name="description"]');
-  if (!meta) {
+  if (!meta) {                         // 若首页没写 ← 自动补一个
     meta = document.createElement('meta');
     meta.setAttribute('name', 'description');
     document.head.appendChild(meta);
   }
-  if (info.desc) meta.setAttribute('content', info.desc);
+  meta.setAttribute('content', final.desc || '');
 }
 /* ====================================================== */
 
@@ -1238,8 +1239,8 @@ function execute(key, action, urlPath = resolvePath(key, action)) {
 
 	/* -------- 记录并应用 <title>/<meta> -------- */
 	pathHeadMap[urlPath] = {
-	  title : action.metaTitle || action.title,
-	  desc  : action.metaDesc  || action.desc
+	  title : action.metaTitle || action.title || '',
+	  desc  : action.metaDesc  || action.desc || ''
 	};
 	applyHead(urlPath);
 	/* ------------------------------------------- */
