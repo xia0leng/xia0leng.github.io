@@ -1153,24 +1153,20 @@ function execute(key, action, urlPath = resolvePath(key, action)) {
 			  const tEl   = shadow.querySelector('title');
 			  const mDesc = shadow.querySelector('meta[name="description"]');
 
-				/* -------- 记录并应用 <title>/<meta> -------- */
-				const hasCustom =
-					  (action.metaTitle && action.metaTitle.trim()) ||
-					  (action.metaDesc  && action.metaDesc.trim());
+			  /* -------- 记录并应用 <title>/<meta> -------- */
+			  const customHead = {
+				title : action.metaTitle || (tEl   && tEl.textContent.trim()) || '',
+				desc  : action.metaDesc  || (mDesc && mDesc.getAttribute('content') || '').trim()
+			  };
 
-				if (hasCustom) {
-				  pathHeadMap[urlPath] = {
-					title : (action.metaTitle || '').trim(),
-					desc  : (action.metaDesc  || '').trim()
-				  };
-				} else {
-				  // 这个类型的窗口没有自定义 head，就用首页默认
-				  delete pathHeadMap[urlPath];
-				}
+			  if (customHead.title || customHead.desc) {
+				pathHeadMap[urlPath] = customHead;   // 有内容 → 写入映射
+			  } else {
+				delete pathHeadMap[urlPath];         // 没内容 → 清掉映射 → 回退首页默认
+			  }
 
-				applyHead(urlPath);
-				/* ------------------------------------------- */
-
+			  applyHead(urlPath);                    // 立即刷新标题 / 描述
+			  /* ------------------------------------------- */
 			}
 		  } catch (e) {
 			content.textContent = '⚠️ Failed to load.';
