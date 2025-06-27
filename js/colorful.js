@@ -1446,31 +1446,31 @@ window.addEventListener('popstate', () => {
                 createWindow('404 Not Found', template.content, { style: ['medium'] }, location.pathname);
             });
     }
+	applyHead(location.pathname);
 });
 
+/* === 关闭 / 最小化后同步地址栏 + 标题 / 描述 === */
 function updatePathAfterChange () {
-  /* 只保留仍然可见的窗口 */
-  const visibleWins = [ ...document.querySelectorAll('.window') ]
-                        .filter(w => w.style.display !== 'none');
+  /* 仍在桌面的可见窗口 */
+  const wins = [ ...document.querySelectorAll('.window') ]
+                .filter(w => w.style.display !== 'none');
 
-  /* 桌面空了 → 回到根路径 */
-  if (visibleWins.length === 0) {
-    history.pushState({}, '', '/');
-    return;
+  /* ①　决定应该呈现哪个路径 */
+  let targetPath = '/';                               // 默认主页
+  if (wins.length) {
+    /* - z-index 最大的就是“最上层”窗口 */
+    let top = wins[0];
+    for (const w of wins) {
+      if (+w.style.zIndex > +top.style.zIndex) top = w;
+    }
+    targetPath = top.dataset.urlPath || '/';
   }
 
-  /* 找到 z-index 最高的那个窗口 */
-  let top = visibleWins[0];
-  for (const w of visibleWins) {
-    if (+(w.style.zIndex || 0) > +top.style.zIndex) top = w;
-  }
-
-  /* 把地址栏更新成它的 urlPath */
-  const path = top.dataset.urlPath || '/';
-  history.pushState({}, '', path);
-  applyHead(path);      // ← 新增：切换窗口时同步 <title>/<meta>
-
+  /* ②　更新地址栏并同步 <title>/<meta> */
+  history.pushState({}, '', targetPath);
+  applyHead(targetPath);
 }
+
 
 // ✅ 根据 pathname 自动匹配 config 中的 action 递归在整棵 config 树里查找 urlPath
 // – 只要有任何 item 的 urlPath（去掉开头 /）与 pathname 完全一致，就返回它
