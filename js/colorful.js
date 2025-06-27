@@ -1127,43 +1127,52 @@ function execute(key, action, urlPath = resolvePath(key, action)) {
 			console.warn(e);
 		  }
 		},
-        url: async () => {
-          const src = absPath(action.value);
+		url: async () => {
+		  const src = absPath(action.value);
 
-          /* ① 立刻创建窗口，先放一个占位文本 */
-          const win = createWindow(
-            windowTitle,
-            document.createTextNode('Loading…'),
-            config,
-            urlPath
-          );
-          const content = win.querySelector('.content');
+		  /* ① 立刻创建窗口，先放一个占位文本 */
+		  const win = createWindow(
+			windowTitle,
+			document.createTextNode('Loading…'),
+			config,
+			urlPath
+		  );
+		  const content = win.querySelector('.content');
 
-          /* ② 后台抓取并填充 */
-          try {
-            const r   = await fetch(src);
-            const txt = await r.text();
-            content.innerHTML = txt;
+		  /* ② 后台抓取并填充 */
+		  try {
+			const r   = await fetch(src);
+			const txt = await r.text();
+			content.innerHTML = txt;
 
-            /* ③ 把 <title>/<meta description> 存到映射表，持续同步浏览器标题栏 */
-            const headMatch = txt.match(/<head[^>]*>([\s\S]*?)<\/head>/i);
-            if (headMatch) {
-              const shadow = document.implementation.createHTMLDocument('');
-              shadow.head.innerHTML = headMatch[1];
-              const tEl   = shadow.querySelector('title');
-              const mDesc = shadow.querySelector('meta[name="description"]');
+			/* ③ 把 <title>/<meta description> 存到映射表，持续同步浏览器标题栏 */
+			const headMatch = txt.match(/<head[^>]*>([\s\S]*?)<\/head>/i);
+			if (headMatch) {
+			  const shadow = document.implementation.createHTMLDocument('');
+			  shadow.head.innerHTML = headMatch[1];
+			  const tEl   = shadow.querySelector('title');
+			  const mDesc = shadow.querySelector('meta[name="description"]');
 
-              pathHeadMap[urlPath] = {
-                title : (tEl   && tEl.textContent.trim())           || windowTitle,
-                desc  : (mDesc && mDesc.getAttribute('content')||'').trim()
-              };
-              applyHead(urlPath);         // 立即刷新一次
-            }
-          } catch (e) {
-            content.textContent = '⚠️ Failed to load.';
-            console.warn(e);
-          }
-        },
+			  /* -------- 记录并应用 <title>/<meta> -------- */
+			  const customHead = {
+				title : action.metaTitle || (tEl   && tEl.textContent.trim()) || '',
+				desc  : action.metaDesc  || (mDesc && mDesc.getAttribute('content') || '').trim()
+			  };
+
+			  if (customHead.title || customHead.desc) {
+				pathHeadMap[urlPath] = customHead;   // 有内容 → 写入映射
+			  } else {
+				delete pathHeadMap[urlPath];         // 没内容 → 清掉映射 → 回退首页默认
+			  }
+
+			  applyHead(urlPath);                    // 立即刷新标题 / 描述
+			  /* ------------------------------------------- */
+			}
+		  } catch (e) {
+			content.textContent = '⚠️ Failed to load.';
+			console.warn(e);
+		  }
+		},
         md: async () => {
             const response = htmlConfig[action.value];
             const template = document.createElement('template');
