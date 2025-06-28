@@ -574,7 +574,6 @@ var config = {
                 type: 'js',
 				icon:'install',
                 value: 'install-odw.js',
-				external: true,
                 style: ['install']
             }
         },
