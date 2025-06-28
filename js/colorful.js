@@ -1230,13 +1230,31 @@ function execute(key, action, urlPath = resolvePath(key, action)) {
         },
 		123: async () => {
 		  const src = absPath(action.value);
-		  const win = createWindow(windowTitle,
-			  document.createTextNode('Loading…'), config, urlPath);
+
+		  // ① 立刻建壳
+		  const win = createWindow(
+			windowTitle,
+			document.createTextNode('Loading…'),
+			config,
+			urlPath
+		  );
+		  const content = win.querySelector('.content');
+
+		  // ② 后台抓取 & 填充
 		  try {
-			const r = await fetch(src);
-			win.querySelector('.content').innerHTML = await r.text();
+			const r   = await fetch(src);
+			const txt = await r.text();
+			content.innerHTML = txt;
+
+			/* ③ 提取 <title>/<meta description> 并写入映射表 */
+			parseAndApplyHead(
+			  txt,
+			  action.metaTitle || windowTitle,
+			  action.metaDesc  || action.desc || '',
+			  urlPath
+			);
 		  } catch (e) {
-			win.querySelector('.content').textContent = '⚠️ Failed to load.';
+			content.textContent = '⚠️ Failed to load.';
 			console.warn(e);
 		  }
 		},
@@ -1293,13 +1311,28 @@ function execute(key, action, urlPath = resolvePath(key, action)) {
             createWindow(windowTitle, template.content, config, urlPath);
         },
 		md2: async () => {
-		  const win = createWindow(windowTitle,
-			  document.createTextNode('Loading…'), config, urlPath);
+		  const win = createWindow(
+			windowTitle,
+			document.createTextNode('Loading…'),
+			config,
+			urlPath
+		  );
+		  const content = win.querySelector('.content');
+
 		  try {
-			const r = await fetch(action.value);
-			win.querySelector('.content').innerHTML = await r.text();
+			const r   = await fetch(action.value);
+			const txt = await r.text();
+			content.innerHTML = txt;
+
+			/* 同步 <title>/<meta> */
+			parseAndApplyHead(
+			  txt,
+			  action.metaTitle || windowTitle,
+			  action.metaDesc  || action.desc || '',
+			  urlPath
+			);
 		  } catch (e) {
-			win.querySelector('.content').textContent = '⚠️ Failed to load.';
+			content.textContent = '⚠️ Failed to load.';
 			console.warn(e);
 		  }
 		},
