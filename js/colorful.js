@@ -578,6 +578,7 @@ var config = {
                 style: ['install']
             }
         },
+		urlPath: '/od-wiki',
         desc: 'od-wiki.com是免费且持续更新的参考od知识整合站点。为方便理解，取舍了大量内容，具有充分了解者可离开本站',
         style: ['medium'],
         link: ['entry', 'icon']
