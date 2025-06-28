@@ -73,7 +73,7 @@ var config = {
             },
 			instagram: {
 				name: '来ins看图喵 Ins',
-				metaTitle : 'Xiaoleng',
+				metaTitle : 'Redirecting... | Xiaoleng Official Website',
 				title: 'Instagram',
 				type: 'js',
 				icon:'instagram',
@@ -116,7 +116,7 @@ var config = {
             },
 			bilibili: {
 				name: '来b站听唱歌喵 bili',
-				metaTitle : 'Xiaoleng',
+				metaTitle : 'Redirecting... | Xiaoleng Official Website',
 				title: '哔哩哔哩 Bilibili',
         		type: 'js',
 				icon:'bilibili',
@@ -127,7 +127,7 @@ var config = {
 			},
 			youtube: {
 				name: '去yt看舞台喵 YT',
-				metaTitle : 'Xiaoleng',
+				metaTitle : 'Redirecting... | Xiaoleng Official Website',
 				title: 'YouTube',
         		type: 'js',
 				icon:'youtube',
@@ -610,6 +610,7 @@ var config = {
             },
 			X: {
                 name: 'X 官号',
+				metaTitle : 'Redirecting... | od-wiki',
 				title: 'X',
                 type: 'js',
 				icon:'x',
@@ -619,6 +620,7 @@ var config = {
             },
 			telegram: {
                 name: 'Telegram群组',
+				metaTitle : 'Redirecting... | od-wiki',
 				title: 'Telegram',
                 type: 'js',
 				icon:'telegram',
@@ -833,6 +835,7 @@ var config = {
         value: {
 			x: {
 				name: 'X',
+				metaTitle : 'Redirecting... | Xiaoleng Official Website',
 				type: 'js',
 				icon:'x',
 				value: 'x.js',
@@ -842,6 +845,7 @@ var config = {
 			},
 			telegram: {
 				name: 'Telegram',
+				metaTitle : 'Redirecting... | Xiaoleng Official Website',
         		type: 'js',
 				icon:'telegram',
         		value: 'telegram.js',
@@ -851,6 +855,7 @@ var config = {
     		},
     		instagram: {
 				name: 'Instagram',
+				metaTitle : 'Redirecting... | Xiaoleng Official Website',
 				type: 'js',
 				icon:'instagram',
 				value: 'instagram.js',
@@ -860,6 +865,7 @@ var config = {
 			},
 			threads: {
 				name: 'Threads',
+				metaTitle : 'Redirecting... | Xiaoleng Official Website',
 				type: 'js',
 				icon:'threads',
 				value: 'threads.js',
@@ -869,6 +875,7 @@ var config = {
     		},
     		bilibili: {
 				name: '哔哩哔哩 Bilibili',
+				metaTitle : 'Redirecting... | Xiaoleng Official Website',
         		type: 'js',
 				icon:'bilibili',
         		value: 'bilibili.js',
