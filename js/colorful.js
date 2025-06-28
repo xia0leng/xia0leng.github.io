@@ -746,8 +746,6 @@ var config = {
         value: {
             terms: {
                 name: '条款和隐私声明 Terms &amp; Privacy Notice',
-				metaTitle : 'Terms & Privacy Notice | Xiaoleng Official Website',
- 				metaDesc  : 'It\'s a big read, but if you\'re after the Xiaoleng Terms of Service, stop now. They\'re here. Check out all the policies for our events, livecast and services.',
                 type: 'md2',
                 value: './terms.html',
 				urlPath: '/terms',
