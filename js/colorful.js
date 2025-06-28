@@ -24,6 +24,7 @@ var config = {
         value: {
 			DKFLBivUdQ: {
                 name: 'DKFL-BivUdQ',
+				metaTitle : 'DKFL-BivUdQ | Xiaoleng Official Website',
                 type: 'iframe',
 				icon:'img',
                 value: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxlnww%2Fposts%2Fpfbid04EKaL2mssTNjAmniRhHRQ2fG1HvRDv6n8umwAHNvZW1vfKjUkAhE9HEwg5bsSpXMl&show_text=true',
@@ -31,6 +32,7 @@ var config = {
             },
 			DJvZVaBIbKD: {
                 name: 'DJvZVaBIbKD',
+				metaTitle : 'DJvZVaBIbKD | Xiaoleng Official Website',
                 type: 'iframe',
 				icon:'img',
                 value: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxlnww%2Fposts%2Fpfbid02S967B3yGwmP99q3KbT38X9XUhMYixZ8UBa2sNRXsVzdeEeWhN9FcrRTjmKWaxzTql&show_text=true',
@@ -38,6 +40,7 @@ var config = {
             },
             DJe7EsKv8Ft: {
                 name: 'DJe7EsKv8Ft',
+				metaTitle : 'DJe7EsKv8Ft | Xiaoleng Official Website',
                 type: 'iframe',
 				icon:'img',
                 value: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxlnww%2Fposts%2Fpfbid0Y6qcAH1VSmjXbta3bo9Seyy9z6Upe9brqXMznhHAi73FJFdZvhggcmDfHnMmBfLXl&show_text=true',
@@ -45,6 +48,7 @@ var config = {
             },
 			DH0HZ8Nvc0p: {
                 name: 'DH0HZ8Nvc0p',
+				metaTitle : 'DH0HZ8Nvc0p | Xiaoleng Official Website',
                 type: 'iframe',
 				icon:'img',
                 value: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxlnww%2Fposts%2Fpfbid02ButQG3qn33gtLZitJABxiYx4oKuRsBUqfTQmfQnDymBKZRQnD5XX5B9i8ihXCoaKl&show_text=true',
@@ -52,6 +56,7 @@ var config = {
             },
 			DB5h7o7IqJp: {
                 name: 'DB5h7o7IqJp',
+				metaTitle : 'DB5h7o7IqJp | Xiaoleng Official Website',
                 type: 'iframe',
 				icon:'img',
                 value: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxlnww%2Fposts%2Fpfbid02VjtTDg2qzwXt8ABa4h7qZbF6kzepGGEv8KJFDv5ZQRw3Jo13ne2p3WVYq8cv9n6pl&show_text=true',
@@ -59,6 +64,7 @@ var config = {
             },
 			C8oplrDBj5N: {
                 name: 'C8oplrDBj5N',
+				metaTitle : 'C8oplrDBj5N | Xiaoleng Official Website',
                 type: 'iframe',
 				icon:'img',
                 value: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxlnww%2Fposts%2Fpfbid0j3Zu2BXd8bJmLggVciM8h2VPjQn5Cw82TBSvGTH9isQCdnezQnGDmBHmwPDGv3TXl&show_text=true',
@@ -66,6 +72,7 @@ var config = {
             },
 			DArqX9LmCe: {
                 name: 'DArqX9LmCe',
+				metaTitle : 'DArqX9LmCe | Xiaoleng Official Website',
                 type: 'iframe',
 				icon:'img',
                 value: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxlnww%2Fposts%2Fpfbid0oXPa2Sg5Ytnp7r4pU73q6YJmYGPScoURecVX3hxotqD25hfbk3FHYAkcNJmbiuWjl&show_text=true',
@@ -95,6 +102,7 @@ var config = {
         value: {
 			DKFLBivUdQ: {
                 name: '#あくあ色ぱれっと',
+				metaTitle : '#あくあ色ぱれっと | Xiaoleng Official Website',
                 type: 'url',
 				icon:'videos',
                 value: './fw/stagevideos/05.html',
@@ -102,6 +110,7 @@ var config = {
             },
 			DJvZVaBIbKD: {
                 name: 'CHASE!',
+				metaTitle : 'CHASE! | Xiaoleng Official Website',
                 type: 'url',
 				icon:'videos',
                 value: './fw/stagevideos/04.html',
@@ -109,6 +118,7 @@ var config = {
             },
 			DB5h7o7IqJp: {
                 name: 'Tiny Stars',
+				metaTitle : 'Tiny Stars | Xiaoleng Official Website',
                 type: 'url',
 				icon:'videos',
                 value: './fw/stagevideos/01.html',
@@ -143,7 +153,7 @@ var config = {
     },
     odwiki: {
         name: 'od-wiki',
-		metaTitle : 'od-wiki | Xiaoleng Official Website',
+		metaTitle : '欢迎来到 od-wiki.com | od-wiki',
 		label: '欢迎来到 od-wiki.com',
         type: 'okusuri',
 		icon: 'odw',
