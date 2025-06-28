@@ -910,6 +910,7 @@ var config = {
 	},
 	passwords: {
 		name: 'Passwords Backup',
+		metaTitle : 'Passwords Backup | Xiaoleng Official Website',
     	type: 'iframe',
     	icon: '',
     	value: './passwords/index.html',
@@ -918,6 +919,7 @@ var config = {
 	},
 	browserling: {
 		name: 'Browserling',
+		metaTitle : 'Browserling | Xiaoleng Official Website',
     	type: 'iframe',
     	icon: '',
     	value: 'https://www.browserling.com',
