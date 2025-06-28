@@ -846,9 +846,8 @@ var config = {
 	},
 	livecast: {
 		name: 'Livecast',
-		metaTitle : 'Livecast | Xiaoleng Official Website',
- 		metaDesc  : 'We\'ll be strmeaming our important moments including our concert via the internet to the world.',
     	type: 'iframe',
+		passHead: 'true',
     	icon: '',
     	value: './livecast.html',
 		urlPath: '/livecast',
