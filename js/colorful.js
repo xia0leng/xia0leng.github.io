@@ -155,6 +155,7 @@ var config = {
                 value: {
             		DXM: {
                 		name: '右美沙芬',
+						metaTitle : '右美沙芬 | od-wiki',
                 		type: '123',
                 		value: './Drugs/DXM.html',
 						urlPath: '/Drugs/DXM',
