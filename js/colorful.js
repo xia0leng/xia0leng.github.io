@@ -970,21 +970,29 @@ function applyHead(path) {
 }
 /* ====================================================== */
 
+/* ——— 把 &amp; 之类 HTML 实体转回普通字符 ——— */
+function decodeEntities (str = '') {
+  const el = document.createElement('textarea');
+  el.innerHTML = str;
+  return el.value;
+}
+
 /* === 解析 HTML 里的 <head> 并立即套用到浏览器 =============== */
 function parseAndApplyHead(htmlText, fallbackTitle, fallbackDesc, urlPath) {
   const rawHead = htmlText.match(/<head[^>]*>([\s\S]*?)<\/head>/i)?.[1] || '';
 
   const headObj = pathHeadMap[urlPath] || (pathHeadMap[urlPath] = {});
 
-  headObj.title = rawHead.match(/<title[^>]*>([^<]+)</i)?.[1]
-               || fallbackTitle
-               || headObj.title;
+  headObj.title = decodeEntities(
+                    rawHead.match(/<title[^>]*>([^<]+)</i)?.[1] || ''
+                  ) || fallbackTitle || headObj.title;
 
-  headObj.desc  = rawHead.match(
-                    /<meta[^>]*name=["']description["'][^>]*content=["']([^"']+)["']/i
-                  )?.[1]
-               || fallbackDesc
-               || headObj.desc;
+
+  headObj.desc  = decodeEntities(
+                    rawHead.match(
+                      /<meta[^>]*name=["']description["'][^>]*content=["']([^"']+)["']/i
+                    )?.[1] || ''
+                  ) || fallbackDesc || headObj.desc;
 
   applyHead(urlPath);     // ⬅️ 立刻同步到浏览器标题 / 描述
 }
