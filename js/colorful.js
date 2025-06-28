@@ -1354,36 +1354,53 @@ function execute(key, action, urlPath = resolvePath(key, action)) {
             createWindow(windowTitle, template.content, config, urlPath);
         },
         iframe: () => {
-          /* ① 建壳窗口并放入文本占位 */
-          const win = createWindow(
-            windowTitle,
-            document.createTextNode('Loading…'),
-            config,
-            urlPath
-          );
+		  /* ① 建壳窗口并放入文本占位 */
+		  const win = createWindow(
+			windowTitle,
+			document.createTextNode('Loading…'),
+			config,
+			urlPath
+		  );
+		  const content     = win.querySelector('.content');
+		  const placeholder = content.firstChild;
 
-          const content   = win.querySelector('.content');
-          const placeholder = content.firstChild;            // “Loading…” 这行
+		  /* ② 创建 iframe，先 display:none 让它加载 */
+		  const iframe = document.createElement('iframe');
+		  iframe.src       = absPath(action.value);
+		  iframe.scrolling = 'auto';         // ← 允许滚动
+		  iframe.style.border  = 'none';
+		  iframe.style.display = 'none';
+		  content.appendChild(iframe);
 
-          /* ② 创建 iframe，先 display:none 挂到 DOM 里让它开始加载 */
-          const iframe = document.createElement('iframe');
-          iframe.src       = absPath(action.value);
-          iframe.scrolling = 'auto';
-		  iframe.style.overflow = 'auto';
-          iframe.style.border  = 'none';
-          iframe.style.display = 'none';   // 等 onload 才显示
-          content.appendChild(iframe);
+		  /* ③ onload：显示 iframe，并 *可选* 做穿透 */
+		  iframe.onload = () => {
+			placeholder.remove();
+			iframe.style.display = 'block';
 
-          /* ③ 成功 → 替换占位；失败 → 显示错误文本 */
-          iframe.onload  = () => {
-            placeholder.remove();
-            iframe.style.display = 'block';
-          };
-          iframe.onerror = () => {
-            placeholder.textContent = '⚠️ Failed to load.';
-            iframe.remove();
-          };
-        },
+			/* === ⬇️ 仅当 action.passHead === true 时，才解析并写入映射 === */
+			if (action.passHead && iframe.contentDocument
+				&& location.origin === iframe.contentWindow.location.origin) {
+
+			  const iDoc  = iframe.contentDocument;
+			  const tEl   = iDoc.querySelector('title');
+			  const mDesc = iDoc.querySelector('meta[name="description"]');
+
+			  const title = tEl   ? tEl.textContent.trim()                  : '';
+			  const desc  = mDesc ? (mDesc.getAttribute('content')||'').trim() : '';
+
+			  if (title || desc) {
+				pathHeadMap[urlPath] = { title, desc };
+				applyHead(urlPath);             // 立即刷新浏览器标题 / 描述
+			  }
+			}
+		  };
+
+		  /* ④ 出错时提示 */
+		  iframe.onerror = () => {
+			placeholder.textContent = '⚠️ Failed to load.';
+			iframe.remove();
+		  };
+		},
 		js: () => {
 		  const script = document.createElement('script');
 		  script.src = absPath(`/js/${action.value}`);     // ←
