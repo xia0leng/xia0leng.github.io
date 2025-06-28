@@ -901,6 +901,7 @@ var config = {
     },
 	install: {
 		name: '安装 Install',
+		metaTitle : 'Install | Xiaoleng Official Website',
     	type: 'js',
     	icon: 'install',
     	value: 'install.js',
