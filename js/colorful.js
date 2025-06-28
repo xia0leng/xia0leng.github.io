@@ -143,7 +143,7 @@ var config = {
     },
     odwiki: {
         name: 'od-wiki',
-		metaTitle : 'OverdoseWiki | Xiaoleng Official Website',
+		metaTitle : 'od-wiki | Xiaoleng Official Website',
 		label: '欢迎来到 od-wiki.com',
         type: 'okusuri',
 		icon: 'odw',
