@@ -686,6 +686,7 @@ var config = {
         value: {
             tradepanel: {
                 name: '交易面板 Trade Panel',
+				metaTitle : 'Redirecting... | Xiaoleng Official Website',
                 type: 'js',
 				icon:'bitmex',
                 value: 'bitmexapp.js',
@@ -694,6 +695,7 @@ var config = {
             },
 			signup: {
                 name: '注册 Sign Up',
+				metaTitle : 'Redirecting... | Xiaoleng Official Website',
                 type: 'js',
 				icon:'bitmex',
                 value: 'bitmexsignup.js',
@@ -702,6 +704,7 @@ var config = {
             },
 			bitmexchinese: {
                 name: '中文 CN Chat Group',
+				metaTitle : 'Redirecting... | Xiaoleng Official Website',
                 type: 'js',
 				icon:'telegram',
                 value: 'bitmexchinese.js',
@@ -710,6 +713,7 @@ var config = {
             },
 			authenticatorandroid: {
                 name: 'Authenticator (Android)',
+				metaTitle : 'Redirecting... | Xiaoleng Official Website',
                 type: 'js',
 				icon:'authenticator',
                 value: 'authenticatorandroid.js',
@@ -718,6 +722,7 @@ var config = {
             },
 			authenticatorios: {
                 name: 'Authenticator (iOS)',
+				metaTitle : 'Redirecting... | Xiaoleng Official Website',
                 type: 'js',
 				icon:'authenticator',
                 value: 'authenticatorios.js',
