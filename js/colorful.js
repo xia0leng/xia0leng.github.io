@@ -150,6 +150,7 @@ var config = {
         value: {
 			Drugs: {
                 name: '索引-找药看此',
+				metaTitle : '药物列表 | od-wiki',
                 type: 'folder',
 				icon:'okusurifolder',
                 value: {
@@ -163,6 +164,7 @@ var config = {
             		},
             		The_harm_of_dextromethorphan: {
 						name: '右美沙芬的危害专题',
+						metaTitle : '右美沙芬的危害专题 | od-wiki',
 						type: '123',
 						value: './Drugs/The_harm_of_dextromethorphan.html',
 						urlPath: '/Drugs/The_harm_of_dextromethorphan',
@@ -170,6 +172,7 @@ var config = {
 					},
 					ATD: {
 						name: '金刚烷胺',
+						metaTitle : '金刚烷胺 | od-wiki',
 						type: '123',
 						value: './Drugs/ATD.html',
 						urlPath: '/Drugs/ATD',
@@ -177,6 +180,7 @@ var config = {
 					},
 					PR: {
 						name: '普瑞巴林',
+						metaTitle : '普瑞巴林 | od-wiki',
 						type: '123',
 						value: './Drugs/PR.html',
 						urlPath: '/Drugs/PR',
@@ -184,6 +188,7 @@ var config = {
 					},
 					CDI: {
 						name: '可待因',
+						metaTitle : '可待因 | od-wiki',
 						type: '123',
 						value: './Drugs/CDI.html',
 						urlPath: '/Drugs/CDI',
@@ -191,6 +196,7 @@ var config = {
 					},
 					DHCDI: {
 						name: '二氢可待因/白兔BRON其一',
+						metaTitle : '二氢可待因/白兔BRON其一 | od-wiki',
 						type: '123',
 						value: './Drugs/DHCDI.html',
 						urlPath: '/Drugs/DHCDI',
@@ -198,6 +204,7 @@ var config = {
 					},
 					MMT: {
 						name: '美金刚',
+						metaTitle : '美金刚 | od-wiki',
 						type: '123',
 						value: './Drugs/MMT.html',
 						urlPath: '/Drugs/MMT',
@@ -205,6 +212,7 @@ var config = {
 					},
 					TMD: {
 						name: '曲马多',
+						metaTitle : '曲马多 | od-wiki',
 						type: '123',
 						value: './Drugs/TMD.html',
 						urlPath: '/Drugs/TMD',
@@ -212,6 +220,7 @@ var config = {
 					},
 					ZD: {
 						name: 'Z药物',
+						metaTitle : 'Z药物 | od-wiki',
 						type: '123',
 						value: './Drugs/ZD.html',
 						urlPath: '/Drugs/ZD',
@@ -219,6 +228,7 @@ var config = {
 					},
 					BZD: {
 						name: '苯二氮卓类药物',
+						metaTitle : '苯二氮卓类药物 | od-wiki',
 						type: '123',
 						value: './Drugs/BZD.html',
 						urlPath: '/Drugs/BZD',
@@ -226,6 +236,7 @@ var config = {
 					},
 					Opioids: {
 						name: '阿片类药物',
+						metaTitle : '阿片类药物 | od-wiki',
 						type: '123',
 						value: './Drugs/Opioids.html',
 						urlPath: '/Drugs/Opioids',
@@ -233,6 +244,7 @@ var config = {
 					},
 					RTL: {
 						name: '哌醋甲酯',
+						metaTitle : '哌醋甲酯 | od-wiki',
 						type: '123',
 						value: './Drugs/RTL.html',
 						urlPath: '/Drugs/RTL',
@@ -240,6 +252,7 @@ var config = {
 					},
 					KTM: {
 						name: '氯胺酮',
+						metaTitle : '氯胺酮 | od-wiki',
 						type: '123',
 						value: './Drugs/KTM.html',
 						urlPath: '/Drugs/KTM',
@@ -247,6 +260,7 @@ var config = {
 					},
 					EtOH: {
 						name: '乙醇',
+						metaTitle : '乙醇 | od-wiki',
 						type: '123',
 						value: './Drugs/EtOH.html',
 						urlPath: '/Drugs/EtOH',
@@ -254,6 +268,7 @@ var config = {
 					},
 					Cigarette: {
 						name: '香烟',
+						metaTitle : '香烟 | od-wiki',
 						type: '123',
 						value: './Drugs/Cigarette.html',
 						urlPath: '/Drugs/Cigarette',
@@ -261,6 +276,7 @@ var config = {
 					},
 					ACL: {
 						name: '槟榔碱',
+						metaTitle : '槟榔碱 | od-wiki',
 						type: '123',
 						value: './Drugs/ACL.html',
 						urlPath: '/Drugs/ACL',
@@ -268,6 +284,7 @@ var config = {
 					},
 					SRIs: {
 						name: '血清素再摄取抑制剂',
+						metaTitle : '血清素再摄取抑制剂 | od-wiki',
 						type: '123',
 						value: './Drugs/SRIs.html',
 						urlPath: '/Drugs/SRIs',
@@ -275,6 +292,7 @@ var config = {
 					},
 					AES: {
 						name: '止吐药',
+						metaTitle : '止吐药 | od-wiki',
 						type: '123',
 						value: './Drugs/AES.html',
 						urlPath: '/Drugs/AES',
@@ -282,6 +300,7 @@ var config = {
 					},
 					VPA: {
 						name: '丙戊酸',
+						metaTitle : '丙戊酸 | od-wiki',
 						type: '123',
 						value: './Drugs/VPA.html',
 						urlPath: '/Drugs/VPA',
@@ -289,6 +308,7 @@ var config = {
 					},
 					NFP: {
 						name: '奈福泮',
+						metaTitle : '奈福泮 | od-wiki',
 						type: '123',
 						value: './Drugs/NFP.html',
 						urlPath: '/Drugs/NFP',
@@ -296,6 +316,7 @@ var config = {
 					},
 					DPX: {
 						name: '地芬诺酯',
+						metaTitle : '地芬诺酯 | od-wiki',
 						type: '123',
 						value: './Drugs/DPX.html',
 						urlPath: '/Drugs/DPX',
@@ -303,6 +324,7 @@ var config = {
 					},
 					QTP: {
 						name: '喹硫平',
+						metaTitle : '喹硫平 | od-wiki',
 						type: '123',
 						value: './Drugs/QTP.html',
 						urlPath: '/Drugs/QTP',
@@ -310,6 +332,7 @@ var config = {
 					},
 					RPD: {
 						name: '利培酮',
+						metaTitle : '利培酮 | od-wiki',
 						type: '123',
 						value: './Drugs/RPD.html',
 						urlPath: '/Drugs/RPD',
@@ -317,6 +340,7 @@ var config = {
 					},
 					DMH: {
 						name: '茶苯海明',
+						metaTitle : '茶苯海明 | od-wiki',
 						type: '123',
 						value: './Drugs/DMH.html',
 						urlPath: '/Drugs/DMH',
@@ -324,6 +348,7 @@ var config = {
 					},
 					PVR: {
 						name: '喷托维林',
+						metaTitle : '喷托维林 | od-wiki',
 						type: '123',
 						value: './Drugs/PVR.html',
 						urlPath: '/Drugs/PVR',
@@ -331,6 +356,7 @@ var config = {
 					},
 					THP: {
 						name: '苯海索',
+						metaTitle : '苯海索 | od-wiki',
 						type: '123',
 						value: './Drugs/THP.html',
 						urlPath: '/Drugs/THP',
@@ -338,6 +364,7 @@ var config = {
 					},
 					EI: {
 						name: '酶抑制剂',
+						metaTitle : '酶抑制剂 | od-wiki',
 						type: '123',
 						value: './Drugs/EI.html',
 						urlPath: '/Drugs/EI',
@@ -345,6 +372,7 @@ var config = {
 					},
 					SPM: {
 						name: '补充剂',
+						metaTitle : '补充剂 | od-wiki',
 						type: '123',
 						value: './Drugs/SPM.html',
 						urlPath: '/Drugs/SPM',
@@ -352,6 +380,7 @@ var config = {
 					},
 					CFI: {
 						name: '咖啡因',
+						metaTitle : '咖啡因 | od-wiki',
 						type: '123',
 						value: './Drugs/CFI.html',
 						urlPath: '/Drugs/CFI',
@@ -359,6 +388,7 @@ var config = {
 					},
 					TAN: {
 						name: '茶氨酸',
+						metaTitle : '茶氨酸 | od-wiki',
 						type: '123',
 						value: './Drugs/TAN.html',
 						urlPath: '/Drugs/TAN',
@@ -366,6 +396,7 @@ var config = {
 					},
 					MGT: {
 						name: '苏糖酸镁',
+						metaTitle : '苏糖酸镁 | od-wiki',
 						type: '123',
 						value: './Drugs/MGT.html',
 						urlPath: '/Drugs/MGT',
@@ -373,6 +404,7 @@ var config = {
 					},
 					PCT: {
 						name: '吡拉西坦',
+						metaTitle : '吡拉西坦 | od-wiki',
 						type: '123',
 						value: './Drugs/PCT.html',
 						urlPath: '/Drugs/PCT',
@@ -380,6 +412,7 @@ var config = {
 					},
 					MOP: {
 						name: '吗啡',
+						metaTitle : '吗啡 | od-wiki',
 						type: '123',
 						value: './Drugs/MOP.html',
 						urlPath: '/Drugs/MOP',
@@ -387,6 +420,7 @@ var config = {
 					},
 					GBP: {
 						name: '加巴喷丁',
+						metaTitle : '加巴喷丁 | od-wiki',
 						type: '123',
 						value: './Drugs/GBP.html',
 						urlPath: '/Drugs/GBP',
@@ -394,6 +428,7 @@ var config = {
 					},
 					BCF: {
 						name: '巴氯芬',
+						metaTitle : '巴氯芬 | od-wiki',
 						type: '123',
 						value: './Drugs/BCF.html',
 						urlPath: '/Drugs/BCF',
@@ -401,6 +436,7 @@ var config = {
 					},
 					PPF: {
 						name: '丙泊酚',
+						metaTitle : '丙泊酚 | od-wiki',
 						type: '123',
 						value: './Drugs/PPF.html',
 						urlPath: '/Drugs/PPF',
@@ -408,6 +444,7 @@ var config = {
 					},
 					ZPD: {
 						name: '唑吡坦',
+						metaTitle : '唑吡坦 | od-wiki',
 						type: '123',
 						value: './Drugs/ZPD.html',
 						urlPath: '/Drugs/ZPD',
@@ -415,6 +452,7 @@ var config = {
 					},
 					ZPO: {
 						name: '扎来普隆',
+						metaTitle : '扎来普隆 | od-wiki',
 						type: '123',
 						value: './Drugs/ZPO.html',
 						urlPath: '/Drugs/ZPO',
@@ -422,6 +460,7 @@ var config = {
 					},
 					ZPC: {
 						name: '佐匹克隆',
+						metaTitle : '佐匹克隆 | od-wiki',
 						type: '123',
 						value: './Drugs/ZPC.html',
 						urlPath: '/Drugs/ZPC',
@@ -429,6 +468,7 @@ var config = {
 					},
 					DPD: {
 						name: '地芬尼多',
+						metaTitle : '地芬尼多 | od-wiki',
 						type: '123',
 						value: './Drugs/DPD.html',
 						urlPath: '/Drugs/DPD',
@@ -436,6 +476,7 @@ var config = {
 					},
 					PMZ: {
 						name: '异丙嗪',
+						metaTitle : '异丙嗪 | od-wiki',
 						type: '123',
 						value: './Drugs/PMZ.html',
 						urlPath: '/Drugs/PMZ',
@@ -443,6 +484,7 @@ var config = {
 					},
 					TXT: {
 						name: '托莫西汀',
+						metaTitle : '托莫西汀 | od-wiki',
 						type: '123',
 						value: './Drugs/TXT.html',
 						urlPath: '/Drugs/TXT',
@@ -450,6 +492,7 @@ var config = {
 					},
 					OZP: {
 						name: '奥氮平',
+						metaTitle : '奥氮平 | od-wiki',
 						type: '123',
 						value: './Drugs/OZP.html',
 						urlPath: '/Drugs/OZP',
@@ -457,6 +500,7 @@ var config = {
 					},
 					ARP: {
 						name: '阿立哌唑',
+						metaTitle : '阿立哌唑 | od-wiki',
 						type: '123',
 						value: './Drugs/ARP.html',
 						urlPath: '/Drugs/ARP',
@@ -464,6 +508,7 @@ var config = {
 					},
 					ASP: {
 						name: '氨磺必利',
+						metaTitle : '氨磺必利 | od-wiki',
 						type: '123',
 						value: './Drugs/ASP.html',
 						urlPath: '/Drugs/ASP',
@@ -471,6 +516,7 @@ var config = {
 					},
 					compound: {
 						name: '复方专题',
+						metaTitle : '复方专题 | od-wiki',
 						type: '123',
 						value: './Drugs/compound.html',
 						urlPath: '/Drugs/compound',
@@ -478,6 +524,7 @@ var config = {
 					},
 					DPH: {
 						name: '苯海拉明',
+						metaTitle : '苯海拉明 | od-wiki',
 						type: '123',
 						value: './Drugs/DPH.html',
 						urlPath: '/Drugs/DPH',
@@ -489,11 +536,13 @@ var config = {
 			},
 			Effects: {
                 name: '药物效果',
+				metaTitle : '药物效果 | od-wiki',
                 type: 'folder',
 				icon:'okusurifolder',
                 value: {
                     Dissociation: {
 						name: '解离',
+						metaTitle : '解离 | od-wiki',
 						type: 'md2',
 						value: './Effects/Dissociation.html',
 						urlPath: '/Effects/Dissociation',
@@ -501,6 +550,7 @@ var config = {
 					},
 					Antidissociation: {
 						name: '反解离',
+						metaTitle : '反解离 | od-wiki',
 						type: 'md2',
 						value: './Effects/Antidissociation.html',
 						urlPath: '/Effects/Antidissociation',
@@ -508,6 +558,7 @@ var config = {
 					},
 					Delirium: {
 						name: '谵妄',
+						metaTitle : '谵妄 | od-wiki',
 						type: 'md2',
 						value: './Effects/Delirium.html',
 						urlPath: '/Effects/Delirium',
@@ -515,6 +566,7 @@ var config = {
 					},
 					Introduction_to_Hallucination: {
 						name: '幻觉简述',
+						metaTitle : '幻觉简述 | od-wiki',
 						type: 'md2',
 						value: './Effects/Introduction_to_Hallucination.html',
 						urlPath: '/Effects/Introduction_to_Hallucination',
@@ -522,6 +574,7 @@ var config = {
 					},
 					Opioids: {
 						name: '阿片类麻醉',
+						metaTitle : '阿片类麻醉 | od-wiki',
 						type: 'md2',
 						value: './Drugs/Opioids.html',
 						urlPath: '/Drugs/Opioids',
@@ -529,6 +582,7 @@ var config = {
 					},
 					BZD: {
 						name: '苯二氮卓类',
+						metaTitle : '苯二氮卓类 | od-wiki',
 						type: 'md2',
 						value: './Drugs/BZD.html',
 						urlPath: '/Drugs/BZD',
@@ -536,6 +590,7 @@ var config = {
 					},
 					SRIs: {
 						name: '血清素再摄取抑制SRI',
+						metaTitle : '血清素再摄取抑制SRI | od-wiki',
 						type: 'md2',
 						value: './Drugs/SRIs.html',
 						urlPath: '/Drugs/SRIs',
@@ -547,6 +602,7 @@ var config = {
             },
 			drugcombination: {
                 name: '药物联用',
+				metaTitle : '药物联用 | od-wiki',
                 type: 'md2',
                 value: './Effects/Combination_drugs.html',
 				urlPath: '/Effects/Combination_drugs',
