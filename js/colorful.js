@@ -856,6 +856,7 @@ var config = {
 	next_event: {
 		name: 'Next Event',
     	type: 'iframe',
+		passHead: 'true',
     	icon: '',
     	value: './next_event.html',
 		urlPath: '/next_event',
