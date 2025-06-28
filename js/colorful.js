@@ -574,6 +574,7 @@ var config = {
                 type: 'js',
 				icon:'install',
                 value: 'install-odw.js',
+				hidden: 'true',
                 style: ['install']
             }
         },
@@ -1222,7 +1223,8 @@ function execute(key, action, urlPath = resolvePath(key, action)) {
                 <div class="folder"></div>`;
             for (const file in action.value) {
                 action.value[file].hash = hash + '/' + file;
-                template.content.querySelector('.folder').appendChild(makeIcon(file, action.value[file]));
+                const icon = makeIcon(file, action.value[file]);
+				if (icon) template.content.querySelector('.folder').appendChild(icon);
             }
             createWindow(windowTitle, template.content, config, urlPath);
         },
@@ -1313,7 +1315,8 @@ function execute(key, action, urlPath = resolvePath(key, action)) {
                 <div class="folder"></div>`;
             for (const file in action.value) {
                 action.value[file].hash = hash + '/' + file;
-                template.content.querySelector('.folder').appendChild(makeIcon(file, action.value[file]));
+                const icon = makeIcon(file, action.value[file]);
+				if (icon) template.content.querySelector('.folder').appendChild(icon);
             }
             createWindow(windowTitle, template.content, config, urlPath);
         },
@@ -1384,6 +1387,9 @@ function createEntry(key, action) {
 }
 
 function makeIcon(key, action) {
+	/* —— 统一隐藏：只要写了 hidden:true，就别生成任何图标 —— */
+	if (action.hidden) return null;
+	
     let name = key;
     if (action.name) {
         name = action.name;
