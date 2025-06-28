@@ -855,8 +855,6 @@ var config = {
 	},
 	next_event: {
 		name: 'Next Event',
-		metaTitle : 'Next Event | Xiaoleng Official Website',
- 		metaDesc  : 'Where your cuest idol announces future plan together with you.',
     	type: 'iframe',
     	icon: '',
     	value: './next_event.html',
