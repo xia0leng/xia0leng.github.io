@@ -7,4 +7,4 @@ window.root.innerHTML = `
   </div>
 `;
 
-window.open('https://www.bitmex.com/app/register/T7Exaj', '_blank');
+window.open('https://www.bitmex.com/app/register/xiaoleng', '_blank');
