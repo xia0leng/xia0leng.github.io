@@ -6,4 +6,4 @@ window.root.innerHTML = `
   </div>
 `;
 
-window.open('https://t.me/od_wiki', '_blank');
+window.open('https://t.me/od_wiki_cn', '_blank');
