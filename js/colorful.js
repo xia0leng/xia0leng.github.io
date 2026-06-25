@@ -928,6 +928,7 @@ var config = {
 	},
 	livecast: {
 		name: 'Livecast',
+        metaTitle : 'Livecast | Xiaoleng Official Website',
     	type: 'iframe',
 		passHead: 'true',
     	icon: '',
@@ -937,6 +938,7 @@ var config = {
 	},
 	next_event: {
 		name: 'Next Event',
+        metaTitle : 'Next Event | Xiaoleng Official Website',
     	type: 'iframe',
 		passHead: 'true',
     	icon: '',
@@ -946,6 +948,7 @@ var config = {
 	},
     shop: {
 		name: 'Shop',
+        metaTitle : 'Shop | Xiaoleng Official Website',
     	type: 'iframe',
 		passHead: 'true',
     	icon: '',
