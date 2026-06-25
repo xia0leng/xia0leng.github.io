@@ -944,6 +944,15 @@ var config = {
 		urlPath: '/next_event',
     	style: ['large']
 	},
+    shop: {
+		name: 'Shop',
+    	type: 'iframe',
+		passHead: 'true',
+    	icon: '',
+    	value: './shop/index.html',
+		urlPath: '/shop',
+    	style: ['large']
+	},
 	notice: {
         name: '通知 Notice',
         type: 'md',
