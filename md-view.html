@@ -1,71 +1,50 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <title>Markdown解析页面</title>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            max-width: 920px;
-            margin: 0 auto;
-            padding: 30px 20px;
-            font-family: system-ui, sans-serif;
-            line-height: 1.7;
-            color: #222;
-        }
-        h1,h2,h3 {
-            margin: 1.2em 0 0.6em;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 0.3em;
-        }
-        p {
-            margin-bottom: 1em;
-        }
-        ul,ol {
-            padding-left: 2em;
-            margin-bottom: 1em;
-        }
-        code {
-            background: #f6f8fa;
-            padding: 2px 6px;
-            border-radius: 4px;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Markdown文档渲染</title>
+<script src="./js/marked.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{max-width:900px;margin:30px auto;padding:0 20px;font-family:system-ui,SimSun,serif;line-height:1.7}
+h1,h2,h3,h4{margin:1.4em 0 0.6em}
+h1{border-bottom:1px solid #eee;padding-bottom:6px}
+blockquote{background:#f3f4f6;padding:12px 16px;border-left:4px solid #888;margin:1em 0}
+blockquote.is-danger{border-left-color:#ef4444;background:#fef2f2}
+blockquote.is-warning{border-left-color:#f59e0b;background:#fffbeb}
+ul{padding-left:22px;margin:1em 0}
+strong{font-weight:700}
+sup{font-size:0.7em}
+a{color:#0066cc}
+</style>
 </head>
 <body>
-    <div id="md-container"></div>
+<div id="container"></div>
+<script>
+// 1. 读取URL参数
+const urlParams = new URLSearchParams(location.search);
+let mdPath = urlParams.get('file');
 
-    <script>
-        // 1. 获取URL参数里的md文件名
-        const urlParams = new URLSearchParams(location.search);
-        const targetMd = urlParams.get('file');
-        const container = document.getElementById("md-container");
+// 2. 无参数时，读取路径作为md文件（适配 /Drugs/ARP 路由）
+if(!mdPath){
+    let path = location.pathname;
+    if(path.startsWith('/')) path = path.slice(1);
+    mdPath = path + '.md';
+}
 
-        // 2. 判断是否传入文件参数
-        if (!targetMd) {
-            // 无参数时：提示用户传入md文件，不再显示固定测试文本
-            container.innerHTML = "<p>请传入文件参数，例：md-view.html?file=test.md</p>";
-        } else {
-            // 有参数：请求对应md文件
-            fetch(targetMd)
-                .then(res => {
-                    if (!res.ok) throw new Error(`文件 ${targetMd} 不存在`);
-                    return res.text();
-                })
-                .then(mdText => {
-                    // 成功读取md，渲染文件内容
-                    container.innerHTML = marked.parse(mdText);
-                })
-                .catch(err => {
-                    // 加载失败，显示错误提示
-                    container.innerHTML = `<p style="color:red;">加载失败：${err.message}</p>`;
-                });
-        }
-    </script>
+// 3. 请求md并渲染
+fetch(mdPath)
+.then(res=>{
+    if(!res.ok) throw new Error("文件不存在或读取失败");
+    return res.text();
+})
+.then(mdText=>{
+    const html = marked.parse(mdText);
+    document.getElementById('container').innerHTML = html;
+})
+.catch(err=>{
+    document.body.innerHTML = `<p style="color:red">加载异常：${err.message}</p>`;
+})
+</script>
 </body>
 </html>
