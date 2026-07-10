@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Markdown解析页面</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            font-family: system-ui, sans-serif;
+            line-height: 1.7;
+            color: #222;
+        }
+        h1,h2,h3 {
+            margin: 1.2em 0 0.6em;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.3em;
+        }
+        p {
+            margin-bottom: 1em;
+        }
+        ul,ol {
+            padding-left: 2em;
+            margin-bottom: 1em;
+        }
+        code {
+            background: #f6f8fa;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div id="md-container"></div>
+
+    <script>
+        // 1. 获取URL参数里的md文件名
+        const urlParams = new URLSearchParams(location.search);
+        const targetMd = urlParams.get('file');
+        const container = document.getElementById("md-container");
+
+        // 2. 判断是否传入文件参数
+        if (!targetMd) {
+            // 无参数时：提示用户传入md文件，不再显示固定测试文本
+            container.innerHTML = "<p>请传入文件参数，例：md-view.html?file=test.md</p>";
+        } else {
+            // 有参数：请求对应md文件
+            fetch(targetMd)
+                .then(res => {
+                    if (!res.ok) throw new Error(`文件 ${targetMd} 不存在`);
+                    return res.text();
+                })
+                .then(mdText => {
+                    // 成功读取md，渲染文件内容
+                    container.innerHTML = marked.parse(mdText);
+                })
+                .catch(err => {
+                    // 加载失败，显示错误提示
+                    container.innerHTML = `<p style="color:red;">加载失败：${err.message}</p>`;
+                });
+        }
+    </script>
+</body>
+</html>
