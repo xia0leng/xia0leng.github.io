@@ -1118,6 +1118,40 @@ function parseAndApplyHead(htmlText, fallbackTitle, fallbackDesc, urlPath) {
 }
 /* ============================================================= */
 
+let markedLoader = null;
+function ensureMarked() {
+  if (window.marked) return Promise.resolve(window.marked);
+  if (!markedLoader) {
+    markedLoader = new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = absPath('/js/marked.min.js');
+      script.onload = () => window.marked ? resolve(window.marked) : reject(new Error('marked is not available'));
+      script.onerror = () => reject(new Error('Failed to load marked.min.js'));
+      document.head.appendChild(script);
+    });
+  }
+  return markedLoader;
+}
+
+async function loadHtmlOrMarkdown(src) {
+  const response = await fetch(src);
+  if (response.ok) {
+    return { html: await response.text(), source: src };
+  }
+
+  if (/\.html(?:$|\?)/i.test(src)) {
+    const mdSrc = src.replace(/\.html($|\?)/i, '.md$1');
+    const mdResponse = await fetch(mdSrc);
+    if (mdResponse.ok) {
+      const mdText = await mdResponse.text();
+      const markedApi = await ensureMarked();
+      return { html: markedApi.parse(mdText), source: mdSrc };
+    }
+  }
+
+  throw new Error(`Failed to load ${src}`);
+}
+
 const htmlConfig = {
     readme: `<h1 style="line-height: 100%; margin-block-start: 0.5em; margin-block-end: 0.05em;">欢迎来到小冷官方网站</h1>
     <h2 style="line-height: 100%; margin-block-start: 0em; margin-block-end: 0em;">Welcome to Xiaoleng Official Website</h2>
@@ -1368,8 +1402,8 @@ function execute(key, action, urlPath = resolvePath(key, action)) {
 
 		  // ② 后台抓取 & 填充
 		  try {
-			const r   = await fetch(src);
-			const txt = await r.text();
+			const loaded = await loadHtmlOrMarkdown(src);
+			const txt = loaded.html;
 			content.innerHTML = txt;
 
 			/* ③ 提取 <title>/<meta description> 并写入映射表 */
