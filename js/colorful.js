@@ -757,7 +757,7 @@ var config = {
 				metaTitle : 'L²S² | Xiaoleng Official Website',
  				metaDesc  : 'L²S²是我们的下一代数字货币衍生品交易引擎Liq™ Engine的图表扩展<br> L²S² is the chart extension of our next generation cryptocurrency derivatives trading engine, Liq™ Engine.',
                 type: 'iframe',
-				icon:'L²S²',
+				icon:'liq',
                 value: './llss/index.html',
 				urlPath: '/llss',
                 style: ['large']
@@ -778,7 +778,7 @@ var config = {
 				metaTitle : 'L²S² | Xiaoleng Official Website',
  				metaDesc  : 'L²S²是我们的下一代数字货币衍生品交易引擎Liq™ Engine的图表扩展<br> L²S² is the chart extension of our next generation cryptocurrency derivatives trading engine, Liq™ Engine.',
                 type: 'iframe',
-				icon:'L²S²',
+				icon:'liq',
                 value: './llss/index.html',
 				urlPath: '/llss',
                 style: ['large']
@@ -1061,6 +1061,32 @@ function applyHead(path) {
     document.head.appendChild(meta);
   }
   meta.setAttribute('content', final.desc || '');
+
+  const pageUrl = new URL(path || '/', location.origin).href;
+  let canonical = document.querySelector('link[rel="canonical"]');
+  if (!canonical) {
+    canonical = document.createElement('link');
+    canonical.setAttribute('rel', 'canonical');
+    document.head.appendChild(canonical);
+  }
+  canonical.setAttribute('href', pageUrl);
+
+  const setMeta = (selector, attr, value) => {
+    let el = document.querySelector(selector);
+    if (!el) {
+      el = document.createElement('meta');
+      const match = selector.match(/meta\[(name|property)="([^"]+)"\]/);
+      if (match) el.setAttribute(match[1], match[2]);
+      document.head.appendChild(el);
+    }
+    el.setAttribute(attr, value);
+  };
+
+  setMeta('meta[property="og:url"]', 'content', pageUrl);
+  setMeta('meta[property="og:title"]', 'content', final.title || defaultHead.title);
+  setMeta('meta[property="og:description"]', 'content', final.desc || '');
+  setMeta('meta[name="twitter:title"]', 'content', final.title || defaultHead.title);
+  setMeta('meta[name="twitter:description"]', 'content', final.desc || '');
 }
 /* ====================================================== */
 
@@ -1091,6 +1117,40 @@ function parseAndApplyHead(htmlText, fallbackTitle, fallbackDesc, urlPath) {
   applyHead(urlPath);     // ⬅️ 立刻同步到浏览器标题 / 描述
 }
 /* ============================================================= */
+
+let markedLoader = null;
+function ensureMarked() {
+  if (window.marked) return Promise.resolve(window.marked);
+  if (!markedLoader) {
+    markedLoader = new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = absPath('/js/marked.min.js');
+      script.onload = () => window.marked ? resolve(window.marked) : reject(new Error('marked is not available'));
+      script.onerror = () => reject(new Error('Failed to load marked.min.js'));
+      document.head.appendChild(script);
+    });
+  }
+  return markedLoader;
+}
+
+async function loadHtmlOrMarkdown(src) {
+  const response = await fetch(src);
+  if (response.ok) {
+    return { html: await response.text(), source: src };
+  }
+
+  if (/\.html(?:$|\?)/i.test(src)) {
+    const mdSrc = src.replace(/\.html($|\?)/i, '.md$1');
+    const mdResponse = await fetch(mdSrc);
+    if (mdResponse.ok) {
+      const mdText = await mdResponse.text();
+      const markedApi = await ensureMarked();
+      return { html: markedApi.parse(mdText), source: mdSrc };
+    }
+  }
+
+  throw new Error(`Failed to load ${src}`);
+}
 
 const htmlConfig = {
     readme: `<h1 style="line-height: 100%; margin-block-start: 0.5em; margin-block-end: 0.05em;">欢迎来到小冷官方网站</h1>
@@ -1200,9 +1260,9 @@ function makeWindow(title, style) {
         <div class="window">
             <div class="header">
                 <div class="title">${title}</div>
-                <div class="button minimize"></div>
-                <div class="button maximize"></div>
-                <div class="button close"></div>
+                <button type="button" class="button minimize" aria-label="Minimize" title="Minimize"></button>
+                <button type="button" class="button maximize" aria-label="Maximize" title="Maximize"></button>
+                <button type="button" class="button close" aria-label="Close" title="Close"></button>
             </div>
             <div class="content"></div>
         </div>`;
@@ -1342,8 +1402,8 @@ function execute(key, action, urlPath = resolvePath(key, action)) {
 
 		  // ② 后台抓取 & 填充
 		  try {
-			const r   = await fetch(src);
-			const txt = await r.text();
+			const loaded = await loadHtmlOrMarkdown(src);
+			const txt = loaded.html;
 			content.innerHTML = txt;
 
 			/* ③ 提取 <title>/<meta description> 并写入映射表 */
