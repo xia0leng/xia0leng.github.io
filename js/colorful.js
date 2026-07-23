@@ -744,7 +744,7 @@ var config = {
         },
         desc: '不是小冷挣到钱最多的交易所，但是是小冷最喜欢的交易所<br> It&#39;s not the exchange where I made the most money, but it&#39;s my favorite.',
         style: ['medium'],
-        link: ['entry', 'icon']
+        link: []
     },
     liq: {
         name: 'Liq™',
