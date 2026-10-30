@@ -7,4 +7,4 @@ window.root.innerHTML = `
   </div>
 `;
 
-window.open('https://instagram.com/xia0leng', '_blank');
+window.open('https://www.xln.moe', '_blank');
