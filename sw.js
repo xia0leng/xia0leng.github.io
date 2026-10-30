@@ -29,7 +29,6 @@ self.addEventListener('fetch', (event) => {
   if (event.request.mode === 'navigate') {
     event.respondWith(
       fetch(event.request)
-        .then((response) => response.status === 404 ? fetch('/index.html') : response)
         .catch(() => caches.open(CACHE_NAME).then((cache) => cache.match(OFFLINE_URL)))
     );
   }
