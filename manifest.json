@@ -1,7 +1,9 @@
 {
   "name": "Xiaoleng",
   "short_name": "Xiaoleng",
+  "id": "/",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "theme_color": "#c5bcff",
   "background_color": "#c5bcff",
