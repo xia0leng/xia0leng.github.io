@@ -719,8 +719,9 @@ var config = {
 				metaTitle : 'Redirecting... | Xiaoleng Official Website',
                 type: 'js',
 				icon:'telegram',
-                value: 'bitmexchinese.js',
+                value: '',
 				external: true,
+                hidden: 'true',
                 style: ['ultrasmall']
             },
 			authenticatorandroid: {
