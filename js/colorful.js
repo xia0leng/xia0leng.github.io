@@ -915,7 +915,6 @@ var config = {
     	icon: 'cgh',
     	value: 'cgh.js',
         external: true,
-		link: ['entry', 'icon'],
     	style: ['install']
 	},
 	passwords: {
