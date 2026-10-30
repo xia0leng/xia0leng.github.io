@@ -908,6 +908,16 @@ var config = {
 		link: ['entry', 'icon'],
     	style: ['install']
 	},
+    xow: {
+		name: '返回小冷官方网站 Back to XOW',
+		metaTitle : 'Redirecting... | Xiaoleng Official Website',
+    	type: 'js',
+    	icon: 'cgh',
+    	value: 'cgh.js',
+        external: true,
+		link: ['entry', 'icon'],
+    	style: ['install']
+	},
 	passwords: {
 		name: 'Passwords Backup',
 		metaTitle : 'Passwords Backup | Xiaoleng Official Website',
