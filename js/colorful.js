@@ -1190,7 +1190,7 @@ function putWindowOnTop(window) {
     }
     document.getElementById(`t${window.id.slice(1)}`).classList.add('active');
 	const path = window.dataset.urlPath || '/';
-	history.pushState({}, '', path);
+	if (location.pathname !== path) history.pushState({}, '', path);
 	applyHead(path);        // ← 新增：关闭 / 最小化后同步 head
 }
 
@@ -1708,22 +1708,28 @@ prepareDom();
 loadDesktop();
 
 // ✅ 监听浏览器前进后退，解析 pathname 自动还原窗口
+let historyNavigationId = 0;
 window.addEventListener('popstate', () => {
-    const segments = location.pathname.split('/').filter(Boolean);
+    const navigationId = ++historyNavigationId;
+    const path = location.pathname;
+    const segments = path.split('/').filter(Boolean);
 
-    // 关闭所有窗口
+    // 窗口和任务栏按钮必须一起清理，避免返回时累积失效按钮
     document.querySelectorAll('.window').forEach(win => win.remove());
+    document.querySelector('.taskbar').replaceChildren();
 
     // 尝试查找匹配的 config 项
     const result = findActionByPath(segments);
 
     if (result) {
-        execute(result.key, result.action, location.pathname);
+        execute(result.key, result.action, path);
     } else {
         // 若未匹配任何窗口项，显示 GitHub Pages 的 404 页面（地址栏保持不动）
         fetch('/404.html')
             .then(res => res.text())
             .then(html => {
+                // 请求完成前若已切换页面，不再创建过期的 404 窗口
+                if (navigationId !== historyNavigationId || location.pathname !== path) return;
                 const bodyStart = html.indexOf('<body');
                 const bodyOpen = html.indexOf('>', bodyStart) + 1;
                 const bodyEnd = html.indexOf('</body>');
@@ -1732,8 +1738,9 @@ window.addEventListener('popstate', () => {
                 const template = document.createElement('template');
                 template.innerHTML = bodyContent;
 
-                createWindow('404 Not Found', template.content, { style: ['medium'] }, location.pathname);
-            });
+                createWindow('404 Not Found', template.content, { style: ['medium'] }, path);
+            })
+            .catch(err => console.warn('Failed to load 404 page:', err));
     }
 	applyHead(location.pathname);
 });
@@ -1756,7 +1763,7 @@ function updatePathAfterChange () {
   }
 
   /* ②　更新地址栏并同步 <title>/<meta> */
-  history.pushState({}, '', targetPath);
+  if (location.pathname !== targetPath) history.pushState({}, '', targetPath);
   applyHead(targetPath);
 }
 
@@ -1776,7 +1783,7 @@ function findActionByPath(pathSegments, cfg = config) {
       }
 
       // 👉 继续向下递归
-      if (item.value) {
+      if (item.value && typeof item.value === 'object') {
         const found = dfs(item.value);
         if (found) return found;
       }
