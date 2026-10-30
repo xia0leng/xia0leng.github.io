@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Markdown文档渲染</title>
 <script src="/js/marked.min.js"></script>
-<style>
-</style>
+<link rel="stylesheet" href="/css/markdown.css">
 </head>
 <body>
-<div id="container"></div>
+<main id="container" class="markdown-body"></main>
 <script>
 // 1. 读取URL参数
 const urlParams = new URLSearchParams(location.search);
