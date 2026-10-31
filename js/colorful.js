@@ -22,6 +22,22 @@ var config = {
         type: 'folder',
 		icon:'photos',
         value: {
+            DQ1ZX6JjZES: {
+                name: 'DQ1ZX6JjZES',
+				metaTitle : 'DQ1ZX6JjZES | Xiaoleng Official Website',
+                type: 'iframe',
+				icon:'img',
+                value: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxlnww%2Fposts%2Fpfbid02Yo7MR9JYmqzJhG84oQZ7mb1Mo6FKoH23UNUVEdq3eu3fv4MxXG4VQDPVLzNDUsUkl&show_text=true',
+                style: ['large']
+            },
+            DLCVXThO95h: {
+                name: 'DLCVXThO95h',
+				metaTitle : 'DLCVXThO95h | Xiaoleng Official Website',
+                type: 'iframe',
+				icon:'img',
+                value: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxlnww%2Fposts%2Fpfbid0arhM4HdvmeapzNpEd4FHSJfMBSYNTvoxQgxFPGJAdErkMYSbAcw4axbE8EXSTTMpl&show_text=true',
+                style: ['large']
+            },
 			DKFLBivUdQ: {
                 name: 'DKFL-BivUdQ',
 				metaTitle : 'DKFL-BivUdQ | Xiaoleng Official Website',
@@ -62,20 +78,13 @@ var config = {
                 value: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxlnww%2Fposts%2Fpfbid02VjtTDg2qzwXt8ABa4h7qZbF6kzepGGEv8KJFDv5ZQRw3Jo13ne2p3WVYq8cv9n6pl&show_text=true',
                 style: ['large']
             },
-			C8oplrDBj5N: {
-                name: 'C8oplrDBj5N',
-				metaTitle : 'C8oplrDBj5N | Xiaoleng Official Website',
-                type: 'iframe',
-				icon:'img',
-                value: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxlnww%2Fposts%2Fpfbid0j3Zu2BXd8bJmLggVciM8h2VPjQn5Cw82TBSvGTH9isQCdnezQnGDmBHmwPDGv3TXl&show_text=true',
-                style: ['large']
-            },
 			DArqX9LmCe: {
                 name: 'DArqX9LmCe',
 				metaTitle : 'DArqX9LmCe | Xiaoleng Official Website',
                 type: 'iframe',
 				icon:'img',
                 value: 'https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxlnww%2Fposts%2Fpfbid0oXPa2Sg5Ytnp7r4pU73q6YJmYGPScoURecVX3hxotqD25hfbk3FHYAkcNJmbiuWjl&show_text=true',
+                hidden: 'true',
                 style: ['large']
             },
 			instagram: {
