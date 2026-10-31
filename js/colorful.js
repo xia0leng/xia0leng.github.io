@@ -679,7 +679,7 @@ var config = {
                 }
             }
         },
-        link: ['entry']
+        link: ['']
     },
 	articles: {
         name: '文章 Articles',
