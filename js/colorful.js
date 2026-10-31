@@ -1311,6 +1311,21 @@ function createWindow(title, content, config, urlPath = '/') {
     return divWindow;
 }
 
+async function loadDocument(source) {
+    const url = new URL(absPath(source), location.origin);
+    let response = await fetch(url);
+    // Static servers do not generate HTML pages from Markdown sources.
+    if (response.status === 404 && /\.html$/i.test(url.pathname)) {
+        url.pathname = url.pathname.replace(/\.html$/i, '.md');
+        response = await fetch(url);
+    }
+    if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${url.pathname}`);
+    }
+    const text = await response.text();
+    return /\.md$/i.test(url.pathname) ? marked.parse(text) : text;
+}
+
 function execute(key, action, urlPath = resolvePath(key, action)) {
     let name = key;
 	let windowTitle = action.title || action.name;
@@ -1361,8 +1376,7 @@ function execute(key, action, urlPath = resolvePath(key, action)) {
 
 		  // ② 后台抓取 & 填充
 		  try {
-			const r   = await fetch(src);
-			const txt = await r.text();
+			const txt = await loadDocument(src);
 			content.innerHTML = txt;
 
 			/* ③ 提取 <title>/<meta description> 并写入映射表 */
@@ -1391,8 +1405,7 @@ function execute(key, action, urlPath = resolvePath(key, action)) {
 
 		  /* ② 后台抓取并填充 */
 		  try {
-			const r   = await fetch(src);
-			const txt = await r.text();
+			const txt = await loadDocument(src);
 			content.innerHTML = txt;
 
 			/* ③ 把 <title>/<meta description> 存到映射表，持续同步浏览器标题栏 */
@@ -1439,8 +1452,7 @@ function execute(key, action, urlPath = resolvePath(key, action)) {
 		  const content = win.querySelector('.content');
 
 		  try {
-			const r   = await fetch(action.value);
-			const txt = await r.text();
+			const txt = await loadDocument(action.value);
 			content.innerHTML = txt;
 
 			/* 同步 <title>/<meta> */
